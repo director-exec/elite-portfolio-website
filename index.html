@@ -16,12 +16,12 @@
     
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2d5aa0;
-            --accent-color: #38a169;
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --bg-light: #f7fafc;
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
             --white: #ffffff;
             --border-color: #e2e8f0;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -50,10 +50,11 @@
         /* Header */
         header {
             background: var(--white);
-            box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .header-content {
@@ -61,29 +62,104 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-top-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-bottom-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .contact-info {
+            color: var(--text-dark);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            transition: all 0.3s ease;
         }
 
         .logo img {
-            height: 50px;
+            height: 56px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        /* Scrolled header styles */
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        header.scrolled .header-content {
+            padding: 0.25rem 0;
+        }
+
+        header.scrolled .header-top-right {
+            display: none;
+        }
+
+        header.scrolled .header-right {
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        header.scrolled .logo img {
+            height: 40px;
             width: auto;
         }
 
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+        header.scrolled .contact-info {
+            display: none;
         }
 
-        .logo-subtitle {
+        header.scrolled .payment-button {
+            padding: 0.375rem 0.75rem;
             font-size: 0.875rem;
-            color: var(--text-light);
-            font-weight: 400;
         }
 
         /* Navigation */
@@ -103,77 +179,203 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.875rem;
             transition: color 0.3s ease;
             position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
         }
 
         .nav-menu a:hover {
             color: var(--accent-color);
+            background-color: var(--bg-light);
         }
 
         .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
+            bottom: -2px;
+            left: 50%;
             width: 0;
             height: 2px;
             background: var(--accent-color);
-            transition: width 0.3s ease;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .nav-menu a:hover::after {
-            width: 100%;
+            width: 80%;
+        }
+
+        /* Dropdown Menu */
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--bg-light);
+            color: var(--accent-color);
+        }
+
+        .dropdown-menu a::after {
+            display: none;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-top: 1px solid var(--border-color);
+            z-index: 999;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu-section {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-menu-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding-left: 1rem;
+        }
+
+        .mobile-menu-links a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--accent-color);
         }
 
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--text-dark);
             cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
         }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--bg-light);
+        }
+
+
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1651628001161-3481a6cce2cd?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+        .hero h1, .hero .description, .hero .description-secondary {
             color: var(--white);
-            padding: 4rem 0;
-            text-align: center;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .hero .tagline {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .hero h1 span {
+            color: var(--white);
         }
 
         .hero .description {
+            font-size: 1.5rem;
+            max-width: 42rem;
+            margin: 0 0 2rem 0;
+            color: var(--white);
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .hero .description-secondary {
             font-size: 1.125rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            opacity: 0.8;
+            max-width: 48rem;
+            margin: 0 0 3rem 0;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.75;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
+            gap: 1.5rem;
+            justify-content: flex-start;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .btn {
             padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -181,189 +383,399 @@
             gap: 0.5rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            font-size: 1.125rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
-            background: var(--accent-color);
+            background: var(--primary-color);
             color: var(--white);
         }
 
         .btn-primary:hover {
-            background: #2f855a;
-            transform: translateY(-2px);
+            background: var(--secondary-color);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
         }
 
         .btn-secondary:hover {
+            background: var(--bg-light);
+            border-color: var(--accent-color);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 3rem 0;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
             background: var(--white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: #f3f4f6;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
             color: var(--primary-color);
         }
 
-        /* Features Section */
-        .features {
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .service-card .btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        /* About Section */
+        .about {
             padding: 5rem 0;
-            background: var(--bg-light);
+            background: var(--white);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            background: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            height: 500px;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-content {
+            text-align: left;
+            padding: 2rem 0;
+        }
+
+        .about-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.75;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            max-width: 80rem;
+            margin: 0 auto;
         }
 
-        .feature-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            text-align: left;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .feature-link:hover {
-            text-decoration: underline;
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .about-text p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            height: 400px;
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            background: #dbeafe;
+            border-radius: 0.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 4rem;
+            flex-shrink: 0;
         }
 
-        /* Certifications Section */
-        .certifications {
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .feature-content h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Compliance Section */
+        .compliance {
             padding: 5rem 0;
             background: var(--bg-light);
         }
 
-        .certifications h2 {
+        .compliance-content {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
+            max-width: 64rem;
+            margin: 0 auto;
         }
 
-        .cert-grid {
+        .compliance-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .compliance-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.75;
+        }
+
+        .compliance-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .cert-item {
+        .compliance-card {
             background: var(--white);
             padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
+            border-radius: 1rem;
             box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
-        .cert-item h3 {
+        .compliance-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .compliance-icon {
+            width: 64px;
+            height: 64px;
+            background: #dbeafe;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .compliance-icon i {
+            font-size: 2rem;
             color: var(--accent-color);
-            margin-bottom: 1rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
+        .compliance-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .cert-badges {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            max-width: 240px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cert-badge {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
             text-align: center;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .standards-list {
+            list-style: none;
+            text-align: left;
+            padding: 0;
         }
 
-        .cta-section p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .standards-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .standards-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .contact-content p {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            line-height: 1.75;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-contact {
+            background: var(--accent-color);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-contact:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #cbd5e1;
+            border: 1px solid #475569;
+        }
+
+        .btn-outline:hover {
+            background: #334155;
+            border-color: #64748b;
+        }
+
+        .contact-address {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
         }
 
         /* Footer */
         footer {
-            background: var(--text-dark);
-            color: var(--white);
+            background: var(--bg-light);
+            color: var(--text-dark);
             padding: 3rem 0 1rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: var(--accent-color);
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .footer-section p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .footer-section ul {
@@ -375,47 +787,38 @@
         }
 
         .footer-section ul li a {
-            color: var(--white);
+            color: var(--text-light);
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
         }
 
         .footer-section ul li a:hover {
-            opacity: 1;
+            color: var(--accent-color);
         }
 
-        .footer-bottom {
-            border-top: 1px solid #4a5568;
-            padding-top: 2rem;
-            text-align: center;
-            opacity: 0.8;
-        }
-
-        .social-links {
+        .footer-section .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
 
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-links a:hover {
-            opacity: 1;
-        }
-
-        /* Legal Disclosure */
-        .legal-disclosure {
-            background: var(--bg-light);
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.875rem;
+        .footer-section .social-links a {
             color: var(--text-light);
+            font-size: 1.125rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
         }
 
         /* Responsive Design */
@@ -429,17 +832,39 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
-            .about-content {
+            .about-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .cta-buttons {
+            .about-image {
+                height: 300px;
+            }
+
+            .about-content {
+                text-align: center;
+            }
+
+            .about-content h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
             .features-grid {
@@ -447,18 +872,7 @@
             }
         }
 
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
 
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
-
-        .mb-3 {
-            margin-bottom: 3rem;
-        }
     </style>
 </head>
 <body>
@@ -466,182 +880,318 @@
     <header>
         <div class="container">
             <div class="header-content">
+                <!-- Logo -->
                 <div class="logo">
-                    <img src="LOGO/thread-viewer-1.png" alt="Elite Portfolio Management Logo">
-                    <div>
-                        <div class="logo-text">Elite Portfolio Management</div>
-                        <div class="logo-subtitle">Digital Recovery. Human Respect. Total Compliance.</div>
-                    </div>
+                    <img src="LOGO/Borderless.png" alt="Diversified Adjustment Service, Inc." width="350" height="75">
                 </div>
                 
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#consumer-tools">Consumer Tools</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                    <button class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </nav>
+                <!-- Right Side Container -->
+                <div class="header-right">
+                    <!-- Top Right: Contact Info + Payment Button -->
+                    <div class="header-top-right">
+                        <div class="contact-info">
+                            Need Help? Call us at 1.800.279.3733
+                        </div>
+                        <a href="/consumer-tools/payment" class="payment-button">
+                            <i class="fas fa-dollar-sign"></i>
+                            Make A Payment
+                        </a>
+                    </div>
+                    
+                    <!-- Bottom Right: Navigation -->
+                    <div class="header-bottom-right">
+                        <nav class="hidden lg:flex">
+                            <ul class="nav-menu">
+                                <li class="nav-item">
+                                    <a href="/about">About</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/about">About Main Page</a>
+                                        <a href="/about/security">Security</a>
+                                        <a href="/about/compliance">Compliance</a>
+                                        <a href="/about/industries">Industries We Serve</a>
+                                        <a href="/about/community">Community Involvement</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/consumer-tools">Consumer Tools</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/consumer-tools">Consumer Tools</a>
+                                        <a href="/consumer-tools/payment">Make a Payment</a>
+                                        <a href="/consumer-tools/dispute">Dispute My Account</a>
+                                        <a href="/consumer-tools/validation">Request Account Validation</a>
+                                        <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
+                                        <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
+                                        <a href="/consumer-tools/remove-number">Remove My Number</a>
+                                        <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/solutions">Solutions</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/solutions">Solutions Main Page</a>
+                                        <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
+                                        <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
+                                        <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
+                                        <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
+                                        <a href="/solutions/skip-tracing">Skip Tracing</a>
+                                        <a href="/solutions/attorneys">Network of Attorneys</a>
+                                        <a href="/solutions/warehousing">Warehousing Management</a>
+                                    </div>
+                                </li>
+                                <li><a href="/contact">Contact Us</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- Mobile Menu Button -->
+                        <button class="mobile-menu-btn lg:hidden">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Elite Portfolio Management</h1>
-            <p class="tagline">Digital Recovery. Human Respect. Total Compliance.</p>
-            <p class="description">
-                With over four decades of successful collections experience, Elite Portfolio Management delivers best-in-class recovery solutions with a focus on compliance, professionalism, and empathy.
-            </p>
-            <p class="description">
-                We combine advanced technology, secure infrastructure, and highly trained personnel to ensure every consumer interaction reflects the highest standards of the industry — and every client experiences maximum ROI with minimum reputational risk.
-            </p>
-            <div class="cta-buttons">
-                <a href="#payment" class="btn btn-primary">
-                    <i class="fas fa-credit-card"></i>
-                    Make a Payment
-                </a>
-                <a href="#consumer-tools" class="btn btn-secondary">
-                    <i class="fas fa-tools"></i>
-                    Consumer Tools
-                </a>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-section">
+            <h4>About</h4>
+            <div class="mobile-menu-links">
+                <a href="/about">About Main Page</a>
+                <a href="/about/security">Security</a>
+                <a href="/about/compliance">Compliance</a>
+                <a href="/about/industries">Industries We Serve</a>
+                <a href="/about/community">Community Involvement</a>
             </div>
         </div>
-    </section>
+        <div class="mobile-menu-section">
+            <h4>Consumer Tools</h4>
+            <div class="mobile-menu-links">
+                <a href="/consumer-tools">Consumer Tools</a>
+                <a href="/consumer-tools/payment">Make a Payment</a>
+                <a href="/consumer-tools/dispute">Dispute My Account</a>
+                <a href="/consumer-tools/validation">Request Account Validation</a>
+                <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
+                <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
+                <a href="/consumer-tools/remove-number">Remove My Number</a>
+                <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Solutions</h4>
+            <div class="mobile-menu-links">
+                <a href="/solutions">Solutions Main Page</a>
+                <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
+                <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
+                <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
+                <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
+                <a href="/solutions/skip-tracing">Skip Tracing</a>
+                <a href="/solutions/attorneys">Network of Attorneys</a>
+                <a href="/solutions/warehousing">Warehousing Management</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Careers</h4>
+            <div class="mobile-menu-links">
+                <a href="/careers">Careers</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Contact</h4>
+            <div class="mobile-menu-links">
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </header>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Make a Payment</h3>
-                    <p>Use one of our secure, convenient payment options to resolve your account.</p>
-                    <a href="#payment" class="feature-link">
-                        Make a Payment <i class="fas fa-arrow-right"></i>
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to<br>Elite Portfolio Management</h1>
+                <p class="description">
+                    <strong>Digital Recovery. Human Respect. Total Compliance.</strong>
+                </p>
+                <p class="description-secondary">
+                    With over four decades of successful collections experience, Elite Portfolio Management delivers best-in-class recovery solutions with a focus on compliance, professionalism, and empathy.
+                </p>
+                <p class="description-secondary">
+                    We combine advanced technology, secure infrastructure, and highly trained personnel to ensure every consumer interaction reflects the highest standards of the industry — and every client experiences maximum ROI with minimum reputational risk.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/consumer-tools" class="btn btn-primary">
+                        I'm a Consumer
+                    </a>
+                    <a href="/solutions" class="btn btn-primary">
+                        I'm a Business
                     </a>
                 </div>
+            </div>
+        </section>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Make a Payment</h3>
+                        <p>Use one of our secure, convenient payment options to resolve your account.</p>
+                        <a href="/consumer-tools/payment" class="btn btn-primary">
+                            Make a Payment
+                        </a>
                     </div>
-                    <h3>Consumer Tools</h3>
-                    <p>Access helpful resources, submit requests, or get assistance every step of the way.</p>
-                    <a href="#consumer-tools" class="feature-link">
-                        View Consumer Tools <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Consumer Tools</h3>
+                        <p>Access helpful resources, submit requests, or get assistance every step of the way.</p>
+                        <a href="/consumer-tools" class="btn btn-primary">
+                            View Consumer Tools
+                        </a>
                     </div>
-                    <h3>Business Solutions</h3>
-                    <p>Recover more while protecting your brand. Explore our full suite of recovery services.</p>
-                    <a href="#solutions" class="feature-link">
-                        Get Started <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Business Solutions</h3>
+                        <p>Recover more while protecting your brand. Explore our full suite of recovery services.</p>
+                        <a href="/solutions" class="btn btn-primary">
+                            Get Started
+                        </a>
                     </div>
-                    <h3>About Elite</h3>
-                    <p>We maintain a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership.</p>
-                    <a href="#about" class="feature-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>🛡 About Elite</h2>
-                    <p>We maintain a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership. Our ethics, technology, and performance set us apart.</p>
-                    <p>With over four decades of experience in the collections industry, we understand the delicate balance between effective recovery and maintaining positive relationships with consumers and clients alike.</p>
-                </div>
-                <div class="about-image">
-                    <i class="fas fa-shield-alt"></i>
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="about-container">
+                    <div class="about-image"></div>
+                    <div class="about-content">
+                        <h2>About Elite</h2>
+                        <p>
+                            We maintain a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership. Our ethics, technology, and performance set us apart.
+                        </p>
+                        <a href="/about" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i>
+                            Learn More
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications Section -->
-    <section class="certifications">
-        <div class="container">
-            <h2>🎖 Memberships & Certifications</h2>
-            <p class="text-center mb-3">
-                Elite Portfolio Management maintains all required state licenses and industry certifications. Our internal compliance team ensures full alignment with:
-            </p>
-            <div class="cert-grid">
-                <div class="cert-item">
-                    <h3>FDCPA, FCRA, GLBA, HIPAA</h3>
-                    <p>Federal compliance standards for debt collection, credit reporting, and data protection.</p>
-                </div>
-                <div class="cert-item">
-                    <h3>CFPB Oversight</h3>
-                    <p>Consumer Financial Protection Bureau oversight and documentation standards.</p>
-                </div>
-                <div class="cert-item">
-                    <h3>State Licensing</h3>
-                    <p>State licensing, COAs, and bond requirements across all 50 states.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Compliance Section -->
+        <section class="compliance">
+            <div class="container">
+                <div class="compliance-content">
+                    <h2>Compliance & Certifications</h2>
+                    <p>
+                        Elite Portfolio Management maintains all required state licenses and industry certifications. Our internal compliance team ensures full alignment with federal and state regulations.
+                    </p>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Get Started?</h2>
-            <p>📞 Call us at 1-800-XXX-XXXX to learn how Elite can support your receivables, protect your reputation, and deliver results.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-phone"></i>
-                    Contact Us Today
-                </a>
+                    <div class="compliance-grid">
+                        <div class="compliance-card">
+                            <div class="compliance-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Federal Regulations</h3>
+                            <div class="cert-badges">
+                                <span class="cert-badge">FDCPA</span>
+                                <span class="cert-badge">FCRA</span>
+                                <span class="cert-badge">GLBA</span>
+                                <span class="cert-badge">HIPAA</span>
+                            </div>
+                        </div>
+
+                        <div class="compliance-card">
+                            <div class="compliance-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Industry Standards</h3>
+                            <ul class="standards-list">
+                                <li>CFPB oversight and documentation standards</li>
+                                <li>State licensing, COAs, and bond requirements across all 50 states</li>
+                                <li>Regular compliance audits and training</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>
+                        Call us at 1-800-XXX-XXXX to learn how Elite can support your receivables, protect your reputation, and deliver results.
+                    </p>
+
+                    <div class="contact-buttons">
+                        <a href="tel:1-800-XXX-XXXX" class="btn btn-contact">
+                            <i class="fas fa-phone"></i>
+                            1-800-XXX-XXXX
+                        </a>
+                        <a href="mailto:info@eliteportfoliomgmt.com" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            info@eliteportfoliomgmt.com
+                        </a>
+                    </div>
+
+                    <div class="contact-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Elite Portfolio Management, PO Box [Insert Address], [City, State ZIP]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <h3>Legal Disclosure</h3>
+                    <p>
+                        This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+                    </p>
+                </div>
+
+                <div class="footer-section">
                     <h3>Mailing Address</h3>
-                    <p>Elite Portfolio Management<br>
-                    PO Box [Insert Address]<br>
-                    [City, State ZIP]</p>
-                    <p>📞 1-800-XXX-XXXX<br>
-                    📧 info@eliteportfoliomgmt.com</p>
+                    <p>
+                        Elite Portfolio Management<br>
+                        PO Box [Insert Address]<br>
+                        [City, State ZIP]<br>
+                        📞 1-800-XXX-XXXX<br>
+                        📧 info@eliteportfoliomgmt.com
+                    </p>
                 </div>
 
                 <div class="footer-section">
                     <h3>Site Resources</h3>
                     <ul>
-                        <li><a href="#payment">Make a Payment</a></li>
-                        <li><a href="#consumer-tools">Consumer Tools</a></li>
-                        <li><a href="#client-login">Client Login</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#privacy">Privacy Policy & Disclaimers</a></li>
+                        <li><a href="/consumer-tools/payment">Make a Payment</a></li>
+                        <li><a href="/consumer-tools">Consumer Tools</a></li>
+                        <li><a href="/client-login">Client Login</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/privacy">Privacy Policy & Disclaimers</a></li>
                     </ul>
                 </div>
 
@@ -649,12 +1199,8 @@
                     <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
-                        <a href="#google"><i class="fab fa-google"></i></a>
-                        <a href="#certifications"><i class="fas fa-certificate"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <p style="margin-top: 1rem;">
-                        🔗 LinkedIn | 🔗 Google Business | 🔗 Compliance Certifications
-                    </p>
                 </div>
             </div>
 
@@ -664,20 +1210,27 @@
         </div>
     </footer>
 
-    <!-- Legal Disclosure -->
-    <div class="legal-disclosure">
-        <div class="container">
-            <p><strong>Legal Disclosure:</strong> This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
-        </div>
-    </div>
-
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
+        const mobileMenu = document.getElementById('mobileMenu');
 
         mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn')) {
+                mobileMenu.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
         });
 
         // Smooth scrolling for anchor links
@@ -698,11 +1251,13 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
+                header.classList.add('scrolled');
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'var(--white)';
-                header.style.backdropFilter = 'none';
+                header.classList.remove('scrolled');
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
             }
         });
     </script>

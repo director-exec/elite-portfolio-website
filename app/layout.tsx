@@ -1,22 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Elite Portfolio Management - Digital Recovery. Human Respect. Total Compliance.',
   description: 'Elite Portfolio Management delivers best-in-class recovery solutions with over four decades of experience. Digital Recovery. Human Respect. Total Compliance.',
-  keywords: 'debt collection, portfolio management, recovery solutions, compliance, financial services',
-  authors: [{ name: 'Elite Portfolio Management' }],
-  viewport: 'width=device-width, initial-scale=1',
-  robots: 'index, follow',
-  openGraph: {
-    title: 'Elite Portfolio Management',
-    description: 'Digital Recovery. Human Respect. Total Compliance.',
-    type: 'website',
-    locale: 'en_US',
-  },
 }
 
 export default function RootLayout({
@@ -25,9 +17,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
-        {children}
+    <html lang="en">
+      <head>
+        {/* Font Awesome */}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      </head>
+      <body className={inter.className}>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )

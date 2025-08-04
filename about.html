@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Elite Portfolio Management</title>
-    <meta name="description" content="Learn about Elite Portfolio Management's compliance-first culture, four decades of experience, and commitment to professional debt collection.">
+    <title>Elite Portfolio Management - Digital Recovery. Human Respect. Total Compliance.</title>
+    <meta name="description" content="Elite Portfolio Management delivers best-in-class recovery solutions with over four decades of experience. Digital Recovery. Human Respect. Total Compliance.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,12 +16,12 @@
     
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2d5aa0;
-            --accent-color: #38a169;
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --bg-light: #f7fafc;
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
             --white: #ffffff;
             --border-color: #e2e8f0;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -50,10 +50,11 @@
         /* Header */
         header {
             background: var(--white);
-            box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .header-content {
@@ -61,29 +62,104 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-top-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-bottom-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .contact-info {
+            color: var(--text-dark);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            transition: all 0.3s ease;
         }
 
         .logo img {
-            height: 50px;
+            height: 56px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        /* Scrolled header styles */
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        header.scrolled .header-content {
+            padding: 0.25rem 0;
+        }
+
+        header.scrolled .header-top-right {
+            display: none;
+        }
+
+        header.scrolled .header-right {
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        header.scrolled .logo img {
+            height: 40px;
             width: auto;
         }
 
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+        header.scrolled .contact-info {
+            display: none;
         }
 
-        .logo-subtitle {
+        header.scrolled .payment-button {
+            padding: 0.375rem 0.75rem;
             font-size: 0.875rem;
-            color: var(--text-light);
-            font-weight: 400;
         }
 
         /* Navigation */
@@ -103,127 +179,316 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.875rem;
             transition: color 0.3s ease;
             position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
         }
 
         .nav-menu a:hover {
             color: var(--accent-color);
+            background-color: var(--bg-light);
         }
 
         .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
+            bottom: -2px;
+            left: 50%;
             width: 0;
             height: 2px;
             background: var(--accent-color);
-            transition: width 0.3s ease;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .nav-menu a:hover::after {
-            width: 100%;
+            width: 80%;
+        }
+
+        /* Dropdown Menu */
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--bg-light);
+            color: var(--accent-color);
+        }
+
+        .dropdown-menu a::after {
+            display: none;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-top: 1px solid var(--border-color);
+            z-index: 999;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu-section {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-menu-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding-left: 1rem;
+        }
+
+        .mobile-menu-links a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--accent-color);
         }
 
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--text-dark);
             cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
         }
 
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            padding: 4rem 0;
-            text-align: center;
+        .mobile-menu-btn:hover {
+            background-color: var(--bg-light);
         }
 
-        .page-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        /* Page Content Styles */
+        .page-content {
+            padding: 3rem 0;
+            min-height: 60vh;
         }
 
-        .page-header p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-
-        /* Content Sections */
-        .content-section {
-            padding: 5rem 0;
-        }
-
-        .content-section:nth-child(even) {
-            background: var(--bg-light);
-        }
-
-        .section-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .section-text h2 {
+        .page-content h1 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
+            color: var(--text-dark);
+            font-weight: 700;
         }
 
-        .section-text p {
+        .page-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        .page-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .page-content p {
             font-size: 1.125rem;
             color: var(--text-light);
-            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
         }
 
-        .section-image {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            height: 400px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 4rem;
+        .page-content ul, .page-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
         }
 
-        /* Values Grid */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .page-content li {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
         }
 
-        .value-card {
+        .page-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .page-content a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Content Cards */
+        .content-card {
             background: var(--white);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 1rem;
             box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
         }
 
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .value-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .content-card h2 {
             color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .content-card p {
+            margin-bottom: 1rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb .separator {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .footer-section p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-section .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-section .social-links a {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
         }
 
         /* Responsive Design */
@@ -236,17 +501,9 @@
                 display: block;
             }
 
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .section-grid {
+            .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -255,13 +512,40 @@
             text-align: center;
         }
 
-        .mb-2 {
-            margin-bottom: 2rem;
+        .text-left {
+            text-align: left;
         }
 
-        .mb-3 {
-            margin-bottom: 3rem;
+        .text-right {
+            text-align: right;
         }
+
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-5 { margin-bottom: 1.25rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-10 { margin-bottom: 2.5rem; }
+
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-5 { margin-top: 1.25rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-10 { margin-top: 2.5rem; }
+
+        .p-1 { padding: 0.25rem; }
+        .p-2 { padding: 0.5rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-5 { padding: 1.25rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-10 { padding: 2.5rem; }
     </style>
 </head>
 <body>
@@ -269,118 +553,215 @@
     <header>
         <div class="container">
             <div class="header-content">
+                <!-- Logo -->
                 <div class="logo">
-                    <img src="LOGO/thread-viewer-1.png" alt="Elite Portfolio Management Logo">
-                    <div>
-                        <div class="logo-text">Elite Portfolio Management</div>
-                        <div class="logo-subtitle">Digital Recovery. Human Respect. Total Compliance.</div>
-                    </div>
+                    <a href="/">
+                        <img src="LOGO/Borderless.png" alt="Diversified Adjustment Service, Inc." width="350" height="75">
+                    </a>
                 </div>
                 
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="consumer-tools.html">Consumer Tools</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                    <button class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </nav>
+                <!-- Right Side Container -->
+                <div class="header-right">
+                    <!-- Top Right: Contact Info + Payment Button -->
+                    <div class="header-top-right">
+                        <div class="contact-info">
+                            Need Help? Call us at 1.800.279.3733
+                        </div>
+                        <a href="/consumer-tools/payment" class="payment-button">
+                            <i class="fas fa-dollar-sign"></i>
+                            Make A Payment
+                        </a>
+                    </div>
+                    
+                    <!-- Bottom Right: Navigation -->
+                    <div class="header-bottom-right">
+                        <nav class="hidden lg:flex">
+                            <ul class="nav-menu">
+                                <li class="nav-item">
+                                    <a href="/about">About</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/about">About Main Page</a>
+                                        <a href="/about/security">Security</a>
+                                        <a href="/about/compliance">Compliance</a>
+                                        <a href="/about/industries">Industries We Serve</a>
+                                        <a href="/about/community">Community Involvement</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/consumer-tools">Consumer Tools</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/consumer-tools">Consumer Tools</a>
+                                        <a href="/consumer-tools/payment">Make a Payment</a>
+                                        <a href="/consumer-tools/dispute">Dispute My Account</a>
+                                        <a href="/consumer-tools/validation">Request Account Validation</a>
+                                        <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
+                                        <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
+                                        <a href="/consumer-tools/remove-number">Remove My Number</a>
+                                        <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/solutions">Solutions</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/solutions">Solutions Main Page</a>
+                                        <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
+                                        <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
+                                        <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
+                                        <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
+                                        <a href="/solutions/skip-tracing">Skip Tracing</a>
+                                        <a href="/solutions/attorneys">Network of Attorneys</a>
+                                        <a href="/solutions/warehousing">Warehousing Management</a>
+                                    </div>
+                                </li>
+                                <li><a href="/contact">Contact Us</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- Mobile Menu Button -->
+                        <button class="mobile-menu-btn lg:hidden">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>About Elite Portfolio Management</h1>
-            <p>Four decades of experience in professional debt collection with a focus on compliance and respect</p>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-section">
+            <h4>About</h4>
+            <div class="mobile-menu-links">
+                <a href="/about">About Main Page</a>
+                <a href="/about/security">Security</a>
+                <a href="/about/compliance">Compliance</a>
+                <a href="/about/industries">Industries We Serve</a>
+                <a href="/about/community">Community Involvement</a>
+            </div>
         </div>
-    </section>
+        <div class="mobile-menu-section">
+            <h4>Consumer Tools</h4>
+            <div class="mobile-menu-links">
+                <a href="/consumer-tools">Consumer Tools</a>
+                <a href="/consumer-tools/payment">Make a Payment</a>
+                <a href="/consumer-tools/dispute">Dispute My Account</a>
+                <a href="/consumer-tools/validation">Request Account Validation</a>
+                <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
+                <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
+                <a href="/consumer-tools/remove-number">Remove My Number</a>
+                <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Solutions</h4>
+            <div class="mobile-menu-links">
+                <a href="/solutions">Solutions Main Page</a>
+                <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
+                <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
+                <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
+                <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
+                <a href="/solutions/skip-tracing">Skip Tracing</a>
+                <a href="/solutions/attorneys">Network of Attorneys</a>
+                <a href="/solutions/warehousing">Warehousing Management</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Contact</h4>
+            <div class="mobile-menu-links">
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Main About Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-text">
-                    <h2>Our Mission</h2>
-                    <p>Elite Portfolio Management maintains a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership. Our ethics, technology, and performance set us apart in the industry.</p>
-                    <p>With over four decades of successful collections experience, we deliver best-in-class recovery solutions with a focus on compliance, professionalism, and empathy.</p>
-                </div>
-                <div class="section-image">
-                    <i class="fas fa-shield-alt"></i>
+    <main>
+        <!-- PAGE CONTENT GOES HERE -->
+        <div class="page-content">
+            <div class="container">
+                <div class="content-card">
+                    <h1>About Elite Portfolio Management</h1>
+                    <h2>A Reputation Built on Integrity. A Future Powered by Innovation.</h2>
+                    
+                    <hr>
+                    
+                    <h3>Who We Are</h3>
+                    <p>Elite Portfolio Management is a nationally recognized third-party collections and receivables management firm built on a foundation of ethics, performance, and compliance. With decades of experience serving clients across regulated industries, we combine expert human insight with powerful digital tools to deliver superior financial results — while protecting the brands we represent.</p>
+                    <p>We are proudly woman-owned and operate with the belief that compliance and transparency are non-negotiable in today's complex regulatory environment.</p>
+                    
+                    <hr>
+                    
+                    <h3>What We Stand For</h3>
+                    <p>We treat your brand as an extension of our own. Every touchpoint reflects our dedication to preserving your reputation, communicating with empathy, and aligning our operations with your values. Whether we're recovering past-due balances or handling sensitive account situations, we work as silent stewards of your public image.</p>
+                    
+                    <hr>
+                    
+                    <h3>How We Operate</h3>
+                    <p>Respect, empathy, and compliance guide everything we do. Every consumer interaction is conducted with professionalism and clarity. Our agents are trained not only in regulation — but in tone, timing, and approach. We uphold a "resolution mindset" in all conversations, helping consumers resolve obligations with dignity.</p>
+                    
+                    <hr>
+                    
+                    <h3>Our People</h3>
+                    <p>Our team is our power. We hire experienced professionals who thrive in a culture of integrity, collaboration, and continuous improvement. Every team member undergoes rigorous training and performance auditing — not just to maintain standards, but to raise them. At Elite, excellence is a shared expectation.</p>
+                    
+                    <hr>
+                    
+                    <h3>How We Deliver</h3>
+                    <p>We succeed by listening. Every client has unique KPIs, operational nuances, and brand sensitivities. We tailor each engagement to align with those needs while delivering clear, measurable recovery results. Whether early-stage outreach or complex portfolio management, our mission is to maximize returns while minimizing risk.</p>
+                    
+                    <hr>
+                    
+                    <h3>Where We Work</h3>
+                    <p>Elite Portfolio Management is licensed, bonded, and fully operational in all 50 U.S. states and Puerto Rico. We maintain Certificates of Authority, statutory bonds, trust accounts, and resident office requirements in every jurisdiction where applicable law demands it. Your nationwide presence is supported by ours.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2 class="text-center mb-3">Our Core Values</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Compliance First</h3>
-                    <p>We maintain strict adherence to all federal and state regulations including FDCPA, FCRA, GLBA, and HIPAA standards.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Human Respect</h3>
-                    <p>Every consumer interaction reflects our commitment to treating individuals with dignity and respect throughout the collection process.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Advanced Technology</h3>
-                    <p>We combine cutting-edge technology with secure infrastructure to ensure efficient and secure operations.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Maximum ROI</h3>
-                    <p>Our clients experience maximum return on investment with minimum reputational risk through our proven processes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-image">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="section-text">
-                    <h2>Technology & Infrastructure</h2>
-                    <p>We combine advanced technology, secure infrastructure, and highly trained personnel to ensure every consumer interaction reflects the highest standards of the industry.</p>
-                    <p>Our digital-first approach enables efficient operations while maintaining the highest levels of security and compliance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer style="background: var(--text-dark); color: var(--white); padding: 3rem 0 1rem;">
+    <footer>
         <div class="container">
-            <div style="text-align: center;">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Legal Disclosure</h3>
+                    <p>
+                        This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Mailing Address</h3>
+                    <p>
+                        Elite Portfolio Management<br>
+                        PO Box [Insert Address]<br>
+                        [City, State ZIP]<br>
+                        📞 1-800-XXX-XXXX<br>
+                        📧 info@eliteportfoliomgmt.com
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Site Resources</h3>
+                    <ul>
+                        <li><a href="/consumer-tools/payment">Make a Payment</a></li>
+                        <li><a href="/consumer-tools">Consumer Tools</a></li>
+                        <li><a href="/client-login">Client Login</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/privacy">Privacy Policy & Disclaimers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
                 <p>&copy; 2024 Elite Portfolio Management. All rights reserved.</p>
-                <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.8;">
-                    <strong>Legal Disclosure:</strong> This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
-                </p>
             </div>
         </div>
     </footer>
@@ -388,21 +769,51 @@
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
+        const mobileMenu = document.getElementById('mobileMenu');
 
         mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn')) {
+                mobileMenu.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
 
         // Add scroll effect to header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
+                header.classList.add('scrolled');
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'var(--white)';
-                header.style.backdropFilter = 'none';
+                header.classList.remove('scrolled');
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
             }
         });
     </script>
