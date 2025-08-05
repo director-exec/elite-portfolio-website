@@ -904,38 +904,37 @@
                             <ul class="nav-menu">
                                 <li class="nav-item">
                                     <a href="/about">About</a>
-                                    <div class="dropdown-menu">
-                                        <a href="/about">About Main Page</a>
-                                        <a href="/about/security">Security</a>
-                                        <a href="/about/compliance">Compliance</a>
-                                        <a href="/about/industries">Industries We Serve</a>
-                                        <a href="/about/community">Community Involvement</a>
+                                    <div className="dropdown-menu">
+                                        <Link href="/about/security">Security</Link>
+                                        <Link href="/about/compliance">Compliance</Link>
+                                        <Link href="/about/industries-we-serve">Industries We Serve</Link>
+                                        <Link href="/about/community-involvement">Community Involvement</Link>
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/consumer-tools">Consumer Tools</a>
-                                    <div class="dropdown-menu">
-                                        <a href="/consumer-tools">Consumer Tools</a>
-                                        <a href="/consumer-tools/payment">Make a Payment</a>
-                                        <a href="/consumer-tools/dispute">Dispute My Account</a>
-                                        <a href="/consumer-tools/validation">Request Account Validation</a>
-                                        <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
-                                        <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
-                                        <a href="/consumer-tools/remove-number">Remove My Number</a>
-                                        <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+                                    <div className="dropdown-menu">
+                                        <Link href="/consumer-tools">Consumer Tools</Link>
+                                        <Link href="/consumer-tools/payment">Make a Payment</Link>
+                                        <Link href="/consumer-tools/dispute">Dispute My Account</Link>
+                                        <Link href="/consumer-tools/validation">Request Account Validation</Link>
+                                        <Link href="/consumer-tools/bankruptcy">Bankruptcy Notification</Link>
+                                        <Link href="/consumer-tools/fraud">Fraud & Identity Theft</Link>
+                                        <Link href="/consumer-tools/remove-number">Remove My Number</Link>
+                                        <Link href="/consumer-tools/feedback">Submit a Compliment or Complaint</Link>
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/solutions">Solutions</a>
-                                    <div class="dropdown-menu">
-                                        <a href="/solutions">Solutions Main Page</a>
-                                        <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
-                                        <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
-                                        <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
-                                        <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
-                                        <a href="/solutions/skip-tracing">Skip Tracing</a>
-                                        <a href="/solutions/attorneys">Network of Attorneys</a>
-                                        <a href="/solutions/warehousing">Warehousing Management</a>
+                                    <div className="dropdown-menu">
+                                        <Link href="/solutions">Solutions Main Page</Link>
+                                        <Link href="/solutions/pre-charge-off">Pre-Charge Off Collections</Link>
+                                        <Link href="/solutions/post-charge-off">Post Charge-Off Collections</Link>
+                                        <Link href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</Link>
+                                        <Link href="/solutions/credit-reporting">Credit Bureau Reporting</Link>
+                                        <Link href="/solutions/skip-tracing">Skip Tracing</Link>
+                                        <Link href="/solutions/attorneys">Network of Attorneys</Link>
+                                        <Link href="/solutions/warehousing">Warehousing Management</Link>
                                     </div>
                                 </li>
                                 <li><a href="/contact">Contact Us</a></li>
@@ -956,38 +955,37 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-section">
             <h4>About</h4>
-            <div class="mobile-menu-links">
-                <a href="/about">About Main Page</a>
-                <a href="/about/security">Security</a>
-                <a href="/about/compliance">Compliance</a>
-                <a href="/about/industries">Industries We Serve</a>
-                <a href="/about/community">Community Involvement</a>
+            <div className="mobile-menu-links">
+              <Link href="/about/security" onClick={closeMobileMenu}>Security</Link>
+              <Link href="/about/compliance" onClick={closeMobileMenu}>Compliance</Link>
+              <Link href="/about/industries-we-serve" onClick={closeMobileMenu}>Industries We Serve</Link>
+              <Link href="/about/community-involvement" onClick={closeMobileMenu}>Community Involvement</Link>
             </div>
         </div>
         <div class="mobile-menu-section">
             <h4>Consumer Tools</h4>
-            <div class="mobile-menu-links">
-                <a href="/consumer-tools">Consumer Tools</a>
-                <a href="/consumer-tools/payment">Make a Payment</a>
-                <a href="/consumer-tools/dispute">Dispute My Account</a>
-                <a href="/consumer-tools/validation">Request Account Validation</a>
-                <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
-                <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
-                <a href="/consumer-tools/remove-number">Remove My Number</a>
-                <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+            <div className="mobile-menu-links">
+                <Link href="/consumer-tools">Consumer Tools</Link>
+                <Link href="/consumer-tools/payment">Make a Payment</Link>
+                <Link href="/consumer-tools/dispute">Dispute My Account</Link>
+                <Link href="/consumer-tools/validation">Request Account Validation</Link>
+                <Link href="/consumer-tools/bankruptcy">Bankruptcy Notification</Link>
+                <Link href="/consumer-tools/fraud">Fraud & Identity Theft</Link>
+                <Link href="/consumer-tools/remove-number">Remove My Number</Link>
+                <Link href="/consumer-tools/feedback">Submit a Compliment or Complaint</Link>
             </div>
         </div>
         <div class="mobile-menu-section">
             <h4>Solutions</h4>
-            <div class="mobile-menu-links">
-                <a href="/solutions">Solutions Main Page</a>
-                <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
-                <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
-                <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
-                <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
-                <a href="/solutions/skip-tracing">Skip Tracing</a>
-                <a href="/solutions/attorneys">Network of Attorneys</a>
-                <a href="/solutions/warehousing">Warehousing Management</a>
+            <div className="mobile-menu-links">
+                <Link href="/solutions">Solutions Main Page</Link>
+                <Link href="/solutions/pre-charge-off">Pre-Charge Off Collections</Link>
+                <Link href="/solutions/post-charge-off">Post Charge-Off Collections</Link>
+                <Link href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</Link>
+                <Link href="/solutions/credit-reporting">Credit Bureau Reporting</Link>
+                <Link href="/solutions/skip-tracing">Skip Tracing</Link>
+                <Link href="/solutions/attorneys">Network of Attorneys</Link>
+                <Link href="/solutions/warehousing">Warehousing Management</Link>
             </div>
         </div>
         <div class="mobile-menu-section">

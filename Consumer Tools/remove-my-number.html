@@ -578,13 +578,12 @@
                         <nav class="hidden lg:flex">
                             <ul class="nav-menu">
                                 <li class="nav-item">
-                                    <a href="/about">About</a>
-                                    <div class="dropdown-menu">
-                                        <a href="/about">About Main Page</a>
-                                        <a href="/about/security">Security</a>
-                                        <a href="/about/compliance">Compliance</a>
-                                        <a href="/about/industries">Industries We Serve</a>
-                                        <a href="/about/community">Community Involvement</a>
+                                    <Link href="/about">About</Link>
+                                    <div className="dropdown-menu">
+                                        <Link href="/about/security">Security</Link>
+                                        <Link href="/about/compliance">Compliance</Link>
+                                        <Link href="/about/industries-we-serve">Industries We Serve</Link>
+                                        <Link href="/about/community-involvement">Community Involvement</Link>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -631,12 +630,11 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-section">
             <h4>About</h4>
-            <div class="mobile-menu-links">
-                <a href="/about">About Main Page</a>
-                <a href="/about/security">Security</a>
-                <a href="/about/compliance">Compliance</a>
-                <a href="/about/industries">Industries We Serve</a>
-                <a href="/about/community">Community Involvement</a>
+            <div className="mobile-menu-links">
+              <Link href="/about/security" onClick={closeMobileMenu}>Security</Link>
+              <Link href="/about/compliance" onClick={closeMobileMenu}>Compliance</Link>
+              <Link href="/about/industries-we-serve" onClick={closeMobileMenu}>Industries We Serve</Link>
+              <Link href="/about/community-involvement" onClick={closeMobileMenu}>Community Involvement</Link>
             </div>
         </div>
         <div class="mobile-menu-section">

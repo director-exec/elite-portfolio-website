@@ -4,7 +4,7 @@ export default function AboutPage() {
       <h1 className="text-3xl font-bold mb-4">About Elite Portfolio Management</h1>
       <h2 className="text-xl font-semibold mb-6 text-gray-700">A Reputation Built on Integrity. A Future Powered by Innovation.</h2>
       
-      <div className="bg-white rounded-lg shadow-lg p-8">
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
         <div className="space-y-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">Who We Are</h3>
@@ -65,6 +65,37 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Navigation Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/about/security" className="block">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">Security</h3>
+            <p className="text-gray-600">Learn about our comprehensive security protocols and data protection measures.</p>
+          </div>
+        </a>
+
+        <a href="/about/compliance" className="block">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">Compliance</h3>
+            <p className="text-gray-600">Discover how we maintain the highest standards of regulatory compliance.</p>
+          </div>
+        </a>
+
+        <a href="/about/industries-we-serve" className="block">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">Industries We Serve</h3>
+            <p className="text-gray-600">Explore the diverse industries we support with specialized solutions.</p>
+          </div>
+        </a>
+
+        <a href="/about/community-involvement" className="block">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">Community Involvement</h3>
+            <p className="text-gray-600">See how we give back to the communities we serve.</p>
+          </div>
+        </a>
       </div>
     </div>
   )

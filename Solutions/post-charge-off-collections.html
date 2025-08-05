@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Portfolio Management - Digital Recovery. Human Respect. Total Compliance.</title>
-    <meta name="description" content="Elite Portfolio Management delivers best-in-class recovery solutions with over four decades of experience. Digital Recovery. Human Respect. Total Compliance.">
+    <title>Post Charge-Off Collections - Elite Portfolio Management</title>
+    <meta name="description" content="Maximize recovery on charged-off accounts with Elite Portfolio Management's Post Charge-Off Collections service. Professional recovery with compliance focus.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -314,82 +314,273 @@
             background-color: var(--bg-light);
         }
 
-        /* Page Content Styles */
-        .page-content {
-            padding: 3rem 0;
-            min-height: 60vh;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
         }
 
-        .page-content h1 {
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .description {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .hero .description-secondary {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.75;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-weight: 700;
             color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: #dbeafe;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 5rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: #dcfce7;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: #16a34a;
+        }
+
+        .benefit-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .benefit-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
             font-weight: 700;
         }
 
-        .page-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-top: 2rem;
-        }
-
-        .page-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-top: 1.5rem;
-        }
-
-        .page-content p {
+        .cta-content p {
             font-size: 1.125rem;
-            color: var(--text-light);
+            color: #cbd5e1;
+            margin-bottom: 2rem;
             line-height: 1.75;
-            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .page-content ul, .page-content ol {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .page-content li {
-            font-size: 1.125rem;
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
             color: var(--text-light);
-            line-height: 1.75;
-            margin-bottom: 0.5rem;
         }
 
-        .page-content a {
+        .breadcrumb a {
             color: var(--accent-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        .page-content a:hover {
+        .breadcrumb a:hover {
             color: var(--primary-color);
-            text-decoration: underline;
         }
 
-        /* Content Cards */
-        .content-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .content-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .content-card p {
-            margin-bottom: 1rem;
+        .breadcrumb .separator {
+            color: var(--text-light);
         }
 
         /* Breadcrumb */
@@ -501,9 +692,30 @@
                 display: block;
             }
 
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .description {
+                font-size: 1.25rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -578,13 +790,12 @@
                         <nav class="hidden lg:flex">
                             <ul class="nav-menu">
                                 <li class="nav-item">
-                                    <a href="/about">About</a>
-                                    <div class="dropdown-menu">
-                                        <a href="/about">About Main Page</a>
-                                        <a href="/about/security">Security</a>
-                                        <a href="/about/compliance">Compliance</a>
-                                        <a href="/about/industries">Industries We Serve</a>
-                                        <a href="/about/community">Community Involvement</a>
+                                    <Link href="/about">About</Link>
+                                    <div className="dropdown-menu">
+                                        <Link href="/about/security">Security</Link>
+                                        <Link href="/about/compliance">Compliance</Link>
+                                        <Link href="/about/industries-we-serve">Industries We Serve</Link>
+                                        <Link href="/about/community-involvement">Community Involvement</Link>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -631,12 +842,11 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-section">
             <h4>About</h4>
-            <div class="mobile-menu-links">
-                <a href="/about">About Main Page</a>
-                <a href="/about/security">Security</a>
-                <a href="/about/compliance">Compliance</a>
-                <a href="/about/industries">Industries We Serve</a>
-                <a href="/about/community">Community Involvement</a>
+            <div className="mobile-menu-links">
+              <Link href="/about/security" onClick={closeMobileMenu}>Security</Link>
+              <Link href="/about/compliance" onClick={closeMobileMenu}>Compliance</Link>
+              <Link href="/about/industries-we-serve" onClick={closeMobileMenu}>Industries We Serve</Link>
+              <Link href="/about/community-involvement" onClick={closeMobileMenu}>Community Involvement</Link>
             </div>
         </div>
         <div class="mobile-menu-section">
@@ -673,75 +883,192 @@
         </div>
     </div>
 
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/solutions">Solutions</a>
+            <span class="separator">/</span>
+            <span>Post Charge-Off Collections</span>
+        </div>
+    </div>
+
     <main>
-        <!-- PAGE CONTENT GOES HERE -->
-        <div class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="container">
-                <div class="content-card">
-                    <h1>Post Charge-Off Collections</h1>
-                    <h2>A Proven Model for Maximizing Recovery</h2>
-                    <p>When accounts go unpaid and age beyond internal efforts, Elite Portfolio Management delivers the experience, systems, and compliance infrastructure needed to convert them into revenue — while protecting your brand reputation every step of the way.</p>
-                    <p>Our post charge-off collections are powered by advanced analytics, multichannel communication, and fully compliant protocols to ensure you recover more while remaining in complete control of your public image and consumer relationships.</p>
-                    
-                    <hr>
-                    
-                    <h3>High-Impact Recovery for Delinquent Accounts</h3>
-                    <p>With decades of results in regulated industries, we've developed a refined, effective approach to resolving delinquent accounts that:</p>
-                    <ul>
-                        <li>Restores cash flow</li>
-                        <li>Strengthens compliance confidence</li>
-                        <li>Minimizes consumer escalation</li>
-                        <li>Protects brand equity</li>
-                    </ul>
-                    <p>Whether you're a financial institution, healthcare provider, utility, or commercial business, our approach is designed to reduce friction and increase resolution — fast.</p>
-                    
-                    <hr>
-                    
-                    <h3>Our Strategy Includes:</h3>
-                    <ul>
-                        <li><strong>Advanced Contact Tools</strong><br>
-                        Omnichannel outreach — voice, SMS, email, and mail — tailored to consumer behavior and channel preference.</li>
-                        
-                        <li><strong>Real-Time Analytics</strong><br>
-                        Every decision is backed by data: segmentation, scoring, and behavioral tracking guide our workflows to optimize recovery.</li>
-                        
-                        <li><strong>Compliance-First Process</strong><br>
-                        FDCPA, FCRA, TCPA, GLBA, HIPAA — our internal legal oversight ensures full regulatory alignment at every stage.</li>
-                        
-                        <li><strong>Professional, Respectful Communication</strong><br>
-                        We train all agents to handle post-charge-off consumers with empathy, clarity, and professionalism — regardless of balance or age.</li>
-                    </ul>
-                    
-                    <hr>
-                    
-                    <h3>Business Benefits</h3>
-                    <ul>
-                        <li>✅ Boost revenue with recoveries from aged accounts</li>
-                        <li>✅ Refocus internal staff on core operations</li>
-                        <li>✅ Cut delinquency rates through faster action</li>
-                        <li>✅ Maintain goodwill and minimize reputational risk</li>
-                    </ul>
-                    
-                    <hr>
-                    
-                    <h3>Don't Let Charged-Off Accounts Stay Dormant</h3>
-                    <p>Accounts that are past due aren't lost — they're just waiting for the right strategy. Let Elite's proven post charge-off recovery model turn unrecovered balances into real results.</p>
-                    <p><strong>Call 1-800-XXX-XXXX today</strong> to learn more about how we help clients maximize resolution without sacrificing reputation.</p>
-                    
-                    <hr>
-                    
-                    <h3>Legal Disclosure</h3>
-                    <p>This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
-                    
-                    <hr>
-                    
-                    <h3>Elite Portfolio Management</h3>
-                    <p>PO Box [Insert]<br>
-                    [City, State ZIP]<br>
-                    <strong>1-800-XXX-XXXX</strong></p>
+                <h1>Post Charge-Off Collections</h1>
+                <p class="description">
+                    <strong>A Proven Model for Maximizing Recovery</strong>
+                </p>
+                <p class="description-secondary">
+                    When accounts go unpaid and age beyond internal efforts, Elite Portfolio Management delivers the experience, systems, and compliance infrastructure needed to convert them into revenue — while protecting your brand reputation every step of the way.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-primary">
+                        <i class="fas fa-phone"></i>
+                        Get Started Today
+                    </a>
+                    <a href="/solutions" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        View All Solutions
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- High-Impact Recovery Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>High-Impact Recovery for Delinquent Accounts</h2>
+                    <p>With decades of results in regulated industries, we've developed a refined, effective approach to resolving delinquent accounts that restores cash flow and protects brand equity.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Restores Cash Flow</h3>
+                        <p>Convert aged accounts into immediate revenue through strategic recovery processes and proven methodologies.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Strengthens Compliance</h3>
+                        <p>Full regulatory compliance with FDCPA, FCRA, TCPA, GLBA, and HIPAA requirements throughout all processes.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Minimizes Escalation</h3>
+                        <p>Professional, respectful communication that reduces consumer complaints and maintains positive relationships.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Protects Brand Equity</h3>
+                        <p>Maintain your company's reputation while maximizing recovery through brand-conscious communication strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Strategy Includes</h2>
+                    <p>Comprehensive post charge-off recovery powered by advanced technology and proven methodologies.</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Advanced Contact Tools</h4>
+                            <p>Omnichannel outreach — voice, SMS, email, and mail — tailored to consumer behavior and channel preference.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Real-Time Analytics</h4>
+                            <p>Every decision is backed by data: segmentation, scoring, and behavioral tracking guide our workflows to optimize recovery.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Compliance-First Process</h4>
+                            <p>FDCPA, FCRA, TCPA, GLBA, HIPAA — our internal legal oversight ensures full regulatory alignment at every stage.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Professional Communication</h4>
+                            <p>We train all agents to handle post-charge-off consumers with empathy, clarity, and professionalism — regardless of balance or age.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Benefits Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Business Benefits</h2>
+                    <p>Experience measurable improvements in your recovery process with our proven post charge-off methodology.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Boost Revenue</h3>
+                        <p>Recover funds from aged accounts that were previously considered uncollectible through strategic recovery processes.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Refocus Staff</h3>
+                        <p>Free up internal resources to focus on core operations while we handle the complex recovery process.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Cut Delinquency Rates</h3>
+                        <p>Reduce overall delinquency through faster action and more effective recovery strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Don't Let Charged-Off Accounts Stay Dormant</h2>
+                    <p>Accounts that are past due aren't lost — they're just waiting for the right strategy. Let Elite's proven post charge-off recovery model turn unrecovered balances into real results.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:1-800-XXX-XXXX" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call 1-800-XXX-XXXX
+                        </a>
+                        <a href="/contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Contact Us Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->

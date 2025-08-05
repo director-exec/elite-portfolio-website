@@ -1,4 +1,14 @@
+'use client'
+
+import { useState } from 'react'
+
 export default function DisputeMyAccountPage() {
+  const [showModal, setShowModal] = useState(true)
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-4">Dispute My Account</h1>
@@ -111,6 +121,29 @@ export default function DisputeMyAccountPage() {
           </button>
         </form>
       </div>
+
+      {/* Pop-up Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-blue-600 mb-4">IMPORTANT</h3>
+              <p className="text-sm text-gray-700 mb-4">
+                This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
+              </p>
+              <p className="text-sm text-gray-700 mb-6">
+                Calls to and from this company may be monitored and/or recorded.
+              </p>
+              <button
+                onClick={closeModal}
+                className="w-full bg-red-700 text-white py-2 px-4 rounded-md hover:bg-red-800 transition-colors duration-200"
+              >
+                I Accept
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 } 

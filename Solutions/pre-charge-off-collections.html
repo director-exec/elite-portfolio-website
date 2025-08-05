@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Portfolio Management - Digital Recovery. Human Respect. Total Compliance.</title>
-    <meta name="description" content="Elite Portfolio Management delivers best-in-class recovery solutions with over four decades of experience. Digital Recovery. Human Respect. Total Compliance.">
+    <title>Pre-Collection Services - Elite Portfolio Management</title>
+    <meta name="description" content="Resolve more accounts sooner with Elite Portfolio Management's Pre-Collection Services. Early intervention with respectful outreach for better recovery rates.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,12 +110,6 @@
         .payment-button:hover {
             background: var(--secondary-color);
             transform: translateY(-1px);
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
         }
 
         .logo {
@@ -314,111 +308,244 @@
             background-color: var(--bg-light);
         }
 
-        /* Page Content Styles */
-        .page-content {
-            padding: 3rem 0;
-            min-height: 60vh;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
         }
 
-        .page-content h1 {
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .description {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .hero .description-secondary {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.75;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-weight: 700;
             color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: #dbeafe;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 5rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: #dcfce7;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: #16a34a;
+        }
+
+        .benefit-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .benefit-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
             font-weight: 700;
         }
 
-        .page-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-top: 2rem;
-        }
-
-        .page-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-top: 1.5rem;
-        }
-
-        .page-content p {
+        .cta-content p {
             font-size: 1.125rem;
-            color: var(--text-light);
-            line-height: 1.75;
-            margin-bottom: 1rem;
-        }
-
-        .page-content ul, .page-content ol {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-        }
-
-        .page-content li {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            line-height: 1.75;
-            margin-bottom: 0.5rem;
-        }
-
-        .page-content a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .page-content a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        /* Content Cards */
-        .content-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow);
+            color: #cbd5e1;
             margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .content-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .content-card p {
-            margin-bottom: 1rem;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            background: var(--bg-light);
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .breadcrumb .container {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--text-light);
-        }
-
-        .breadcrumb a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb .separator {
-            color: var(--text-light);
+            line-height: 1.75;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Footer */
@@ -501,51 +628,61 @@
                 display: block;
             }
 
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .description {
+                font-size: 1.25rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .text-left {
-            text-align: left;
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
         }
 
-        .text-right {
-            text-align: right;
+        .breadcrumb a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .mb-1 { margin-bottom: 0.25rem; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-3 { margin-bottom: 0.75rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-5 { margin-bottom: 1.25rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-10 { margin-bottom: 2.5rem; }
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
 
-        .mt-1 { margin-top: 0.25rem; }
-        .mt-2 { margin-top: 0.5rem; }
-        .mt-3 { margin-top: 0.75rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-5 { margin-top: 1.25rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mt-10 { margin-top: 2.5rem; }
-
-        .p-1 { padding: 0.25rem; }
-        .p-2 { padding: 0.5rem; }
-        .p-3 { padding: 0.75rem; }
-        .p-4 { padding: 1rem; }
-        .p-5 { padding: 1.25rem; }
-        .p-6 { padding: 1.5rem; }
-        .p-8 { padding: 2rem; }
-        .p-10 { padding: 2.5rem; }
+        .breadcrumb .separator {
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
@@ -556,7 +693,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="/">
-                        <img src="/LOGO/Borderless.png" alt="Diversified Adjustment Service, Inc." width="350" height="75">
+                        <img src="/LOGO/Borderless.png" alt="Elite Portfolio Management" width="350" height="75">
                     </a>
                 </div>
                 
@@ -580,11 +717,10 @@
                                 <li class="nav-item">
                                     <a href="/about">About</a>
                                     <div class="dropdown-menu">
-                                        <a href="/about">About Main Page</a>
                                         <a href="/about/security">Security</a>
                                         <a href="/about/compliance">Compliance</a>
-                                        <a href="/about/industries">Industries We Serve</a>
-                                        <a href="/about/community">Community Involvement</a>
+                                        <a href="/about/industries-we-serve">Industries We Serve</a>
+                                        <a href="/about/community-involvement">Community Involvement</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -632,11 +768,10 @@
         <div class="mobile-menu-section">
             <h4>About</h4>
             <div class="mobile-menu-links">
-                <a href="/about">About Main Page</a>
                 <a href="/about/security">Security</a>
                 <a href="/about/compliance">Compliance</a>
-                <a href="/about/industries">Industries We Serve</a>
-                <a href="/about/community">Community Involvement</a>
+                <a href="/about/industries-we-serve">Industries We Serve</a>
+                <a href="/about/community-involvement">Community Involvement</a>
             </div>
         </div>
         <div class="mobile-menu-section">
@@ -673,77 +808,192 @@
         </div>
     </div>
 
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/solutions">Solutions</a>
+            <span class="separator">/</span>
+            <span>Pre-Collection Services</span>
+        </div>
+    </div>
+
     <main>
-        <!-- PAGE CONTENT GOES HERE -->
-        <div class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="container">
-                <div class="content-card">
-                    <h1>Pre-Collection Services</h1>
-                    <h2>Sometimes Early Intervention Is All It Takes</h2>
-                    <h3>Resolve More. Sooner. Smarter.</h3>
-                    <p>At Elite Portfolio Management, we understand that the earlier you engage a delinquent account, the better the chances of resolution. That's why our Pre-Collection Services focus on proactive, respectful outreach for accounts that are slightly past due — long before charge-off or full collection becomes necessary.</p>
-                    <p>These accounts don't need pressure. They need a nudge — and that's exactly what we provide through strategic early-stage contact, powered by sophisticated analytics and handled with a brand-protective approach.</p>
-                    
-                    <hr>
-                    
-                    <h3>Why Use Pre-Collection?</h3>
-                    <p>Our pre-collection strategy is ideal for businesses that want to:</p>
-                    <ul>
-                        <li>Prevent escalation to full collections</li>
-                        <li>Preserve customer relationships</li>
-                        <li>Improve recovery rates on early-stage delinquencies</li>
-                        <li>Maintain a professional and compliant outreach tone</li>
-                        <li>Lower long-term collection costs by up to 80%</li>
-                    </ul>
-                    
-                    <hr>
-                    
-                    <h3>What You Can Expect</h3>
-                    <ul>
-                        <li><strong>Customized Outreach Plans</strong><br>
-                        Tailored to your business model, risk tolerance, and account timelines.</li>
-                        
-                        <li><strong>Brand-Friendly Communication</strong><br>
-                        Our contact methods prioritize your company's image, focusing on clarity, professionalism, and empathy.</li>
-                        
-                        <li><strong>Full Regulatory Compliance</strong><br>
-                        Every message and method is FDCPA-compliant and aligned with industry-specific requirements.</li>
-                        
-                        <li><strong>Analytics-Driven Strategy</strong><br>
-                        We use early-stage scoring models and behavioral data to prioritize accounts and determine best contact methods.</li>
-                    </ul>
-                    
-                    <hr>
-                    
-                    <h3>Business Benefits</h3>
-                    <ul>
-                        <li>✅ Increased revenue and cash flow</li>
-                        <li>✅ Reduced bad-debt write-offs</li>
-                        <li>✅ Higher customer retention and goodwill</li>
-                        <li>✅ Up to 80% cost savings compared to traditional collections</li>
-                        <li>✅ Enhanced internal team efficiency through workload reduction</li>
-                    </ul>
-                    
-                    <hr>
-                    
-                    <h3>Let's Solve It Before It Escalates</h3>
-                    <p>The earlier you act, the greater your results. Our pre-collection programs are designed to restore account standing quickly — before costly charge-offs, disputes, or legal action take hold.</p>
-                    <p><strong>Call Elite Portfolio Management at 1-800-XXX-XXXX</strong> to get started today.</p>
-                    
-                    <hr>
-                    
-                    <h3>Legal Disclosure</h3>
-                    <p>This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
-                    
-                    <hr>
-                    
-                    <h3>Elite Portfolio Management</h3>
-                    <p>PO Box [Insert Address]<br>
-                    [City, State ZIP]<br>
-                    <strong>1-800-XXX-XXXX</strong></p>
+                <h1>Pre-Collection Services</h1>
+                <p class="description">
+                    <strong>Sometimes Early Intervention Is All It Takes</strong>
+                </p>
+                <p class="description-secondary">
+                    Resolve More. Sooner. Smarter. At Elite Portfolio Management, we understand that the earlier you engage a delinquent account, the better the chances of resolution. Our Pre-Collection Services focus on proactive, respectful outreach for accounts that are slightly past due.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-primary">
+                        <i class="fas fa-phone"></i>
+                        Get Started Today
+                    </a>
+                    <a href="/solutions" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        View All Solutions
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Why Use Pre-Collection Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Use Pre-Collection?</h2>
+                    <p>Our pre-collection strategy is ideal for businesses that want to prevent escalation to full collections while preserving customer relationships and improving recovery rates.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Prevent Escalation</h3>
+                        <p>Stop accounts from reaching full collection status with early intervention strategies that maintain account viability.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Preserve Relationships</h3>
+                        <p>Maintain customer goodwill through respectful, professional communication that focuses on resolution rather than pressure.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Improve Recovery Rates</h3>
+                        <p>Higher success rates on early-stage delinquencies through strategic timing and personalized outreach approaches.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Lower Costs</h3>
+                        <p>Reduce long-term collection costs by up to 80% compared to traditional full collection processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Can Expect Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What You Can Expect</h2>
+                    <p>Our comprehensive pre-collection approach combines strategic planning with professional execution to maximize your recovery potential.</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Customized Outreach Plans</h4>
+                            <p>Tailored to your business model, risk tolerance, and account timelines for optimal results.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Brand-Friendly Communication</h4>
+                            <p>Our contact methods prioritize your company's image, focusing on clarity, professionalism, and empathy.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Full Regulatory Compliance</h4>
+                            <p>Every message and method is FDCPA-compliant and aligned with industry-specific requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Analytics-Driven Strategy</h4>
+                            <p>We use early-stage scoring models and behavioral data to prioritize accounts and determine best contact methods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Benefits Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Business Benefits</h2>
+                    <p>Experience measurable improvements in your recovery process with our proven pre-collection methodology.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Increased Revenue</h3>
+                        <p>Boost cash flow and reduce bad-debt write-offs through early intervention and strategic account management.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Higher Retention</h3>
+                        <p>Maintain customer relationships and goodwill through respectful, professional communication approaches.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Cost Savings</h3>
+                        <p>Achieve up to 80% cost savings compared to traditional collections while improving overall efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Let's Solve It Before It Escalates</h2>
+                    <p>The earlier you act, the greater your results. Our pre-collection programs are designed to restore account standing quickly — before costly charge-offs, disputes, or legal action take hold.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:1-800-XXX-XXXX" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call 1-800-XXX-XXXX
+                        </a>
+                        <a href="/contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Contact Us Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->

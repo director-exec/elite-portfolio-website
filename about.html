@@ -579,17 +579,16 @@
                             <ul class="nav-menu">
                                 <li class="nav-item">
                                     <a href="/about">About</a>
-                                    <div class="dropdown-menu">
-                                        <a href="/about">About Main Page</a>
-                                        <a href="/about/security">Security</a>
-                                        <a href="/about/compliance">Compliance</a>
-                                        <a href="/about/industries">Industries We Serve</a>
-                                        <a href="/about/community">Community Involvement</a>
+                                    <div className="dropdown-menu">
+                                        <Link href="/about/security">Security</Link>
+                                        <Link href="/about/compliance">Compliance</Link>
+                                        <Link href="/about/industries-we-serve">Industries We Serve</Link>
+                                        <Link href="/about/community-involvement">Community Involvement</Link>
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/consumer-tools">Consumer Tools</a>
-                                    <div class="dropdown-menu">
+                                    <div className="dropdown-menu">
                                         <a href="/consumer-tools">Consumer Tools</a>
                                         <a href="/consumer-tools/payment">Make a Payment</a>
                                         <a href="/consumer-tools/dispute">Dispute My Account</a>
@@ -602,7 +601,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="/solutions">Solutions</a>
-                                    <div class="dropdown-menu">
+                                    <div className="dropdown-menu">
                                         <a href="/solutions">Solutions Main Page</a>
                                         <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
                                         <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
@@ -631,12 +630,11 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-section">
             <h4>About</h4>
-            <div class="mobile-menu-links">
-                <a href="/about">About Main Page</a>
-                <a href="/about/security">Security</a>
-                <a href="/about/compliance">Compliance</a>
-                <a href="/about/industries">Industries We Serve</a>
-                <a href="/about/community">Community Involvement</a>
+            <div className="mobile-menu-links">
+              <Link href="/about/security" onClick={closeMobileMenu}>Security</Link>
+              <Link href="/about/compliance" onClick={closeMobileMenu}>Compliance</Link>
+              <Link href="/about/industries-we-serve" onClick={closeMobileMenu}>Industries We Serve</Link>
+              <Link href="/about/community-involvement" onClick={closeMobileMenu}>Community Involvement</Link>
             </div>
         </div>
         <div class="mobile-menu-section">

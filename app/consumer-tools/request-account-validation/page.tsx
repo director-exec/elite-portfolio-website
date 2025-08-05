@@ -1,122 +1,118 @@
+'use client'
+
+import { useState } from 'react'
+
 export default function RequestAccountValidationPage() {
+  const [showModal, setShowModal] = useState(true)
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-4">Request Account Validation</h1>
       <h2 className="text-xl font-semibold mb-6 text-gray-700">Get Account Details Delivered to Your Inbox</h2>
       
       <div className="bg-white rounded-lg shadow-lg p-8">
-        <p className="mb-6">
-          If you would like an itemized statement for your account with Elite Portfolio Management, please complete the form below. 
-          By submitting your request, you confirm that you are the authorized account holder and that the information you've provided 
-          is complete and accurate.
-        </p>
-        
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-          <p className="text-sm">
-            <strong>Please allow up to 30 days for your request to be processed.</strong>
+        <div className="space-y-6">
+          <p className="text-gray-700 leading-relaxed">
+            If you would like an itemized statement for your account with Elite Portfolio Management, please complete the form below. By submitting your request, you confirm that you are the authorized account holder and that the information you've provided is complete and accurate.
           </p>
-        </div>
+          
+          <p className="text-gray-700 leading-relaxed">
+            Please allow up to 30 days for your request to be processed.
+          </p>
 
-        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
-          <h3 className="font-semibold mb-2">Important Notice Regarding Email Delivery</h3>
-          <p className="text-sm mb-2">
-            Your itemized statement will be sent via standard (unencrypted) email. While convenient, this method may not offer 
-            the same level of security as postal mail. By submitting this form, you acknowledge and accept delivery in this format.
-          </p>
-          <p className="text-sm">
-            To avoid delivery issues, we recommend adding our email address — 
-            <strong> support@eliteportfoliomgmt.com</strong> — to your safe sender list.
-          </p>
-        </div>
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">Important Notice Regarding Email Delivery</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Your itemized statement will be sent via standard (unencrypted) email. While convenient, this method may not offer the same level of security as postal mail. By submitting this form, you acknowledge and accept delivery in this format.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              To avoid delivery issues, we recommend adding our email address — support@eliteportfoliomgmt.com — to your safe sender list.
+            </p>
+          </div>
 
-        <form className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">What You'll Need to Provide:</h3>
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">What You'll Need to Provide:</h3>
             
             <div className="space-y-4">
               <div>
-                <h4 className="font-medium mb-2">1. General Account Information</h4>
-                <div className="space-y-3">
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Elite Account Number (8-digit)</label>
-                    <input type="text" className="w-full p-2 border border-gray-300 rounded" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Creditor Name</label>
-                    <input type="text" className="w-full p-2 border border-gray-300 rounded" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Your Full Legal Name</label>
-                    <input type="text" className="w-full p-2 border border-gray-300 rounded" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Mailing Address (Street, City, State, Zip)</label>
-                    <textarea className="w-full p-2 border border-gray-300 rounded" rows={3}></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-2">2. Contact Details & Consent</h4>
-                <div className="space-y-3">
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Valid Phone Number</label>
-                    <input type="tel" className="w-full p-2 border border-gray-300 rounded" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Valid Email Address</label>
-                    <input type="email" className="w-full p-2 border border-gray-300 rounded" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 p-4 rounded">
-                <h4 className="font-medium mb-2">Acknowledgment of the following:</h4>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="mr-2">○</span>
-                    <span>You may receive communications via phone, text, or email</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">○</span>
-                    <span>You confirm ownership of the contact details you've submitted</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">○</span>
-                    <span>You request electronic delivery of this document</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">○</span>
-                    <span>You may revoke consent at any time through reasonable means</span>
-                  </li>
+                <h4 className="font-semibold text-gray-800 mb-2">1. General Account Information</h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                  <li>Elite Account Number (8-digit)</li>
+                  <li>Creditor Name</li>
+                  <li>Your Full Legal Name</li>
+                  <li>Mailing Address (Street, City, State, Zip)</li>
                 </ul>
               </div>
 
-              <div className="flex items-start space-x-2">
-                <input type="checkbox" id="acknowledge" className="mt-1" />
-                <label htmlFor="acknowledge" className="text-sm">
-                  I acknowledge and agree to the above terms
-                </label>
+              <div>
+                <h4 className="font-semibold text-gray-800 mb-2">2. Contact Details & Consent</h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                  <li>Valid Phone Number</li>
+                  <li>Valid Email Address</li>
+                  <li>Acknowledgment of the following:</li>
+                  <ul className="list-disc list-inside space-y-1 text-gray-700 ml-8 mt-1">
+                    <li>You may receive communications via phone, text, or email</li>
+                    <li>You confirm ownership of the contact details you've submitted</li>
+                    <li>You request electronic delivery of this document</li>
+                    <li>You may revoke consent at any time through reasonable means</li>
+                  </ul>
+                </ul>
               </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+              <label className="flex items-center space-x-2">
+                <input type="checkbox" className="rounded" />
+                <span className="text-gray-700">I acknowledge and agree to the above terms</span>
+              </label>
             </div>
           </div>
 
-          <div className="bg-gray-100 p-4 rounded text-sm">
-            <p><strong>Legal Disclosure:</strong> This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">Legal Disclosure</h3>
+            <p className="text-gray-700 leading-relaxed">
+              This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+            </p>
           </div>
 
-          <div className="bg-gray-50 p-4 rounded text-sm">
-            <p><strong>Elite Portfolio Management</strong></p>
-            <p>PO Box [Updated]</p>
-            <p>[City, State ZIP]</p>
-            <p>Phone: 1-800-XXX-XXXX</p>
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">Contact Information</h3>
+            <div className="text-gray-700">
+              <p className="font-semibold">Elite Portfolio Management</p>
+              <p>PO Box [Updated]</p>
+              <p>[City, State ZIP]</p>
+              <p>Phone: 1-800-XXX-XXXX</p>
+            </div>
           </div>
-
-          <button type="submit" className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
-            Submit Request
-          </button>
-        </form>
+        </div>
       </div>
+
+      {/* Pop-up Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-blue-600 mb-4">IMPORTANT</h3>
+              <p className="text-sm text-gray-700 mb-4">
+                This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
+              </p>
+              <p className="text-sm text-gray-700 mb-6">
+                Calls to and from this company may be monitored and/or recorded.
+              </p>
+              <button
+                onClick={closeModal}
+                className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-200"
+              >
+                I Accept
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 } 
