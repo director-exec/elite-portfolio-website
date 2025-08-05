@@ -64,7 +64,7 @@ export default function BankruptcyNotificationPage() {
               We're here to help ensure your legal rights are fully respected.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Call us at 1-800-XXX-XXXX to speak with an account representative.
+              Call us at 833-381-4416 to speak with an account representative.
             </p>
           </div>
 
@@ -80,8 +80,8 @@ export default function BankruptcyNotificationPage() {
             <div className="text-gray-700">
               <p className="font-semibold">Elite Portfolio Management</p>
               <p>PO Box [Insert]</p>
-              <p>[City, State ZIP]</p>
-              <p>1-800-XXX-XXXX</p>
+              <p>Conroe TX, 77301</p>
+              <p>833-381-4416</p>
             </div>
           </div>
         </div>

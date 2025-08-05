@@ -97,7 +97,7 @@ export default function SkipTracingPage() {
             superior performance across even the toughest portfolios.
           </p>
           <p className="font-semibold">
-            Call 1-800-XXX-XXXX today to learn how our skip tracing solutions can improve your recovery metrics from the very first contact.
+            Call 833-381-4416 today to learn how our skip tracing solutions can improve your recovery metrics from the very first contact.
           </p>
         </div>
 
@@ -107,9 +107,9 @@ export default function SkipTracingPage() {
 
         <div className="bg-gray-50 p-4 rounded text-sm mt-4">
           <p><strong>Elite Portfolio Management</strong></p>
-          <p>PO Box [Insert Address]</p>
-          <p>[City, State ZIP]</p>
-          <p>1-800-XXX-XXXX</p>
+          <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+          <p>Conroe TX, 77301</p>
+          <p>833-381-4416</p>
         </div>
       </div>
     </div>

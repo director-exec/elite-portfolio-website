@@ -89,8 +89,8 @@ export default function SubmitComplimentComplaintPage() {
             <div className="text-gray-700">
               <p className="font-semibold">Elite Portfolio Management</p>
               <p>PO Box [Insert]</p>
-              <p>[City, State ZIP]</p>
-              <p>1-800-XXX-XXXX</p>
+              <p>Conroe TX, 77301</p>
+              <p>833-381-4416</p>
             </div>
           </div>
         </div>

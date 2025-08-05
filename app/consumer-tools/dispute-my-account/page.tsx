@@ -102,7 +102,7 @@ export default function DisputeMyAccountPage() {
           <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
             <h3 className="text-lg font-semibold mb-2">Need to Speak with Someone?</h3>
             <p className="mb-2">You can contact us directly to speak with an account representative:</p>
-            <p className="font-semibold text-lg">1-800-XXX-XXXX</p>
+            <p className="font-semibold text-lg">833-381-4416</p>
           </div>
 
           <div className="bg-gray-100 p-4 rounded text-sm">
@@ -112,8 +112,8 @@ export default function DisputeMyAccountPage() {
           <div className="bg-gray-50 p-4 rounded text-sm">
             <p><strong>Elite Portfolio Management</strong></p>
             <p>PO Box [Insert]</p>
-            <p>[City, State ZIP]</p>
-            <p>1-800-XXX-XXXX</p>
+            <p>Conroe TX, 77301</p>
+            <p>833-381-4416</p>
           </div>
 
           <button type="submit" className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">

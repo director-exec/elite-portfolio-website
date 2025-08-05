@@ -96,7 +96,7 @@ export default function WarehousingManagementPage() {
             track and recover them with minimal cost and maximum timing precision.
           </p>
           <p className="font-semibold">
-            Call 1-800-XXX-XXXX to speak with our recovery strategy team today.
+            Call 833-381-4416 to speak with our recovery strategy team today.
           </p>
         </div>
 
@@ -106,9 +106,9 @@ export default function WarehousingManagementPage() {
 
         <div className="bg-gray-50 p-4 rounded text-sm mt-4">
           <p><strong>Elite Portfolio Management</strong></p>
-          <p>PO Box [Insert Address]</p>
-          <p>[City, State ZIP]</p>
-          <p>1-800-XXX-XXXX</p>
+          <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+          <p>Conroe TX, 77301</p>
+          <p>833-381-4416</p>
         </div>
       </div>
     </div>

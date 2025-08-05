@@ -16,9 +16,9 @@ export default function Footer() {
             <h3>Mailing Address</h3>
             <p>
               Elite Portfolio Management<br />
-              PO Box [Insert Address]<br />
-              [City, State ZIP]<br />
-              1-800-XXX-XXXX<br />
+              2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301<br />
+              Conroe TX, 77301<br />
+              833-381-4416<br />
               info@eliteportfoliomgmt.com
             </p>
           </div>

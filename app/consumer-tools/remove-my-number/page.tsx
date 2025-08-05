@@ -23,7 +23,7 @@ export default function RemoveMyNumberPage() {
           <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
             <h3 className="text-lg font-semibold mb-2 text-yellow-800">Urgent Matters</h3>
             <p className="text-yellow-700">
-              If the matter is urgent, we recommend calling us directly at 1-800-XXX-XXXX.
+              If the matter is urgent, we recommend calling us directly at 833-381-4416.
             </p>
           </div>
 
@@ -68,9 +68,9 @@ export default function RemoveMyNumberPage() {
             <h3 className="text-lg font-semibold mb-4 text-gray-800">Contact Information</h3>
             <div className="text-gray-700">
               <p className="font-semibold">Elite Portfolio Management</p>
-              <p>PO Box [Insert Address]</p>
-              <p>[City, State ZIP]</p>
-              <p>1-800-XXX-XXXX</p>
+              <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+              <p>Conroe TX, 77301</p>
+              <p>833-381-4416</p>
             </div>
           </div>
         </div>

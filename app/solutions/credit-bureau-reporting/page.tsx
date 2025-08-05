@@ -87,7 +87,7 @@ export default function CreditBureauReportingPage() {
 
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
           <h3 className="text-lg font-semibold mb-2">Have questions about how credit reporting fits your strategy?</h3>
-          <p className="font-semibold">Call 1-800-XXX-XXXX to speak with our compliance and recovery team.</p>
+          <p className="font-semibold">Call 833-381-4416 to speak with our compliance and recovery team.</p>
         </div>
 
         <div className="bg-gray-100 p-4 rounded text-sm mb-4">
@@ -117,9 +117,9 @@ export default function CreditBureauReportingPage() {
 
         <div className="bg-gray-50 p-4 rounded text-sm">
           <p><strong>Elite Portfolio Management</strong></p>
-          <p>PO Box [Insert Address]</p>
-          <p>[City, State ZIP]</p>
-          <p>1-800-XXX-XXXX</p>
+          <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+          <p>Conroe TX, 77301</p>
+          <p>833-381-4416</p>
         </div>
       </div>
     </div>

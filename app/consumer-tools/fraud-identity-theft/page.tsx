@@ -23,7 +23,7 @@ export default function FraudIdentityTheftPage() {
           <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
             <h3 className="text-lg font-semibold mb-2 text-blue-800">Immediate Action Required</h3>
             <p className="text-blue-700 font-semibold">
-              Call us at 1-800-XXX-XXXX
+              Call us at 833-381-4416
             </p>
             <p className="text-blue-700 mt-2">
               Your privacy and security are our priority.
@@ -94,8 +94,8 @@ export default function FraudIdentityTheftPage() {
             <div className="text-gray-700">
               <p className="font-semibold">Elite Portfolio Management</p>
               <p>PO Box [Insert]</p>
-              <p>[City, State ZIP]</p>
-              <p>1-800-XXX-XXXX</p>
+              <p>Conroe TX, 77301</p>
+              <p>833-381-4416</p>
             </div>
           </div>
         </div>

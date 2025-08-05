@@ -166,7 +166,7 @@ export default function MakePaymentPage() {
                 PO BOX [Updated PO Box]
               </p>
               <p style={{ color: '#64748b' }}>
-                [City, State ZIP]
+                Conroe TX, 77301
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function MakePaymentPage() {
             fontWeight: '600',
             color: '#1e3a8a'
           }}>
-            1-800-XXX-XXXX
+            833-381-4416
           </p>
         </div>
 
@@ -243,7 +243,7 @@ export default function MakePaymentPage() {
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#cbd5e1' }}>
                 Elite Portfolio Management<br />
-                1-800-279-3733<br />
+                833-381-4416<br />
                 info@eliteportfoliomgmt.com
               </p>
             </div>

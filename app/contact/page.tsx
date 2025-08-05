@@ -16,7 +16,7 @@ export default function ContactPage() {
               If you've received a communication from Elite Portfolio Management and want to discuss your account or make a payment, 
               our team is here to assist you.
             </p>
-            <p className="font-semibold mb-2">Call us at 1-800-XXX-XXXX</p>
+            <p className="font-semibold mb-2">Call us at 833-381-4416</p>
             <p className="text-sm text-gray-600">Or visit: Make a Payment | Dispute My Account | Submit a Request</p>
           </div>
 
@@ -27,7 +27,7 @@ export default function ContactPage() {
               how we help clients maximize recovery while protecting their brand.
             </p>
             <p className="font-semibold mb-2">Email: solutions@eliteportfoliomgmt.com</p>
-            <p className="font-semibold">Business Inquiries: 1-800-XXX-XXXX (Option 2)</p>
+            <p className="font-semibold">Business Inquiries: 833-381-4416 (Option 2)</p>
           </div>
 
           <div className="border-l-4 border-purple-500 pl-6">
@@ -36,7 +36,7 @@ export default function ContactPage() {
               If you're a current client and need support, reporting access, or a service update, we're always here for you.
             </p>
             <p className="font-semibold mb-2">Client Services: support@eliteportfoliomgmt.com</p>
-            <p className="font-semibold">Dedicated Line: 1-800-XXX-XXXX (Option 3)</p>
+            <p className="font-semibold">Dedicated Line: 833-381-4416 (Option 3)</p>
           </div>
 
           <div className="border-l-4 border-yellow-500 pl-6">
@@ -63,8 +63,8 @@ export default function ContactPage() {
             <div className="space-y-1">
               <p><strong>Elite Portfolio Management</strong></p>
               <p>PO Box [Insert]</p>
-              <p>[City, State ZIP]</p>
-              <p className="font-semibold mt-2">General: 1-800-XXX-XXXX</p>
+              <p>Conroe TX, 77301</p>
+              <p className="font-semibold mt-2">General: 833-381-4416</p>
             </div>
           </div>
 

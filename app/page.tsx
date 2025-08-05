@@ -131,13 +131,13 @@ export default function Home() {
           <div className="contact-content">
             <h2>Ready to Get Started?</h2>
             <p>
-              Call us at 1-800-XXX-XXXX to learn how Elite can support your receivables, protect your reputation, and deliver results.
+              Call us at 833-381-4416 to learn how Elite can support your receivables, protect your reputation, and deliver results.
             </p>
 
             <div className="contact-buttons">
-              <a href="tel:1-800-XXX-XXXX" className="btn btn-contact">
+              <a href="tel:833-381-4416" className="btn btn-contact">
                 <i className="fas fa-phone"></i>
-                1-800-XXX-XXXX
+                833-381-4416
               </a>
               <a href="mailto:info@eliteportfoliomgmt.com" className="btn btn-outline">
                 <i className="fas fa-envelope"></i>
@@ -147,7 +147,7 @@ export default function Home() {
 
             <div className="contact-address">
               <i className="fas fa-map-marker-alt"></i>
-              <span>Elite Portfolio Management, PO Box [Insert Address], [City, State ZIP]</span>
+              <span>Elite Portfolio Management, 2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301, Conroe TX, 77301</span>
             </div>
           </div>
         </div>

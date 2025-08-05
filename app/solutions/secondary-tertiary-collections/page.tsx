@@ -173,7 +173,7 @@ export default function SecondaryTertiaryCollectionsPage() {
                 have resisted traditional collection efforts.
               </p>
               <p className="font-semibold text-blue-800">
-                Call Elite Portfolio Management at 1-800-XXX-XXXX to discuss your specialized collection needs.
+                Call Elite Portfolio Management at 833-381-4416 to discuss your specialized collection needs.
               </p>
             </div>
 
@@ -183,9 +183,9 @@ export default function SecondaryTertiaryCollectionsPage() {
 
             <div className="bg-gray-50 p-4 rounded-lg text-sm text-gray-600">
               <p><strong>Elite Portfolio Management</strong></p>
-              <p>PO Box [Insert Address]</p>
-              <p>[City, State ZIP]</p>
-              <p>1-800-XXX-XXXX</p>
+              <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+              <p>Conroe TX, 77301</p>
+              <p>833-381-4416</p>
             </div>
           </div>
 
