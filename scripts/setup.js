@@ -19,7 +19,7 @@ if (!fs.existsSync(publicDir)) {
 }
 
 // Copy logo to public directory
-const logoSource = path.join(__dirname, '..', 'LOGO', 'thread-viewer-1.png');
+const logoSource = path.join(__dirname, '..', 'public', 'LOGO', 'Borderless.png');
 const logoDest = path.join(publicDir, 'logo.png');
 
 if (fs.existsSync(logoSource)) {

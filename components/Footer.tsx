@@ -18,8 +18,8 @@ export default function Footer() {
               Elite Portfolio Management<br />
               PO Box [Insert Address]<br />
               [City, State ZIP]<br />
-              📞 1-800-XXX-XXXX<br />
-              📧 info@eliteportfoliomgmt.com
+              1-800-XXX-XXXX<br />
+              info@eliteportfoliomgmt.com
             </p>
           </div>
 

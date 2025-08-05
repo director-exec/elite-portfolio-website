@@ -17,10 +17,10 @@ export default function Home() {
             We combine advanced technology, secure infrastructure, and highly trained personnel to ensure every consumer interaction reflects the highest standards of the industry — and every client experiences maximum ROI with minimum reputational risk.
           </p>
           <div className="cta-buttons">
-            <Link href="/consumer-tools" className="btn btn-primary">
+            <Link href="/consumer-tools" className="btn btn-hero">
               I'm a Consumer
             </Link>
-            <Link href="/solutions" className="btn btn-primary">
+            <Link href="/solutions" className="btn btn-hero">
               I'm a Business
             </Link>
           </div>
