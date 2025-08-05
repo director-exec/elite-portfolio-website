@@ -37,7 +37,7 @@ export default function Header() {
             <div className="logo">
               <Link href="/">
                 <Image 
-                  src="/LOGO/logo1.png"
+                  src="/LOGO/logo1.svg"
                   alt="Diversified Adjustment Service, Inc." 
                   width={600} 
                   height={150}
