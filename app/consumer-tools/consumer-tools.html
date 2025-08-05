@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Portfolio Management - Digital Recovery. Human Respect. Total Compliance.</title>
+    <meta name="description" content="Elite Portfolio Management delivers best-in-class recovery solutions with over four decades of experience. Digital Recovery. Human Respect. Total Compliance.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-top-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-bottom-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .contact-info {
+            color: var(--text-dark);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .logo img {
+            height: 56px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        /* Scrolled header styles */
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        header.scrolled .header-content {
+            padding: 0.25rem 0;
+        }
+
+        header.scrolled .header-top-right {
+            display: none;
+        }
+
+        header.scrolled .header-right {
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        header.scrolled .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        header.scrolled .contact-info {
+            display: none;
+        }
+
+        header.scrolled .payment-button {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+            background-color: var(--bg-light);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        /* Dropdown Menu */
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--bg-light);
+            color: var(--accent-color);
+        }
+
+        .dropdown-menu a::after {
+            display: none;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-top: 1px solid var(--border-color);
+            z-index: 999;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu-section {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-menu-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding-left: 1rem;
+        }
+
+        .mobile-menu-links a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Page Content Styles */
+        .page-content {
+            padding: 3rem 0;
+            min-height: 60vh;
+        }
+
+        .page-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .page-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        .page-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .page-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .page-content ul, .page-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .page-content li {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .page-content a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .content-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .content-card p {
+            margin-bottom: 1rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb .separator {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .footer-section p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-section .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-section .social-links a {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-5 { margin-bottom: 1.25rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-10 { margin-bottom: 2.5rem; }
+
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-5 { margin-top: 1.25rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-10 { margin-top: 2.5rem; }
+
+        .p-1 { padding: 0.25rem; }
+        .p-2 { padding: 0.5rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-5 { padding: 1.25rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-10 { padding: 2.5rem; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="/">
+                        <img src="/LOGO/Borderless.png" alt="Diversified Adjustment Service, Inc." width="350" height="75">
+                    </a>
+                </div>
+                
+                <!-- Right Side Container -->
+                <div class="header-right">
+                    <!-- Top Right: Contact Info + Payment Button -->
+                    <div class="header-top-right">
+                        <div class="contact-info">
+                            Need Help? Call us at 833-381-4416
+                        </div>
+                        <a href="/consumer-tools/payment" class="payment-button">
+                            <i class="fas fa-dollar-sign"></i>
+                            Make A Payment
+                        </a>
+                    </div>
+                    
+                    <!-- Bottom Right: Navigation -->
+                    <div class="header-bottom-right">
+                        <nav class="hidden lg:flex">
+                            <ul class="nav-menu">
+                                <li class="nav-item">
+                                    <Link href="/about">About</Link>
+                                    <div className="dropdown-menu">
+                                        <Link href="/about/security">Security</Link>
+                                        <Link href="/about/compliance">Compliance</Link>
+                                        <Link href="/about/industries-we-serve">Industries We Serve</Link>
+                                        <Link href="/about/community-involvement">Community Involvement</Link>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/consumer-tools">Consumer Tools</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/consumer-tools">Consumer Tools</a>
+                                        <a href="/consumer-tools/payment">Make a Payment</a>
+                                        <a href="/consumer-tools/dispute">Dispute My Account</a>
+                                        <a href="/consumer-tools/validation">Request Account Validation</a>
+                                        <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
+                                        <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
+                                        <a href="/consumer-tools/remove-number">Remove My Number</a>
+                                        <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/solutions">Solutions</a>
+                                    <div class="dropdown-menu">
+                                        <a href="/solutions">Solutions Main Page</a>
+                                        <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
+                                        <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
+                                        <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
+                                        <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
+                                        <a href="/solutions/skip-tracing">Skip Tracing</a>
+                                        <a href="/solutions/attorneys">Network of Attorneys</a>
+                                        <a href="/solutions/warehousing">Warehousing Management</a>
+                                    </div>
+                                </li>
+                                <li><a href="/contact">Contact Us</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- Mobile Menu Button -->
+                        <button class="mobile-menu-btn lg:hidden">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-section">
+            <h4>About</h4>
+            <div className="mobile-menu-links">
+              <Link href="/about/security" onClick={closeMobileMenu}>Security</Link>
+              <Link href="/about/compliance" onClick={closeMobileMenu}>Compliance</Link>
+              <Link href="/about/industries-we-serve" onClick={closeMobileMenu}>Industries We Serve</Link>
+              <Link href="/about/community-involvement" onClick={closeMobileMenu}>Community Involvement</Link>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Consumer Tools</h4>
+            <div class="mobile-menu-links">
+                <a href="/consumer-tools">Consumer Tools</a>
+                <a href="/consumer-tools/payment">Make a Payment</a>
+                <a href="/consumer-tools/dispute">Dispute My Account</a>
+                <a href="/consumer-tools/validation">Request Account Validation</a>
+                <a href="/consumer-tools/bankruptcy">Bankruptcy Notification</a>
+                <a href="/consumer-tools/fraud">Fraud & Identity Theft</a>
+                <a href="/consumer-tools/remove-number">Remove My Number</a>
+                <a href="/consumer-tools/feedback">Submit a Compliment or Complaint</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Solutions</h4>
+            <div class="mobile-menu-links">
+                <a href="/solutions">Solutions Main Page</a>
+                <a href="/solutions/pre-charge-off">Pre-Charge Off Collections</a>
+                <a href="/solutions/post-charge-off">Post Charge-Off Collections</a>
+                <a href="/solutions/secondary-tertiary">Secondary & Tertiary Collections</a>
+                <a href="/solutions/credit-reporting">Credit Bureau Reporting</a>
+                <a href="/solutions/skip-tracing">Skip Tracing</a>
+                <a href="/solutions/attorneys">Network of Attorneys</a>
+                <a href="/solutions/warehousing">Warehousing Management</a>
+            </div>
+        </div>
+        <div class="mobile-menu-section">
+            <h4>Contact</h4>
+            <div class="mobile-menu-links">
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- PAGE CONTENT GOES HERE -->
+        <div class="page-content">
+            <div class="container">
+                <div class="content-card">
+                    <h1>Consumer Tools</h1>
+                    <h2>Simple. Secure. Respectful.</h2>
+                    <p>At Elite Portfolio Management, we believe resolving an account should be straightforward and stress-free. That's why we offer easy-to-use tools and professional support to help consumers take control of their financial obligations on their own terms.</p>
+                    <p>Whether you're here to make a payment, request documentation, or submit feedback, our platform is designed to be accessible, secure, and fully compliant.</p>
+                    
+                    <hr>
+                    
+                    <h3>Tools That Empower You</h3>
+                    <ul>
+                        <li><strong>Make a Secure Payment</strong><br>
+                        Our online payment portal is fast, encrypted, and available 24/7.</li>
+                        
+                        <li><strong>Submit a Dispute or Request Validation</strong><br>
+                        We respect your rights and are here to help resolve concerns quickly and professionally.</li>
+                        
+                        <li><strong>Give Feedback</strong><br>
+                        Share your experience — whether it's a compliment or a concern. Your voice matters.</li>
+                    </ul>
+                    
+                    <p>Have questions? Call us directly. Our team is here to support you with clarity, courtesy, and care.</p>
+                    
+                    <hr>
+                    
+                    <h3>Important Notices</h3>
+                    <p>This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
+                    
+                    <hr>
+                    
+                    <h3>Elite Portfolio Management</h3>
+                    <p>Mailing Address: 2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301<br>
+                    Phone: 1.800.XXX.XXXX</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Legal Disclosure</h3>
+                    <p>
+                        This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Mailing Address</h3>
+                    <p>
+                        Elite Portfolio Management<br>
+                        2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301<br>
+                        Conroe TX, 77301<br>
+                        833-381-4416<br>
+                        info@eliteportfoliomgmt.com
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Site Resources</h3>
+                    <ul>
+                        <li><a href="/consumer-tools/payment">Make a Payment</a></li>
+                        <li><a href="/consumer-tools">Consumer Tools</a></li>
+                        <li><a href="/client-login">Client Login</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/privacy">Privacy Policy & Disclaimers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elite Portfolio Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn')) {
+                mobileMenu.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.classList.remove('scrolled');
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    </script>
+</body>
+</html> 

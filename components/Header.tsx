@@ -37,7 +37,7 @@ export default function Header() {
             <div className="logo">
               <Link href="/">
                 <Image 
-                  src="/LOGO/Borderless.png"
+                  src="/LOGO/logo1.png"
                   alt="Diversified Adjustment Service, Inc." 
                   width={600} 
                   height={150}
@@ -116,7 +116,7 @@ export default function Header() {
             <div className="logo">
               <Link href="/">
                 <Image 
-                  src="/LOGO/Borderless.png"
+                  src="/LOGO/logo1.png"
                   alt="Diversified Adjustment Service, Inc." 
                   width={350} 
                   height={75}
