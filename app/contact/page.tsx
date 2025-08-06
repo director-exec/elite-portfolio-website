@@ -1,78 +1,116 @@
 export default function ContactPage() {
+  const contactCards = [
+    {
+      id: 'account-resolution',
+      title: 'Trying to Resolve an Account?',
+      description: 'If you\'ve received a communication from Elite Portfolio Management and want to discuss your account or make a payment, our team is here to assist you.',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop'
+    },
+    {
+      id: 'receivables-help',
+      title: 'Need Help With Receivables?',
+      description: 'Looking to improve collections or streamline your accounts receivable process? Contact our solutions team to learn how we help clients maximize recovery while protecting their brand.',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop'
+    },
+    {
+      id: 'client-support',
+      title: 'Already a Client?',
+      description: 'If you\'re a current client and need support, reporting access, or a service update, we\'re always here for you.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop'
+    },
+    {
+      id: 'hr-verification',
+      title: 'Employment Verification or HR Questions?',
+      description: 'Need to verify employment, check holiday hours, or inquire about benefits?',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop'
+    }
+  ]
+
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-      <h2 className="text-xl font-semibold mb-6 text-gray-700">Let's Get You to the Right Place</h2>
-      
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <p className="mb-8">
-          Have a question or need assistance? Select the option below that best matches your situation — we're ready to help.
-        </p>
+    <>
+      {/* Hero Banner Section */}
+      <section className="hero-banner relative h-96 flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+        ></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
+          <p className="text-xl">Let's Get You to the Right Place</p>
+        </div>
+      </section>
 
-        <div className="space-y-8">
-          <div className="border-l-4 border-blue-500 pl-6">
-            <h3 className="text-lg font-semibold mb-2">🧾 Trying to Resolve an Account?</h3>
-            <p className="mb-4">
-              If you've received a communication from Elite Portfolio Management and want to discuss your account or make a payment, 
-              our team is here to assist you.
+      {/* Main Content Introduction */}
+      <section className="main-intro py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Have a Question or Need Assistance?</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              Select the option below that best matches your situation — we're ready to help. 
+              Our team is here to assist you with any questions or concerns you may have.
             </p>
-            <p className="font-semibold mb-2">Call us at 833-381-4416</p>
-            <p className="text-sm text-gray-600">Or visit: Make a Payment | Dispute My Account | Submit a Request</p>
-          </div>
-
-          <div className="border-l-4 border-green-500 pl-6">
-            <h3 className="text-lg font-semibold mb-2">💼 Need Help With Receivables?</h3>
-            <p className="mb-4">
-              Looking to improve collections or streamline your accounts receivable process? Contact our solutions team to learn 
-              how we help clients maximize recovery while protecting their brand.
-            </p>
-            <p className="font-semibold mb-2">Email: solutions@eliteportfoliomgmt.com</p>
-            <p className="font-semibold">Business Inquiries: 833-381-4416 (Option 2)</p>
-          </div>
-
-          <div className="border-l-4 border-purple-500 pl-6">
-            <h3 className="text-lg font-semibold mb-2">👥 Already a Client?</h3>
-            <p className="mb-4">
-              If you're a current client and need support, reporting access, or a service update, we're always here for you.
-            </p>
-            <p className="font-semibold mb-2">Client Services: support@eliteportfoliomgmt.com</p>
-            <p className="font-semibold">Dedicated Line: 833-381-4416 (Option 3)</p>
-          </div>
-
-          <div className="border-l-4 border-yellow-500 pl-6">
-            <h3 className="text-lg font-semibold mb-2">📄 Employment Verification or HR Questions?</h3>
-            <p className="mb-4">
-              Need to verify employment, check holiday hours, or inquire about benefits?
-            </p>
-            <p className="font-semibold mb-2">HR Department: hr@eliteportfoliomgmt.com</p>
-            <p className="text-sm text-gray-600">Hours: Monday–Friday | 8:00 AM – 5:00 PM ET</p>
-            <p className="text-sm text-gray-600">Closed on all federal holidays.</p>
-          </div>
-
-          <div className="border-l-4 border-red-500 pl-6">
-            <h3 className="text-lg font-semibold mb-2">🎯 Looking for a Career?</h3>
-            <p className="mb-4">
-              Explore open positions, competitive pay, and flexible schedules on our Careers Page. We offer paid training, 
-              growth opportunities, and a people-first environment.
-            </p>
-            <p className="font-semibold">Email: careers@eliteportfoliomgmt.com</p>
-          </div>
-
-          <div className="bg-gray-50 p-6 rounded">
-            <h3 className="text-lg font-semibold mb-4">Mailing Address</h3>
-            <div className="space-y-1">
-              <p><strong>Elite Portfolio Management</strong></p>
-              <p>PO Box [Insert]</p>
-              <p>Conroe TX, 77301</p>
-              <p className="font-semibold mt-2">General: 833-381-4416</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="tel:833-381-4416" 
+                className="bg-blue-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition-colors inline-block"
+              >
+                Call Us: 833-381-4416
+              </a>
+              <a 
+                href="mailto:info@eliteportfoliomgmt.com" 
+                className="bg-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition-colors inline-block"
+              >
+                Email Us: info@eliteportfoliomgmt.com
+              </a>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-gray-100 p-4 rounded text-sm">
-            <p><strong>Legal Disclosure:</strong> This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
+      {/* Contact Cards Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {contactCards.map((card) => (
+                <div key={card.id} className="bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="relative h-48">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                      style={{ backgroundImage: `url(${card.image})` }}
+                    ></div>
+                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <h3 className="text-2xl font-bold text-white text-center px-4">{card.title}</h3>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="text-gray-700 leading-relaxed">
+                      {card.description}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta text-center py-12" style={{ backgroundColor: '#414757' }}>
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-6 text-white">
+            Ready to get started?
+          </h3>
+          <a href="tel:833-381-4416" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block mr-4" style={{ color: '#414757' }}>
+            Call Us Today!
+          </a>
+          <a href="mailto:info@eliteportfoliomgmt.com" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
+            Email Us
+          </a>
+        </div>
+      </section>
+    </>
   )
 } 

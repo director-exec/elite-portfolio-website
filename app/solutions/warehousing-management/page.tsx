@@ -1,137 +1,139 @@
 import PageLayout from '../../../components/PageLayout';
 
 export default function WarehousingManagementPage() {
+  const serviceSections = [
+    {
+      id: 'keep-cash-flow',
+      title: 'Keep Your Cash Flow Coming',
+      description: 'Diversified will manage your \'end of life\' accounts at a reduced fee. Our proprietary scoring, analytics, and skip tracing processes help you maximize recovery and keep cash flow coming on accounts where the statute of limitations has not expired. We monitor multiple databases around the clock for favorable recovery opportunities.',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'secure-data-holding',
+      title: 'Secure Data Holding',
+      description: 'We retain and monitor accounts that are past standard collection efforts, while ensuring full compliance with data retention laws. Our system scans multiple national databases continuously to detect credit activity, employment updates, asset shifts, or other signs of renewed collectability.',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      background: 'grey',
+      imageLeft: true
+    },
+    {
+      id: 'proprietary-scoring',
+      title: 'Proprietary Scoring & Analytics',
+      description: 'We re-score and prioritize accounts based on updated financial behavior, payment capacity, and risk indicators. Warehoused accounts are held at lower servicing rates, with full recovery efforts only reinitiated when there\'s true potential to collect.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'cost-effective-strategy',
+      title: 'Cost-Effective Strategy',
+      description: 'Extend recovery timelines without legal risk, increase total lifetime ROI on each account, avoid premature closures or write-offs, and free up internal resources while we monitor and manage. Accounts nearing the statute of limitations still have value — if you manage them correctly.',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      background: 'grey',
+      imageLeft: true
+    }
+  ]
+
   return (
-    <PageLayout
-      title="Warehousing Management"
-      subtitle="Keep Your Cash Flow Coming"
-      heroImage="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      heroImageAlt="Warehousing Management Services"
-    >
-      <div className="content-section">
-        <h2 className="section-title">Increase Your Revenue Stream</h2>
-        <div className="title-underline"></div>
-        
-        <div className="content-grid">
-          <div className="content-text">
-            <p className="lead-paragraph">
+    <>
+      {/* Hero Banner Section */}
+      <section className="hero-banner relative h-96 flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+        ></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-5xl font-bold mb-4">Warehousing Management</h1>
+          <p className="text-xl">Keep Your Cash Flow Coming</p>
+        </div>
+      </section>
+
+      {/* Main Content Introduction */}
+      <section className="main-intro py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Increase Your Revenue Stream</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
               Diversified will manage your 'end of life' accounts at a reduced fee. Our proprietary scoring, analytics, 
               and skip tracing processes help you maximize recovery and keep cash flow coming on accounts where the statute 
               of limitations has not expired.
             </p>
-            
-            <p>
-              We monitor multiple databases around the clock for favorable recovery opportunities, ensuring your dormant 
-              accounts remain valuable assets rather than write-offs.
-            </p>
-          </div>
-          
-          <div className="content-image">
-            <img 
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Warehousing Management Process"
-              className="rounded-lg shadow-lg"
-            />
           </div>
         </div>
+      </section>
 
-        <div className="features-section">
-          <h3 className="section-subtitle">How It Works</h3>
-          
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">
-                <i className="fas fa-shield-alt"></i>
+      {/* Service Sections */}
+      {serviceSections.map((section, index) => (
+        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {section.imageLeft ? (
+                  <>
+                    <div className="order-1">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                    <div className="order-2">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="order-2 lg:order-1">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </>
+                )}
               </div>
-              <h4>Secure Data Holding</h4>
-              <p>
-                We retain and monitor accounts that are past standard collection efforts, while ensuring full compliance 
-                with data retention laws.
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">
-                <i className="fas fa-bell"></i>
-              </div>
-              <h4>Real-Time Triggers</h4>
-              <p>
-                Our system scans multiple national databases continuously to detect credit activity, employment updates, 
-                asset shifts, or other signs of renewed collectability.
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">
-                <i className="fas fa-chart-line"></i>
-              </div>
-              <h4>Proprietary Scoring & Analytics</h4>
-              <p>
-                We re-score and prioritize accounts based on updated financial behavior, payment capacity, and risk indicators.
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">
-                <i className="fas fa-coins"></i>
-              </div>
-              <h4>Cost-Effective Strategy</h4>
-              <p>
-                Warehoused accounts are held at lower servicing rates, with full recovery efforts only reinitiated 
-                when there's true potential to collect.
-              </p>
             </div>
           </div>
-        </div>
+        </section>
+      ))}
 
-        <div className="benefits-section">
-          <h3 className="section-subtitle">Why Use Warehousing?</h3>
-          
-          <div className="benefits-grid">
-            <div className="benefit-item">
-              <i className="fas fa-check-circle"></i>
-              <span>Extend recovery timelines without legal risk</span>
-            </div>
-            <div className="benefit-item">
-              <i className="fas fa-check-circle"></i>
-              <span>Increase total lifetime ROI on each account</span>
-            </div>
-            <div className="benefit-item">
-              <i className="fas fa-check-circle"></i>
-              <span>Avoid premature closures or write-offs</span>
-            </div>
-            <div className="benefit-item">
-              <i className="fas fa-check-circle"></i>
-              <span>Free up internal resources while we monitor and manage</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="cta-section">
-          <div className="cta-card">
-            <h3>Don't Write Off Accounts Too Soon</h3>
-            <p>
+      {/* Summary Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Don't Write Off Accounts Too Soon</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
               Accounts nearing the statute of limitations still have value — if you manage them correctly. Let Diversified 
               help you track and recover them with minimal cost and maximum timing precision.
             </p>
-            <div className="cta-contact">
-              <strong>Call 833-381-4416 to speak with our recovery strategy team today.</strong>
-            </div>
           </div>
         </div>
+      </section>
 
-        <div className="legal-section">
-          <div className="legal-disclosure">
-            <p><strong>Legal Disclosure:</strong> This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
-          </div>
-          
-          <div className="company-info">
-            <p><strong>Diversified Adjustment Service, Inc.</strong></p>
-            <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
-            <p>833-381-4416</p>
-          </div>
+      {/* CTA Section */}
+      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-6 text-white">
+            Ready to maximize your recovery potential?
+          </h3>
+          <a href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
+            Contact Us Today!
+          </a>
         </div>
-      </div>
-    </PageLayout>
-  );
+      </section>
+    </>
+  )
 } 

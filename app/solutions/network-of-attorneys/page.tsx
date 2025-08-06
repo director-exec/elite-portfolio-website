@@ -1,140 +1,137 @@
 export default function NetworkOfAttorneysPage() {
+  const serviceSections = [
+    {
+      id: 'nationwide-network',
+      title: 'Nationwide Legal Network',
+      description: 'While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response. Elite Portfolio Management offers comprehensive nationwide legal support through a vetted network of experienced collection attorneys — so when legal action is required, you have the infrastructure in place to act decisively and compliantly.',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'trusted-representation',
+      title: 'Trusted Legal Representation — Anywhere in the U.S.',
+      description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across all 50 states and U.S. jurisdictions. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      background: 'grey',
+      imageLeft: true
+    },
+    {
+      id: 'client-directed-strategy',
+      title: 'Client-Directed Legal Strategy',
+      description: 'No lawsuit is initiated and no settlement is accepted without your explicit approval. The attorney represents you, and we manage the communication, documentation, and execution on your behalf. Before recommending litigation, Elite conducts a collectability review including asset investigation, employment verification, and compliance checklists.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'comprehensive-services',
+      title: 'Comprehensive Legal Services',
+      description: 'Our Elite Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation in every state. Whether you\'re pursuing a single claim or managing a national portfolio, we have the legal infrastructure to execute with confidence.',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      background: 'grey',
+      imageLeft: true
+    }
+  ]
+
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-4">Nationwide Legal Network</h1>
-      <h2 className="text-xl font-semibold mb-6 text-gray-700">Strategic Legal Escalation When It Matters Most</h2>
-      
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <p className="mb-8">
-          While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response. 
-          Elite Portfolio Management offers comprehensive nationwide legal support through a vetted network of experienced collection 
-          attorneys — so when legal action is required, you have the infrastructure in place to act decisively and compliantly.
-        </p>
+    <>
+      {/* Hero Banner Section */}
+      <section className="hero-banner relative h-96 flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+        ></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-5xl font-bold mb-4">Nationwide Legal Network</h1>
+          <p className="text-xl">Strategic Legal Escalation When It Matters Most</p>
+        </div>
+      </section>
 
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">Trusted Legal Representation — Anywhere in the U.S.</h3>
-          
-          <div className="space-y-6">
-            <div className="flex items-start">
-              <span className="text-blue-600 mr-3 mt-1">●</span>
-              <div>
-                <h4 className="font-semibold">National Attorney Network</h4>
-                <p className="text-gray-600">
-                  Our partners include licensed, bonded, and highly rated collection attorneys operating across all 50 states and U.S. jurisdictions.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <span className="text-blue-600 mr-3 mt-1">●</span>
-              <div>
-                <h4 className="font-semibold">Centralized Legal Oversight</h4>
-                <p className="text-gray-600">
-                  You don't have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, 
-                  so you get full visibility and efficiency from one point of contact.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <span className="text-blue-600 mr-3 mt-1">●</span>
-              <div>
-                <h4 className="font-semibold">Client-Directed Legal Strategy</h4>
-                <p className="text-gray-600">
-                  No lawsuit is initiated and no settlement is accepted without your explicit approval. The attorney represents you, 
-                  and we manage the communication, documentation, and execution on your behalf.
-                </p>
+      {/* Main Content Introduction */}
+      <section className="main-intro py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Strategic Legal Escalation When It Matters Most</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response. 
+              Elite Portfolio Management offers comprehensive nationwide legal support through a vetted network of experienced collection 
+              attorneys — so when legal action is required, you have the infrastructure in place to act decisively and compliantly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Sections */}
+      {serviceSections.map((section, index) => (
+        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {section.imageLeft ? (
+                  <>
+                    <div className="order-1">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                    <div className="order-2">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="order-2 lg:order-1">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
-        </div>
+        </section>
+      ))}
 
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">When Legal Action Is Warranted</h3>
-          <p className="mb-4">
-            Before recommending litigation, Elite conducts a collectability review including:
-          </p>
-          
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center">
-              <span className="text-blue-600 mr-3">●</span>
-              <span>Asset investigation</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-blue-600 mr-3">●</span>
-              <span>Employment verification</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-blue-600 mr-3">●</span>
-              <span>Statute of limitations review</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-blue-600 mr-3">●</span>
-              <span>Compliance checklists and jurisdiction-specific risk analysis</span>
-            </div>
+      {/* Summary Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">When Legal Action Is Warranted</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Whether you're pursuing a single claim or managing a national portfolio, Elite Portfolio Management has the legal 
+              infrastructure to execute with confidence — without ever losing sight of your brand reputation or compliance obligations.
+            </p>
           </div>
-          
-          <p className="text-sm text-gray-600">
-            If legal action is deemed appropriate, we'll walk you through every step and provide all relevant case data 
-            so you can make an informed decision.
-          </p>
         </div>
+      </section>
 
-        <div className="bg-green-50 border-l-4 border-green-400 p-6 mb-8">
-          <h3 className="text-xl font-semibold mb-4">Elite Legal Network Services Include:</h3>
-          <ul className="space-y-2">
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Lawsuit initiation and monitoring</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Judgment enforcement</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Settlement negotiation</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Court cost tracking</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Payment forwarding and accounting</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Multi-jurisdictional coverage</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-600 mr-2">✅</span>
-              <span>Bonded representation in every state</span>
-            </li>
-          </ul>
+      {/* CTA Section */}
+      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-6 text-white">
+            Ready for strategic legal escalation?
+          </h3>
+          <a href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
+            Contact Us Today!
+          </a>
         </div>
-
-        <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
-          <p className="mb-4">
-            Whether you're pursuing a single claim or managing a national portfolio, Elite Portfolio Management has the legal 
-            infrastructure to execute with confidence — without ever losing sight of your brand reputation or compliance obligations.
-          </p>
-          <p className="font-semibold">
-            Call us at 833-381-4416 to learn how our legal collections network can support your recovery efforts across the country.
-          </p>
-        </div>
-
-        <div className="bg-gray-100 p-4 rounded text-sm">
-          <p><strong>Legal Notice:</strong> This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.</p>
-        </div>
-
-        <div className="bg-gray-50 p-4 rounded text-sm mt-4">
-          <p><strong>Elite Portfolio Management</strong></p>
-          <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
-          <p>Conroe TX, 77301</p>
-          <p>833-381-4416</p>
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   )
 } 

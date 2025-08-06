@@ -6,7 +6,7 @@ export default function AboutPage() {
       id: 'who-we-are',
       title: 'Who We Are',
       description: 'Elite Portfolio Management is a nationally recognized third-party collections and receivables management firm built on a foundation of ethics, performance, and compliance. With decades of experience serving clients across regulated industries, we combine expert human insight with powerful digital tools to deliver superior financial results — while protecting the brands we represent.\n\nWe are proudly woman-owned and operate with the belief that compliance and transparency are non-negotiable in today\'s complex regulatory environment.',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop',
       background: 'white',
       imageLeft: false
     },
@@ -14,7 +14,7 @@ export default function AboutPage() {
       id: 'what-we-stand-for',
       title: 'What We Stand For',
       description: 'We treat your brand as an extension of our own. Every touchpoint reflects our dedication to preserving your reputation, communicating with empathy, and aligning our operations with your values. Whether we\'re recovering past-due balances or handling sensitive account situations, we work as silent stewards of your public image.',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     },
@@ -22,7 +22,7 @@ export default function AboutPage() {
       id: 'how-we-operate',
       title: 'How We Operate',
       description: 'Respect, empathy, and compliance guide everything we do. Every consumer interaction is conducted with professionalism and clarity. Our agents are trained not only in regulation — but in tone, timing, and approach. We uphold a "resolution mindset" in all conversations, helping consumers resolve obligations with dignity.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop',
       background: 'white',
       imageLeft: false
     },
@@ -46,7 +46,7 @@ export default function AboutPage() {
       id: 'where-we-work',
       title: 'Where We Work',
       description: 'Elite Portfolio Management is licensed, bonded, and fully operational in all 50 U.S. states and Puerto Rico. We maintain Certificates of Authority, statutory bonds, trust accounts, and resident office requirements in every jurisdiction where applicable law demands it. Your nationwide presence is supported by ours.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     }
@@ -106,7 +106,7 @@ export default function AboutPage() {
                       <img 
                         src={section.image} 
                         alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                        className="w-full h-80 object-cover rounded-lg shadow-xl"
                       />
                     </div>
                     <div className="order-2">
@@ -128,7 +128,7 @@ export default function AboutPage() {
                       <img 
                         src={section.image} 
                         alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                        className="w-full h-80 object-cover rounded-lg shadow-xl"
                       />
                     </div>
                   </>
@@ -147,7 +147,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {additionalSections.map((section) => (
                 <Link key={section.id} href={section.link} className="block">
-                  <div className="bg-gray-50 rounded-lg p-6 h-full hover:shadow-lg transition-shadow duration-300">
+                  <div className="bg-gray-50 rounded-lg p-6 h-full shadow-2xl hover:shadow-2xl transition-shadow duration-300" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
                     <h3 className="text-xl font-semibold mb-3 text-gray-900">{section.title}</h3>
                     <p className="text-gray-700 leading-relaxed">{section.description}</p>
                   </div>
