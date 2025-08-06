@@ -9,87 +9,123 @@ export default function RequestAccountValidationPage() {
     setShowModal(false)
   }
 
+  const validationSections = [
+    {
+      id: 'account-details',
+      title: 'Get Account Details Delivered to Your Inbox',
+      description: 'If you would like an itemized statement for your account with Elite Portfolio Management, please complete the form below. By submitting your request, you confirm that you are the authorized account holder and that the information you\'ve provided is complete and accurate. Please allow up to 30 days for your request to be processed.',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'email-delivery',
+      title: 'Important Notice Regarding Email Delivery',
+      description: 'Your itemized statement will be sent via standard (unencrypted) email. While convenient, this method may not offer the same level of security as postal mail. By submitting this form, you acknowledge and accept delivery in this format. To avoid delivery issues, we recommend adding our email address — support@eliteportfoliomgmt.com — to your safe sender list.',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      background: 'grey',
+      imageLeft: true
+    },
+    {
+      id: 'required-information',
+      title: 'What You\'ll Need to Provide',
+      description: 'You\'ll need to provide your Elite Account Number (8-digit), Creditor Name, Your Full Legal Name, Mailing Address, Valid Phone Number, and Valid Email Address. You must also acknowledge that you may receive communications via phone, text, or email, confirm ownership of the contact details you\'ve submitted, request electronic delivery of this document, and understand you may revoke consent at any time through reasonable means.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      background: 'white',
+      imageLeft: false
+    }
+  ]
+
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-4">Request Account Validation</h1>
-      <h2 className="text-xl font-semibold mb-6 text-gray-700">Get Account Details Delivered to Your Inbox</h2>
-      
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <div className="space-y-6">
-          <p className="text-gray-700 leading-relaxed">
-            If you would like an itemized statement for your account with Elite Portfolio Management, please complete the form below. By submitting your request, you confirm that you are the authorized account holder and that the information you've provided is complete and accurate.
-          </p>
-          
-          <p className="text-gray-700 leading-relaxed">
-            Please allow up to 30 days for your request to be processed.
-          </p>
+    <>
+      {/* Hero Banner Section */}
+      <section className="hero-banner relative h-96 flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+        ></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-5xl font-bold mb-4">Request Account Validation</h1>
+          <p className="text-xl">Get Account Details Delivered to Your Inbox</p>
+        </div>
+      </section>
 
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Important Notice Regarding Email Delivery</h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Your itemized statement will be sent via standard (unencrypted) email. While convenient, this method may not offer the same level of security as postal mail. By submitting this form, you acknowledge and accept delivery in this format.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              To avoid delivery issues, we recommend adding our email address — support@eliteportfoliomgmt.com — to your safe sender list.
-            </p>
-          </div>
-
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">What You'll Need to Provide:</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">1. General Account Information</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                  <li>Elite Account Number (8-digit)</li>
-                  <li>Creditor Name</li>
-                  <li>Your Full Legal Name</li>
-                  <li>Mailing Address (Street, City, State, Zip)</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">2. Contact Details & Consent</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                  <li>Valid Phone Number</li>
-                  <li>Valid Email Address</li>
-                  <li>Acknowledgment of the following:</li>
-                  <ul className="list-disc list-inside space-y-1 text-gray-700 ml-8 mt-1">
-                    <li>You may receive communications via phone, text, or email</li>
-                    <li>You confirm ownership of the contact details you've submitted</li>
-                    <li>You request electronic delivery of this document</li>
-                    <li>You may revoke consent at any time through reasonable means</li>
-                  </ul>
-                </ul>
+      {/* Validation Sections */}
+      {validationSections.map((section, index) => (
+        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {section.imageLeft ? (
+                  <>
+                    <div className="order-1">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                    <div className="order-2">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="order-2 lg:order-1">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
-
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" className="rounded" />
-                <span className="text-gray-700">I acknowledge and agree to the above terms</span>
-              </label>
-            </div>
           </div>
+        </section>
+      ))}
 
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Legal Disclosure</h3>
-            <p className="text-gray-700 leading-relaxed">
-              This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
-            </p>
-          </div>
-
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Contact Information</h3>
-            <div className="text-gray-700">
-              <p className="font-semibold">Elite Portfolio Management</p>
-              <p>PO Box [Updated]</p>
-              <p>Conroe TX, 77301</p>
-              <p>Phone: 833-381-4416</p>
+      {/* Legal Disclosure Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Legal Disclosure</h2>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <p className="text-lg text-gray-700 leading-relaxed text-center">
+                This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
+            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
+              <div className="text-lg text-gray-700">
+                <p className="font-semibold">Elite Portfolio Management</p>
+                <p>PO Box [Updated]</p>
+                <p>Conroe TX, 77301</p>
+                <p>Phone: 833-381-4416</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Pop-up Modal */}
       {showModal && (
@@ -113,6 +149,6 @@ export default function RequestAccountValidationPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 } 
