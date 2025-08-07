@@ -28,7 +28,7 @@ export default function NetworkOfAttorneysPage() {
       id: 'comprehensive-services',
       title: 'Comprehensive Legal Services',
       description: 'Our Elite Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation in every state. Whether you\'re pursuing a single claim or managing a national portfolio, we have the legal infrastructure to execute with confidence.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     }
@@ -40,7 +40,7 @@ export default function NetworkOfAttorneysPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

@@ -4,7 +4,7 @@ export default function IndustriesWeServePage() {
       id: 'financial-services',
       title: 'Financial Services',
       description: 'From national banks to fintech lenders, we support institutions with intelligent, analytics-driven recovery strategies. Our systems integrate directly with your KPIs, enabling custom performance tracking and real-time insight. Whether managing high-volume portfolios or niche accounts, we operate with full FDCPA/FCRA compliance and strict consumer data safeguards.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
       background: 'white',
       imageLeft: false
     },
@@ -12,7 +12,7 @@ export default function IndustriesWeServePage() {
       id: 'telecommunications',
       title: 'Telecommunications',
       description: 'Elite has decades of experience supporting wireless, broadband, landline, satellite, and cable providers. Our tailored solutions optimize recovery without compromising brand equity. With a digital-first collections model, real-time analytics, and compliance-forward workflows, we manage every stage of your consumer or commercial receivables with discretion and precision.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     },
@@ -28,7 +28,7 @@ export default function IndustriesWeServePage() {
       id: 'utilities',
       title: 'Utilities',
       description: 'We support leading utility providers — gas, water, electric, and broadband — across regulated and deregulated markets. Whether residential or commercial, our life-cycle-based collections approach ensures early intervention, regulatory alignment, and minimal reputational risk. We also handle specialized accounts like equipment loss and property damage with care and accuracy.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     },
@@ -36,7 +36,7 @@ export default function IndustriesWeServePage() {
       id: 'commercial-b2b',
       title: 'Commercial / B2B',
       description: 'For business-to-business collections, professionalism and discretion are everything. Elite provides commercial receivables management across industries with an emphasis on protecting long-term business relationships. Our team understands the nuances of corporate debt recovery and customizes strategies to fit your operations without disrupting your reputation.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
       background: 'white',
       imageLeft: false
     },
@@ -56,7 +56,7 @@ export default function IndustriesWeServePage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

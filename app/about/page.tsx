@@ -6,7 +6,7 @@ export default function AboutPage() {
       id: 'who-we-are',
       title: 'Who We Are',
       description: 'Elite Portfolio Management is a nationally recognized third-party collections and receivables management firm built on a foundation of ethics, performance, and compliance. With decades of experience serving clients across regulated industries, we combine expert human insight with powerful digital tools to deliver superior financial results — while protecting the brands we represent.\n\nWe are proudly woman-owned and operate with the belief that compliance and transparency are non-negotiable in today\'s complex regulatory environment.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop',
       background: 'white',
       imageLeft: false
     },
@@ -14,7 +14,7 @@ export default function AboutPage() {
       id: 'what-we-stand-for',
       title: 'What We Stand For',
       description: 'We treat your brand as an extension of our own. Every touchpoint reflects our dedication to preserving your reputation, communicating with empathy, and aligning our operations with your values. Whether we\'re recovering past-due balances or handling sensitive account situations, we work as silent stewards of your public image.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     },
@@ -30,7 +30,7 @@ export default function AboutPage() {
       id: 'our-people',
       title: 'Our People',
       description: 'Our team is our power. We hire experienced professionals who thrive in a culture of integrity, collaboration, and continuous improvement. Every team member undergoes rigorous training and performance auditing — not just to maintain standards, but to raise them. At Elite, excellence is a shared expectation.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
     },
@@ -85,7 +85,7 @@ export default function AboutPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">
