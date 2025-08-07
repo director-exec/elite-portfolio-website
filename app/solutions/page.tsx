@@ -6,7 +6,7 @@ export default function SolutionsPage() {
       id: 'pre-collection',
       title: 'Pre-Charge Off Collections',
       description: 'Early intervention strategies to prevent charge-offs and maximize recovery potential. Our proactive approach helps clients maintain account relationships while maximizing recovery rates through strategic communication and payment arrangements.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/pre-charge-off-collections',
       background: 'white',
       imageLeft: false
@@ -24,7 +24,7 @@ export default function SolutionsPage() {
       id: 'secondary-tertiary',
       title: 'Secondary & Tertiary Collections',
       description: 'Specialized recovery for difficult accounts requiring advanced strategies. Our experienced team handles accounts that have been through multiple collection attempts, using innovative approaches to locate and engage debtors.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/secondary-tertiary-collections',
       background: 'white',
       imageLeft: false
@@ -33,7 +33,7 @@ export default function SolutionsPage() {
       id: 'warehousing',
       title: 'Warehousing Management',
       description: 'Portfolio management and optimization for maximum recovery efficiency. We provide comprehensive portfolio analysis, segmentation, and strategic management to maximize your recovery potential while minimizing operational costs.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/warehousing-management',
       background: 'grey',
       imageLeft: true
@@ -42,7 +42,7 @@ export default function SolutionsPage() {
       id: 'network-attorneys',
       title: 'Network of Attorneys',
       description: 'Legal collection services nationwide with experienced legal professionals. Our network of licensed attorneys provides legal collection services across all 50 states, ensuring compliance with state-specific regulations and maximizing recovery through legal channels.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/network-of-attorneys',
       background: 'white',
       imageLeft: false
@@ -51,7 +51,7 @@ export default function SolutionsPage() {
       id: 'skip-tracing',
       title: 'Skip Tracing',
       description: 'Advanced location and contact services to locate hard-to-find debtors. Our skip-tracing specialists use cutting-edge technology and databases to locate debtors who have moved or changed contact information.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/skip-tracing',
       background: 'grey',
       imageLeft: true
@@ -60,7 +60,7 @@ export default function SolutionsPage() {
       id: 'reporting',
       title: 'Reporting Services',
       description: 'Comprehensive reporting and analytics for portfolio performance tracking. We provide detailed reporting on collection activities, recovery rates, and portfolio performance to help you make informed business decisions.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/credit-bureau-reporting',
       background: 'white',
       imageLeft: false
@@ -69,7 +69,7 @@ export default function SolutionsPage() {
       id: 'credit-bureau',
       title: 'Credit Bureau Reporting',
       description: 'Compliant credit reporting services to maintain accurate credit records. Our credit bureau reporting services ensure accurate and timely reporting to all major credit bureaus, helping maintain the integrity of credit reporting systems.',
-      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
       link: '/solutions/credit-bureau-reporting',
       background: 'grey',
       imageLeft: true
@@ -82,7 +82,7 @@ export default function SolutionsPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=1200&auto=format&fit=crop)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">
