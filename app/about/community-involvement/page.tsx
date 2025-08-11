@@ -4,7 +4,7 @@ export default function CommunityInvolvementPage() {
       id: 'mission-beyond',
       title: 'Our Commitment Reaches Beyond Collections',
       description: 'At Elite Portfolio Management, our mission goes deeper than financial recovery — it\'s rooted in creating lasting, positive impact in the communities we serve. We believe true leadership includes giving back, and we proudly uphold that responsibility through active volunteerism, charitable partnerships, and community-driven initiatives.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop',
+      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
       background: 'white',
       imageLeft: false
     },
@@ -12,15 +12,15 @@ export default function CommunityInvolvementPage() {
       id: 'charitable-partnerships',
       title: 'Charitable Partnerships & Support',
       description: 'As part of our ongoing commitment, we support local and national nonprofits through monthly contributions, employee-led fundraising efforts, and direct involvement in events that uplift those in need. From supporting children\'s health organizations to addressing urgent community issues, our goal is to drive measurable change — not just in business, but in people\'s lives.',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
     },
     {
       id: 'elite-standard',
-      title: 'Elite Isn\'t Just a Name — It\'s Our Standard',
-      description: 'Elite isn\'t just a name — it\'s a standard we uphold in everything we do, including how we serve our communities. We believe that true success is measured not just by business performance, but by the positive impact we have on the world around us. Through our community involvement, we strive to create lasting change and build stronger, more resilient communities.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      title: 'Elite Portfolio Isn\'t Just a Name — It\'s Our Standard',
+      description: 'Elite Portfolio isn\'t just a name — it\'s a standard we uphold in everything we do, including how we serve our communities. We believe that true success is measured not just by business performance, but by the positive impact we have on the world around us. Through our community involvement, we strive to create lasting change and build stronger, more resilient communities.',
+      image: '/Pages/Board_Meeting_Consult_Building.jpeg',
       background: 'white',
       imageLeft: false
     }
@@ -32,7 +32,7 @@ export default function CommunityInvolvementPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

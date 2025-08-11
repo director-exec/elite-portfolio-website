@@ -19,12 +19,28 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Cleanup body class when component unmounts
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, []);
+
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    const newState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(newState);
+    
+    // Prevent body scroll when mobile menu is open
+    if (newState) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
   };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+    document.body.classList.remove('mobile-menu-open');
   };
 
   return (
@@ -37,7 +53,7 @@ export default function Header() {
             <div className="logo">
               <Link href="/">
                 <Image 
-                  src="/LOGO/logo1.svg"
+                  src="/LOGO/UpdatedLogoFull.svg"
                   alt="Diversified Adjustment Service, Inc." 
                   width={600} 
                   height={150}
@@ -53,9 +69,9 @@ export default function Header() {
                 <div className="contact-info">
                   Need Help? Call us at 833-381-4416
                 </div>
-                <Link href="/consumer-tools/make-a-payment" className="payment-button">
+                <a href="https://portal.eliteportfoliomgmt.com/" className="payment-button" target="_blank" rel="noopener noreferrer">
                   Make A Payment
-                </Link>
+                </a>
               </div>
               
               {/* Bottom Right: Navigation */}
@@ -67,6 +83,7 @@ export default function Header() {
                       <div className="dropdown-menu">
                         <Link href="/about/security">Security</Link>
                         <Link href="/about/compliance">Compliance</Link>
+                        <Link href="/about/tcpa-compliance">TCPA Compliance</Link>
                         <Link href="/about/industries-we-serve">Industries We Serve</Link>
                         <Link href="/about/community-involvement">Community Involvement</Link>
                       </div>
@@ -88,7 +105,6 @@ export default function Header() {
                         <Link href="/solutions/post-charge-off-collections">Post Charge-Off Collections</Link>
                         <Link href="/solutions/secondary-tertiary-collections">Secondary & Tertiary Collections</Link>
                         <Link href="/solutions/credit-bureau-reporting">Credit Bureau Reporting</Link>
-                        <Link href="/solutions/skip-tracing">Skip Tracing</Link>
                         <Link href="/solutions/network-of-attorneys">Network of Attorneys</Link>
                         <Link href="/solutions/warehousing-management">Warehousing Management</Link>
                       </div>
@@ -115,7 +131,7 @@ export default function Header() {
             <div className="logo">
               <Link href="/">
                 <Image 
-                  src="/LOGO/logo1.svg"
+                  src="/LOGO/UpdatedLogoMini.svg"
                   alt="Diversified Adjustment Service, Inc." 
                   width={350} 
                   height={75}
@@ -134,6 +150,7 @@ export default function Header() {
                     <div className="dropdown-menu">
                       <Link href="/about/security">Security</Link>
                       <Link href="/about/compliance">Compliance</Link>
+                      <Link href="/about/tcpa-compliance">TCPA Compliance</Link>
                       <Link href="/about/industries-we-serve">Industries We Serve</Link>
                       <Link href="/about/community-involvement">Community Involvement</Link>
                     </div>
@@ -155,7 +172,6 @@ export default function Header() {
                       <Link href="/solutions/post-charge-off-collections">Post Charge-Off Collections</Link>
                       <Link href="/solutions/secondary-tertiary-collections">Secondary & Tertiary Collections</Link>
                       <Link href="/solutions/credit-bureau-reporting">Credit Bureau Reporting</Link>
-                      <Link href="/solutions/skip-tracing">Skip Tracing</Link>
                       <Link href="/solutions/network-of-attorneys">Network of Attorneys</Link>
                       <Link href="/solutions/warehousing-management">Warehousing Management</Link>
                     </div>
@@ -180,22 +196,27 @@ export default function Header() {
           <a href="tel:833-381-4416" className="mobile-call-btn">
             Call Us
           </a>
-          <Link href="/consumer-tools/make-a-payment" className="mobile-payment-btn" onClick={closeMobileMenu}>
+          <a href="https://portal.eliteportfoliomgmt.com/" className="mobile-payment-btn" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
             Make A Payment
-          </Link>
+          </a>
         </div>
         
         <div className="mobile-menu-section">
-          <h4>About</h4>
+          <Link href="/about" onClick={closeMobileMenu}>
+            <h4>About</h4>
+          </Link>
           <div className="mobile-menu-links">
             <Link href="/about/security" onClick={closeMobileMenu}>Security</Link>
             <Link href="/about/compliance" onClick={closeMobileMenu}>Compliance</Link>
+            <Link href="/about/tcpa-compliance" onClick={closeMobileMenu}>TCPA Compliance</Link>
             <Link href="/about/industries-we-serve" onClick={closeMobileMenu}>Industries We Serve</Link>
             <Link href="/about/community-involvement" onClick={closeMobileMenu}>Community Involvement</Link>
           </div>
         </div>
         <div className="mobile-menu-section">
-          <h4>Consumer Tools</h4>
+          <Link href="/consumer-tools" onClick={closeMobileMenu}>
+            <h4>Consumer Tools</h4>
+          </Link>
           <div className="mobile-menu-links">
             <Link href="/consumer-tools/request-account-validation" onClick={closeMobileMenu}>Request Account Validation</Link>
             <Link href="/consumer-tools/bankruptcy-notification" onClick={closeMobileMenu}>Bankruptcy Notification</Link>
@@ -205,22 +226,22 @@ export default function Header() {
           </div>
         </div>
         <div className="mobile-menu-section">
-          <h4>Solutions</h4>
+          <Link href="/solutions" onClick={closeMobileMenu}>
+            <h4>Solutions</h4>
+          </Link>
           <div className="mobile-menu-links">
             <Link href="/solutions/pre-charge-off-collections" onClick={closeMobileMenu}>Pre-Charge Off Collections</Link>
             <Link href="/solutions/post-charge-off-collections" onClick={closeMobileMenu}>Post Charge-Off Collections</Link>
             <Link href="/solutions/secondary-tertiary-collections" onClick={closeMobileMenu}>Secondary & Tertiary Collections</Link>
             <Link href="/solutions/credit-bureau-reporting" onClick={closeMobileMenu}>Credit Bureau Reporting</Link>
-            <Link href="/solutions/skip-tracing" onClick={closeMobileMenu}>Skip Tracing</Link>
             <Link href="/solutions/network-of-attorneys" onClick={closeMobileMenu}>Network of Attorneys</Link>
             <Link href="/solutions/warehousing-management" onClick={closeMobileMenu}>Warehousing Management</Link>
           </div>
         </div>
         <div className="mobile-menu-section">
-          <h4>Contact</h4>
-          <div className="mobile-menu-links">
-            <Link href="/contact" onClick={closeMobileMenu}>Contact Us</Link>
-          </div>
+          <Link href="/contact" onClick={closeMobileMenu}>
+            <h4>Contact Us</h4>
+          </Link>
         </div>
       </div>
     </>

@@ -4,25 +4,29 @@ export default function ContactPage() {
       id: 'account-resolution',
       title: 'Trying to Resolve an Account?',
       description: 'If you\'ve received a communication from Elite Portfolio Management and want to discuss your account or make a payment, our team is here to assist you.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop'
+      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      email: 'validation@eliteportfoliomgmt.com'
     },
     {
       id: 'receivables-help',
       title: 'Need Help With Receivables?',
       description: 'Looking to improve collections or streamline your accounts receivable process? Contact our solutions team to learn how we help clients maximize recovery while protecting their brand.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop'
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      email: 'compliance@eliteportfoliomgmt.com'
     },
     {
       id: 'client-support',
       title: 'Already a Client?',
       description: 'If you\'re a current client and need support, reporting access, or a service update, we\'re always here for you.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      email: 'info@eliteportfoliomgmt.com'
     },
     {
       id: 'hr-verification',
       title: 'Employment Verification or HR Questions?',
       description: 'Need to verify employment, check holiday hours, or inquire about benefits?',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop'
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      email: 'info@eliteportfoliomgmt.com'
     }
   ]
 
@@ -32,7 +36,7 @@ export default function ContactPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">
@@ -82,12 +86,16 @@ export default function ContactPage() {
                     ></div>
                     <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <h3 className="text-2xl font-bold text-white text-center px-4">{card.title}</h3>
+                      <h3 className="text-xl font-bold text-white text-center px-4">{card.title}</h3>
                     </div>
                   </div>
                   <div className="p-6">
-                    <div className="text-gray-700 leading-relaxed">
+                    <div className="text-gray-700 leading-relaxed mb-4">
                       {card.description}
+                    </div>
+                    <div className="mt-4">
+                      <p className="text-sm font-semibold text-blue-600">Email: {card.email}</p>
+                      <p className="text-sm text-gray-600">Phone: 833-381-4416</p>
                     </div>
                   </div>
                 </div>
@@ -96,6 +104,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+
 
       {/* CTA Section */}
       <section className="cta text-center py-12" style={{ backgroundColor: '#414757' }}>

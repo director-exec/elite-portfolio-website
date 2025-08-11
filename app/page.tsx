@@ -6,9 +6,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <h1>Welcome to<br />Elite Portfolio Management</h1>
+          <h1>Precision Meets Resolution</h1>
           <p className="description">
-            <strong>Digital Recovery. Human Respect. Total Compliance.</strong>
+            <strong>A Digital Approach to Strategic Outcomes</strong>
           </p>
           <p className="description-secondary">
             With over four decades of successful collections experience, Elite Portfolio Management delivers best-in-class recovery solutions with a focus on compliance, professionalism, and empathy.
@@ -37,7 +37,7 @@ export default function Home() {
               </div>
               <h3>Make a Payment</h3>
               <p>Use one of our secure, convenient payment options to resolve your account.</p>
-              <Link href="/consumer-tools/payment" className="btn btn-primary">
+              <Link href="https://portal.eliteportfoliomgmt.com/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                 Make a Payment
               </Link>
             </div>
@@ -73,7 +73,7 @@ export default function Home() {
           <div className="about-container">
             <div className="about-image"></div>
             <div className="about-content">
-              <h2>About Elite</h2>
+              <h2>About Elite Portfolio</h2>
               <p>
                 We maintain a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership. Our ethics, technology, and performance set us apart.
               </p>
@@ -105,7 +105,7 @@ export default function Home() {
                   <span className="cert-badge">FDCPA</span>
                   <span className="cert-badge">FCRA</span>
                   <span className="cert-badge">GLBA</span>
-                  <span className="cert-badge">HIPAA</span>
+                  <span className="cert-badge">TCPA</span>
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ export default function Home() {
                 </div>
                 <h3>Industry Standards</h3>
                 <ul className="standards-list">
-                  <li>CFPB oversight and documentation standards</li>
+                  <li>FDCPA and TCPA oversight and documentation standards</li>
                   <li>State licensing, COAs, and bond requirements across all 50 states</li>
                   <li>Regular compliance audits and training</li>
                 </ul>
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="contact-content">
             <h2>Ready to Get Started?</h2>
             <p>
-              Call us at 833-381-4416 to learn how Elite can support your receivables, protect your reputation, and deliver results.
+              Call us at 833-381-4416 to learn how Elite Portfolio can support your receivables, protect your reputation, and deliver results.
             </p>
 
             <div className="contact-buttons">
@@ -147,7 +147,7 @@ export default function Home() {
 
             <div className="contact-address">
               <i className="fas fa-map-marker-alt"></i>
-              <span>Elite Portfolio Management, 2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301, Conroe TX, 77301</span>
+              <span>Elite Portfolio Management, 2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</span>
             </div>
           </div>
         </div>

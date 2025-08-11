@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function FraudIdentityTheftPage() {
   const [showModal, setShowModal] = useState(true)
@@ -9,104 +10,201 @@ export default function FraudIdentityTheftPage() {
     setShowModal(false)
   }
 
+  const fraudSections = [
+    {
+      id: 'immediate-action',
+      title: 'Immediate Action Required',
+      description: 'If you believe your account has been impacted by fraud or identity theft, please contact Elite Portfolio Management immediately so we can assist you in resolving the matter with urgency and care. Your privacy and security are our priority. Call us at 833-381-4416 for immediate assistance.',
+      image: '/Pages/Stamp_Doc.jpeg',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'ftc-reporting',
+      title: 'Report Identity Theft to the FTC',
+      description: 'You can also file a formal identity theft report with the Federal Trade Commission. Visit IdentityTheft.gov to create a comprehensive report that will help you resolve the issue with creditors, banks, and credit bureaus. This official report is often required by financial institutions and can help protect your rights.',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Seal_of_the_United_States_Federal_Trade_Commission.svg/1024px-Seal_of_the_United_States_Federal_Trade_Commission.svg.png',
+      background: 'grey',
+      imageLeft: true
+    },
+    {
+      id: 'police-report',
+      title: 'File a Police Report',
+      description: 'In cases of identity theft, it\'s important to file a police report with your local law enforcement agency. This creates an official record of the crime and may be required by creditors, banks, and credit bureaus. Bring your FTC Identity Theft Report, government-issued photo ID, proof of address, and any evidence of the identity theft.',
+      image: 'https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw',
+      background: 'white',
+      imageLeft: false
+    },
+    {
+      id: 'what-to-expect',
+      title: 'What to Expect',
+      description: 'When you report fraud or identity theft to us, you can expect immediate account review and security measures, assistance with documentation and reporting, guidance on protecting your identity going forward, and regular updates on the status of your case. We work quickly to resolve these issues and protect your financial security.',
+      image: 'https://images.pexels.com/photos/9068372/pexels-photo-9068372.jpeg?_gl=1*269x10*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MjU3MjAkbzEkZzEkdDE3NTQ5MjYwNzckajUxJGwwJGgw',
+      background: 'grey',
+      imageLeft: true
+    },
+    {
+      id: 'additional-resources',
+      title: 'Additional Resources',
+      description: 'We provide access to important resources including credit bureaus (Equifax, Experian, TransUnion) and federal agencies (FTC, Social Security Administration, IRS). These organizations can help you place fraud alerts, freeze your credit, and report identity theft to the appropriate authorities.',
+      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      background: 'white',
+      imageLeft: false
+    }
+  ]
+
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-4">Fraud & Identity Theft</h1>
-      <h2 className="text-xl font-semibold mb-6 text-gray-700">Suspect Fraud? We're Here to Help.</h2>
-      
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <div className="space-y-6">
-          <p className="text-gray-700 leading-relaxed">
-            If you believe your account has been impacted by fraud or identity theft, please contact Elite Portfolio Management immediately so we can assist you in resolving the matter with urgency and care.
-          </p>
-          
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold mb-2 text-blue-800">Immediate Action Required</h3>
-            <p className="text-blue-700 font-semibold">
-              Call us at 833-381-4416
-            </p>
-            <p className="text-blue-700 mt-2">
-              Your privacy and security are our priority.
+    <>
+      {/* Hero Banner Section */}
+      <section className="hero-banner relative h-96 flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
+        ></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-5xl font-bold mb-4">Fraud & Identity Theft</h1>
+          <p className="text-xl">Suspect Fraud? We're Here to Help.</p>
+        </div>
+      </section>
+
+      {/* Main Content Introduction */}
+      <section className="main-intro py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Protecting Your Identity and Financial Security</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              If you believe your account has been impacted by fraud or identity theft, 
+              Elite Portfolio Management is here to help you resolve the matter with urgency and care. 
+              We take these situations seriously and will work quickly to protect your financial security.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Report Identity Theft to the FTC</h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              You can also file a formal identity theft report with the Federal Trade Commission at:
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <a 
-                href="https://www.IdentityTheft.gov" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800 font-semibold flex items-center"
-              >
-                🔗 www.IdentityTheft.gov
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
+      {/* Fraud Sections */}
+      {fraudSections.map((section, index) => (
+        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {section.imageLeft ? (
+                  <>
+                    <div className="order-1">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                    <div className="order-2">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="order-2 lg:order-1">
+                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
+                      <div className="text-lg text-gray-700 leading-relaxed">
+                        {section.description}
+                      </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
+        </section>
+      ))}
 
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">What to Expect</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-              <li>Immediate account review and security measures</li>
-              <li>Assistance with documentation and reporting</li>
-              <li>Guidance on protecting your identity going forward</li>
-              <li>Regular updates on the status of your case</li>
-            </ul>
-          </div>
-
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Additional Resources</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-2">Credit Bureaus</h4>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Equifax: 1-800-525-6285</li>
-                  <li>• Experian: 1-888-397-3742</li>
-                  <li>• TransUnion: 1-800-680-7289</li>
-                </ul>
+      {/* Resources Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">Important Resources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">Credit Bureaus</h3>
+                <div className="space-y-2 text-gray-700">
+                  <p><strong>Equifax:</strong> 1-800-525-6285</p>
+                  <p><strong>Experian:</strong> 1-888-397-3742</p>
+                  <p><strong>TransUnion:</strong> 1-800-680-7289</p>
+                </div>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-2">Federal Agencies</h4>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• FTC: 1-877-438-4338</li>
-                  <li>• Social Security: 1-800-772-1213</li>
-                  <li>• IRS: 1-800-908-4490</li>
-                </ul>
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">Federal Agencies</h3>
+                <div className="space-y-2 text-gray-700">
+                  <p><strong>FTC:</strong> 1-877-438-4338</p>
+                  <p><strong>Social Security:</strong> 1-800-772-1213</p>
+                  <p><strong>IRS:</strong> 1-800-908-4490</p>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Legal Disclosure</h3>
-            <p className="text-gray-700 leading-relaxed">
-              This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
-            </p>
-          </div>
-
-          <div className="border-t border-gray-200 pt-6">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">Contact Information</h3>
-            <div className="text-gray-700">
-              <p className="font-semibold">Elite Portfolio Management</p>
-              <p>PO Box [Insert]</p>
-              <p>Conroe TX, 77301</p>
-              <p>833-381-4416</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
+            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
+              <div className="text-lg text-gray-700 space-y-4">
+                <p className="font-semibold">Elite Portfolio Management</p>
+                <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+                <p className="text-xl font-semibold text-blue-900">833-381-4416</p>
+                <p className="mt-4">
+                  <strong>Compliance Email:</strong> compliance@eliteportfoliomgmt.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legal Disclosure Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Legal Disclosure</h2>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <p className="text-lg text-gray-700 leading-relaxed text-center">
+                This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-6 text-white">
+            Need immediate assistance with fraud or identity theft?
+          </h3>
+          <Link href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#414757' }}>
+            Contact Us Today!
+          </Link>
+        </div>
+      </section>
 
       {/* Pop-up Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-blue-600 mb-4">IMPORTANT</h3>
+              <h3 className="text-xl font-bold text-blue-900 mb-4">IMPORTANT</h3>
               <p className="text-sm text-gray-700 mb-4">
                 This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
               </p>
@@ -123,6 +221,6 @@ export default function FraudIdentityTheftPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 } 

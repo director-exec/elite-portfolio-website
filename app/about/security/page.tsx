@@ -4,7 +4,7 @@ export default function SecurityPage() {
       id: 'data-protection',
       title: 'Data Protection & Encryption',
       description: 'At Elite Portfolio Management, safeguarding data isn\'t just a priority — it\'s embedded in our DNA. We understand the critical importance of protecting both your information and your customers\' data at every level. Our track record is spotless — zero data breaches — and our infrastructure is built to meet and exceed today\'s most stringent security and compliance standards.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg',
       background: 'white',
       imageLeft: false
     },
@@ -12,15 +12,15 @@ export default function SecurityPage() {
       id: 'security-protocols',
       title: 'Security Protocols & Infrastructure',
       description: 'We implement continuously updated, transparent security protocols that leverage the latest in encryption, secure storage, and controlled access systems. From responsible document disposal to fully secured digital and physical environments, every detail is accounted for — including a comprehensive disaster recovery plan to ensure continuity under any circumstances.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+      image: '/Pages/Stamp_Doc.jpeg',
       background: 'grey',
       imageLeft: true
     },
     {
       id: 'compliance-standards',
       title: 'Compliance & Regulatory Alignment',
-      description: 'No matter your industry, you can trust Elite to deliver collections support with the highest level of data protection and regulatory alignment. Because in a digital-first world, security isn\'t an option — it\'s our obligation. We maintain rigorous compliance with all federal and state regulations while implementing industry best practices for data security.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      description: 'No matter your industry, you can trust Elite Portfolio to deliver collections support with the highest level of data protection and regulatory alignment. Because in a digital-first world, security isn\'t an option — it\'s our obligation. We maintain rigorous compliance with all federal and state regulations while implementing industry best practices for data security.',
+      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
       background: 'white',
       imageLeft: false
     }
@@ -32,7 +32,7 @@ export default function SecurityPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

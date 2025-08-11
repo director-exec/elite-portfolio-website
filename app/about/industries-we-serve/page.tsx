@@ -11,7 +11,7 @@ export default function IndustriesWeServePage() {
     {
       id: 'telecommunications',
       title: 'Telecommunications',
-      description: 'Elite has decades of experience supporting wireless, broadband, landline, satellite, and cable providers. Our tailored solutions optimize recovery without compromising brand equity. With a digital-first collections model, real-time analytics, and compliance-forward workflows, we manage every stage of your consumer or commercial receivables with discretion and precision.',
+      description: 'Elite Portfolio has decades of experience supporting wireless, broadband, landline, satellite, and cable providers. Our tailored solutions optimize recovery without compromising brand equity. With a digital-first collections model, real-time analytics, and compliance-forward workflows, we manage every stage of your consumer or commercial receivables with discretion and precision.',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
       background: 'grey',
       imageLeft: true
@@ -20,7 +20,7 @@ export default function IndustriesWeServePage() {
       id: 'healthcare',
       title: 'Healthcare',
       description: 'Our patient-centered recovery model combines compassion with results. We help hospitals, physician groups, specialty care centers, insurers, and pharmacy networks manage receivables with dignity and professionalism. Every engagement is conducted with full HIPAA compliance and a focus on protecting patient privacy while accelerating recoveries. HIPAA Compliance is Non-Negotiable - we prioritize patient rights and data security at every touchpoint — no exceptions.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      image: '/Pages/Legal_Doc_Med.jpeg',
       background: 'white',
       imageLeft: false
     },
@@ -35,8 +35,8 @@ export default function IndustriesWeServePage() {
     {
       id: 'commercial-b2b',
       title: 'Commercial / B2B',
-      description: 'For business-to-business collections, professionalism and discretion are everything. Elite provides commercial receivables management across industries with an emphasis on protecting long-term business relationships. Our team understands the nuances of corporate debt recovery and customizes strategies to fit your operations without disrupting your reputation.',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+      description: 'For business-to-business collections, professionalism and discretion are everything. Elite Portfolioprovides commercial receivables management across industries with an emphasis on protecting long-term business relationships. Our team understands the nuances of corporate debt recovery and customizes strategies to fit your operations without disrupting your reputation.',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false
     },
@@ -56,7 +56,7 @@ export default function IndustriesWeServePage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

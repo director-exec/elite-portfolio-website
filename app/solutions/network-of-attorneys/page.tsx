@@ -1,34 +1,26 @@
 export default function NetworkOfAttorneysPage() {
   const serviceSections = [
     {
-      id: 'nationwide-network',
-      title: 'Nationwide Legal Network',
-      description: 'While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response. Elite Portfolio Management offers comprehensive nationwide legal support through a vetted network of experienced collection attorneys — so when legal action is required, you have the infrastructure in place to act decisively and compliantly.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
-      background: 'white',
-      imageLeft: false
-    },
-    {
       id: 'trusted-representation',
       title: 'Trusted Legal Representation — Anywhere in the U.S.',
-      description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across all 50 states and U.S. jurisdictions. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across all 50 states. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
+      image: 'https://images.pexels.com/photos/8730998/pexels-photo-8730998.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
     },
     {
       id: 'client-directed-strategy',
       title: 'Client-Directed Legal Strategy',
-      description: 'No lawsuit is initiated and no settlement is accepted without your explicit approval. The attorney represents you, and we manage the communication, documentation, and execution on your behalf. Before recommending litigation, Elite conducts a collectability review including asset investigation, employment verification, and compliance checklists.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      description: 'No lawsuit is initiated and no settlement is accepted without your explicit approval. The attorney represents you, and we manage the communication, documentation, and execution on your behalf. Before recommending litigation, Elite Portfolio conducts a collectability review including asset investigation, employment verification, and compliance checklists.',
+      image: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false
     },
     {
       id: 'comprehensive-services',
       title: 'Comprehensive Legal Services',
-      description: 'Our Elite Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation in every state. Whether you\'re pursuing a single claim or managing a national portfolio, we have the legal infrastructure to execute with confidence.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      description: 'Our Elite Portfolio Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation in every state. Whether you\'re pursuing a single claim or managing a national portfolio, we have the legal infrastructure to execute with confidence.',
+      image: 'https://images.pexels.com/photos/8112172/pexels-photo-8112172.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
     }
@@ -40,7 +32,7 @@ export default function NetworkOfAttorneysPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/8730998/pexels-photo-8730998.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">
@@ -56,8 +48,8 @@ export default function NetworkOfAttorneysPage() {
             <h2 className="text-3xl font-bold mb-6">Strategic Legal Escalation When It Matters Most</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response. 
-              Elite Portfolio Management offers comprehensive nationwide legal support through a vetted network of experienced collection 
-              attorneys — so when legal action is required, you have the infrastructure in place to act decisively and compliantly.
+              The Elite Portfolio Management team offers comprehensive nationwide legal support through a vetted network of experienced collection 
+              attorneys. So when legal action is required, you have the infrastructure in place to act decisively and compliantly.
             </p>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function ConsumerToolsPage() {
       title: 'Make a Payment',
       description: 'Use our secure, convenient payment options to resolve your account quickly and easily. We offer multiple payment methods including online payments, phone payments, and mail-in options to accommodate your preferences.',
       image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=800&auto=format&fit=crop',
-      link: 'https://portal.eliteportfoliomgmt.com/Login',
+      link: 'https://portal.eliteportfoliomgmt.com/',
       external: true,
       background: 'white',
       imageLeft: false
@@ -15,8 +15,8 @@ export default function ConsumerToolsPage() {
     {
       id: 'account-validation',
       title: 'Request Account Validation',
-      description: 'Get an itemized statement for your account delivered to your inbox. This detailed breakdown helps you understand your account balance and payment history for better financial planning.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      description: 'Get account validation for your account delivered to your inbox. This detailed breakdown helps you understand your account balance and payment history for better financial planning.',
+      image: '/Pages/Calculator_Writing_Pro.jpeg',
       link: '/consumer-tools/request-account-validation',
       external: false,
       background: 'grey',
@@ -26,7 +26,7 @@ export default function ConsumerToolsPage() {
       id: 'bankruptcy-notification',
       title: 'Bankruptcy Notification',
       description: 'Notify us if you\'ve filed for bankruptcy to ensure proper handling of your account. This helps us comply with bankruptcy laws and ensures your account is handled appropriately during the bankruptcy process.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
       link: '/consumer-tools/bankruptcy-notification',
       external: false,
       background: 'white',
@@ -56,7 +56,7 @@ export default function ConsumerToolsPage() {
       id: 'feedback',
       title: 'Submit Feedback',
       description: 'Share compliments or complaints to help us improve our service and better assist you. Your feedback is valuable and helps us maintain the highest standards of customer service.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-5fNmWej4tAA?q=80&w=800&auto=format&fit=crop',
       link: '/consumer-tools/submit-compliment-complaint',
       external: false,
       background: 'grey',
@@ -70,7 +70,7 @@ export default function ConsumerToolsPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(/Pages/Calculator_Writing_Pro.jpeg)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

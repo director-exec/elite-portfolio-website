@@ -26,13 +26,15 @@ export default function Footer() {
           <div className="footer-section">
             <h3>Site Resources</h3>
             <ul>
-              <li><Link href="/consumer-tools/payment">Make a Payment</Link></li>
+              <li><a href="https://portal.eliteportfoliomgmt.com/" target="_blank" rel="noopener noreferrer">Make a Payment</a></li>
               <li><Link href="/consumer-tools">Consumer Tools</Link></li>
               <li><Link href="/client-login">Client Login</Link></li>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/solutions">Solutions</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
-              <li><Link href="/privacy">Privacy Policy & Disclaimers</Link></li>
+              <li><Link href="/privacy">Privacy Policy</Link></li>
+              <li><Link href="/terms">Terms and Conditions</Link></li>
+              <li><Link href="/text-message-opt-in">Text Message Opt-in</Link></li>
             </ul>
           </div>
 

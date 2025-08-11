@@ -111,9 +111,11 @@ export default function DisputeMyAccountPage() {
 
           <div className="bg-gray-50 p-4 rounded text-sm">
             <p><strong>Elite Portfolio Management</strong></p>
-            <p>PO Box [Insert]</p>
-            <p>Conroe TX, 77301</p>
+            <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
             <p>833-381-4416</p>
+            <p className="mt-2">
+              <strong>Validation Email:</strong> validation@eliteportfoliomgmt.com
+            </p>
           </div>
 
           <button type="submit" className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
@@ -127,7 +129,7 @@ export default function DisputeMyAccountPage() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-blue-600 mb-4">IMPORTANT</h3>
+              <h3 className="text-xl font-bold text-blue-900 mb-4">IMPORTANT</h3>
               <p className="text-sm text-gray-700 mb-4">
                 This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
               </p>
@@ -136,7 +138,7 @@ export default function DisputeMyAccountPage() {
               </p>
               <button
                 onClick={closeModal}
-                className="w-full bg-red-700 text-white py-2 px-4 rounded-md hover:bg-red-800 transition-colors duration-200"
+                className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-200"
               >
                 I Accept
               </button>

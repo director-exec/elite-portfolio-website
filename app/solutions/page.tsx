@@ -6,7 +6,7 @@ export default function SolutionsPage() {
       id: 'pre-collection',
       title: 'Pre-Charge Off Collections',
       description: 'Early intervention strategies to prevent charge-offs and maximize recovery potential. Our proactive approach helps clients maintain account relationships while maximizing recovery rates through strategic communication and payment arrangements.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/7433837/pexels-photo-7433837.jpeg',
       link: '/solutions/pre-charge-off-collections',
       background: 'white',
       imageLeft: false
@@ -14,8 +14,8 @@ export default function SolutionsPage() {
     {
       id: 'post-charge-off',
       title: 'Post Charge-Off Collections',
-      description: 'Recovery solutions for charged-off accounts with proven results. We specialize in recovering balances from accounts that have been written off, using advanced skip-tracing and strategic collection techniques.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      description: 'Recovery solutions for charged-off accounts with proven results. We specialize in recovering balances from accounts that have been written off using advanced strategic collection techniques.',
+      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
       link: '/solutions/post-charge-off-collections',
       background: 'grey',
       imageLeft: true
@@ -24,7 +24,7 @@ export default function SolutionsPage() {
       id: 'secondary-tertiary',
       title: 'Secondary & Tertiary Collections',
       description: 'Specialized recovery for difficult accounts requiring advanced strategies. Our experienced team handles accounts that have been through multiple collection attempts, using innovative approaches to locate and engage debtors.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/9068372/pexels-photo-9068372.jpeg?_gl=1*269x10*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MjU3MjAkbzEkZzEkdDE3NTQ5MjYwNzckajUxJGwwJGgw',
       link: '/solutions/secondary-tertiary-collections',
       background: 'white',
       imageLeft: false
@@ -33,7 +33,7 @@ export default function SolutionsPage() {
       id: 'warehousing',
       title: 'Warehousing Management',
       description: 'Portfolio management and optimization for maximum recovery efficiency. We provide comprehensive portfolio analysis, segmentation, and strategic management to maximize your recovery potential while minimizing operational costs.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw',
       link: '/solutions/warehousing-management',
       background: 'grey',
       imageLeft: true
@@ -48,31 +48,22 @@ export default function SolutionsPage() {
       imageLeft: false
     },
     {
-      id: 'skip-tracing',
-      title: 'Skip Tracing',
-      description: 'Advanced location and contact services to locate hard-to-find debtors. Our skip-tracing specialists use cutting-edge technology and databases to locate debtors who have moved or changed contact information.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
-      link: '/solutions/skip-tracing',
-      background: 'grey',
-      imageLeft: true
-    },
-    {
       id: 'reporting',
       title: 'Reporting Services',
       description: 'Comprehensive reporting and analytics for portfolio performance tracking. We provide detailed reporting on collection activities, recovery rates, and portfolio performance to help you make informed business decisions.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://media.istockphoto.com/id/989117546/photo/business-people-meeting-negotiating-a-contract-between-two-colleagues.jpg?b=1&s=612x612&w=0&k=20&c=Ir_c9w7uD2bD76E_6GSGF7N1hpPJexsDGbhgQwDWB3s=',
       link: '/solutions/credit-bureau-reporting',
-      background: 'white',
-      imageLeft: false
+      background: 'grey',
+      imageLeft: true
     },
     {
       id: 'credit-bureau',
       title: 'Credit Bureau Reporting',
-      description: 'Compliant credit reporting services to maintain accurate credit records. Our credit bureau reporting services ensure accurate and timely reporting to all major credit bureaus, helping maintain the integrity of credit reporting systems.',
-      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop',
+      description: 'As part of our full service recovery solutions. Elite Portfolio Management\'s network offers optional credit bureau reporting to enhance your collection strategy. We handle every file with full adherence to the Fair Credit Reporting Act (FCRFA) and all the applicable regulations. Our network will report only with your authorization.',
+      image: 'https://media.istockphoto.com/id/955988522/photo/business-signing-a-contract-buy-sell-house.jpg?b=1&s=612x612&w=0&k=20&c=EET9rlkAU1PTC_BWtJNfSWZfpvnCYLct0IkE4uZvb5k=',
       link: '/solutions/credit-bureau-reporting',
-      background: 'grey',
-      imageLeft: true
+      background: 'white',
+      imageLeft: false
     }
   ]
 
@@ -82,7 +73,7 @@ export default function SolutionsPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

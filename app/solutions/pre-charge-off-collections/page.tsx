@@ -6,7 +6,7 @@ export default function PreChargeOffCollectionsPage() {
       id: 'early-intervention',
       title: 'Early Intervention Strategy',
       description: 'Our pre-collection approach focuses on proactive, respectful outreach for accounts that are slightly past due — long before charge-off or full collection becomes necessary. These accounts don\'t need pressure. They need a nudge — and that\'s exactly what we provide through strategic early-stage contact, powered by sophisticated analytics and handled with a brand-protective approach.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/8730374/pexels-photo-8730374.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false
     },
@@ -14,7 +14,7 @@ export default function PreChargeOffCollectionsPage() {
       id: 'customized-outreach',
       title: 'Customized Outreach Plans',
       description: 'Tailored to your business model, risk tolerance, and account timelines. Our contact methods prioritize your company\'s image, focusing on clarity, professionalism, and empathy. Every message and method is FDCPA-compliant and aligned with industry-specific requirements.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
     },
@@ -22,7 +22,7 @@ export default function PreChargeOffCollectionsPage() {
       id: 'analytics-driven',
       title: 'Analytics-Driven Strategy',
       description: 'We use early-stage scoring models and behavioral data to prioritize accounts and determine best contact methods. Our systems integrate directly with your KPIs, enabling custom performance tracking and real-time insight. Whether managing high-volume portfolios or niche accounts, we operate with full FDCPA/FCRA compliance and strict consumer data safeguards.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/7433837/pexels-photo-7433837.jpeg',
       background: 'white',
       imageLeft: false
     },
@@ -30,7 +30,7 @@ export default function PreChargeOffCollectionsPage() {
       id: 'business-benefits',
       title: 'Business Benefits',
       description: 'Prevent escalation to full collections, preserve customer relationships, improve recovery rates on early-stage delinquencies, maintain a professional and compliant outreach tone, and lower long-term collection costs by up to 80%. Our pre-collection programs are designed to restore account standing quickly — before costly charge-offs, disputes, or legal action take hold.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/8112172/pexels-photo-8112172.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
     }
@@ -42,7 +42,7 @@ export default function PreChargeOffCollectionsPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/8730374/pexels-photo-8730374.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">

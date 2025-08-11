@@ -1,36 +1,47 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function SkipTracingPage() {
   const serviceSections = [
     {
-      id: 'efficient-tracing',
-      title: 'Efficient. Timely. Accurate.',
-      description: 'At Elite Portfolio Management, we combine real-time data access with advanced skip tracing technology to locate consumers and businesses faster — and recover more. Every account placed with us undergoes automated skip tracing, regardless of balance, and at no additional cost to our clients.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      id: 'advanced-location-services',
+      title: 'Advanced Location Services',
+      description: 'Our skip tracing services utilize cutting-edge technology and comprehensive databases to locate hard-to-find consumers. We employ sophisticated algorithms, public records searches, and proprietary databases to track down individuals who have moved, changed contact information, or are otherwise difficult to reach.',
+      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false
     },
     {
-      id: 'real-time-data',
-      title: 'Real-Time Data Access',
-      description: 'We\'re connected to top-tier data sources that represent over 95% of U.S. consumers and businesses, allowing us to verify, update, and confirm location data instantly. Our systems cross-reference multiple identifiers — address history, employment, phone numbers, utilities, credit activity, and more — to pinpoint right-party contacts with precision.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      id: 'comprehensive-database-access',
+      title: 'Comprehensive Database Access',
+      description: 'We have access to extensive databases including credit bureaus, public records, utility records, and proprietary skip tracing databases. Our team combines multiple data sources to create the most accurate and up-to-date contact information for each individual.',
+      image: 'https://images.pexels.com/photos/6077797/pexels-photo-6077797.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
     },
     {
-      id: 'advanced-search',
-      title: 'Advanced Search Logic',
-      description: 'Our dedicated skip tracing team escalates complex cases using supplemental data strategies and manual investigations, based on account value and risk indicators. High-value accounts receive enhanced tracing and deeper analytical reviews to maximize ROI and optimize recovery sequence.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      id: 'fcra-compliant-processes',
+      title: 'FCRA-Compliant Processes',
+      description: 'All our skip tracing activities are conducted in full compliance with the Fair Credit Reporting Act (FCRA) and other applicable regulations. We maintain strict protocols to ensure consumer privacy and data protection while maximizing our ability to locate individuals.',
+      image: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false
     },
     {
-      id: 'superior-results',
-      title: 'Elite-Level Accuracy. Unmatched Results.',
-      description: 'Skip tracing isn\'t an afterthought — it\'s baked into every collection strategy we deploy. That\'s how Elite delivers superior performance across even the toughest portfolios. We provide higher right-party contact (RPC) rates, faster engagement with debtors, reduced cost-per-collection, recovery of otherwise unreachable accounts, and real-time updates and tracking transparency.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      id: 'specialized-expertise',
+      title: 'Specialized Expertise',
+      description: 'Our skip tracing team includes experienced professionals who understand the unique challenges of locating individuals in various circumstances. Whether dealing with name changes, address updates, or complex family situations, we have the expertise to navigate these challenges effectively.',
+      image: 'https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
+    },
+    {
+      id: 'proven-success-rates',
+      title: 'Proven Success Rates',
+      description: 'Our skip tracing services consistently achieve high success rates in locating individuals across various demographics and circumstances. We track our performance metrics and continuously refine our processes to maintain and improve our success rates.',
+      image: 'https://images.pexels.com/photos/8112172/pexels-photo-8112172.jpeg?auto=compress&cs=tinysrgb&w=800',
+      background: 'white',
+      imageLeft: false
     }
   ]
 
@@ -40,12 +51,12 @@ export default function SkipTracingPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Skip Tracing</h1>
-          <p className="text-xl">Efficient. Timely. Accurate.</p>
+          <h1 className="text-5xl font-bold mb-4">Skip Tracing Services</h1>
+          <p className="text-xl">Advanced Location Services for Hard-to-Find Consumers</p>
         </div>
       </section>
 
@@ -53,11 +64,12 @@ export default function SkipTracingPage() {
       <section className="main-intro py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Locate Consumers and Businesses Faster</h2>
+            <h2 className="text-3xl font-bold mb-6">Locate the Unlocatable</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              At Elite Portfolio Management, we combine real-time data access with advanced skip tracing technology to locate 
-              consumers and businesses faster — and recover more. Every account placed with us undergoes automated skip tracing, 
-              regardless of balance, and at no additional cost to our clients.
+              When traditional contact methods fail, our advanced skip tracing services can help you locate 
+              hard-to-find consumers. We utilize cutting-edge technology, comprehensive databases, and 
+              experienced professionals to track down individuals who have moved, changed contact information, 
+              or are otherwise difficult to reach.
             </p>
           </div>
         </div>
@@ -112,10 +124,11 @@ export default function SkipTracingPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Maximize Contact Rates and Recovery Potential</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">When Traditional Methods Fail</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Skip tracing isn't an afterthought — it's baked into every collection strategy we deploy. That's how Elite delivers 
-              superior performance across even the toughest portfolios.
+              Skip tracing is often the key to successful collections when standard contact methods have been exhausted. 
+              Our advanced location services can help you reconnect with consumers and potentially recover accounts 
+              that would otherwise be lost.
             </p>
           </div>
         </div>
@@ -125,13 +138,13 @@ export default function SkipTracingPage() {
       <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-bold mb-6 text-white">
-            Ready to improve your recovery metrics?
+            Ready to locate hard-to-find consumers?
           </h3>
-          <a href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
+          <Link href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
             Contact Us Today!
-          </a>
+          </Link>
         </div>
       </section>
     </>
   )
-} 
+}

@@ -1,18 +1,10 @@
 export default function CreditBureauReportingPage() {
   const serviceSections = [
     {
-      id: 'optional-reporting',
-      title: 'Optional. Compliant. Powerful.',
-      description: 'As part of our full-service recovery solutions, Elite Portfolio Management offers optional credit bureau reporting to enhance your collection strategy — at no additional cost. We report only with your authorization, and we handle every file with full adherence to the Fair Credit Reporting Act (FCRA) and all applicable regulations.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
-      background: 'white',
-      imageLeft: false
-    },
-    {
       id: 'bureau-integration',
       title: 'Your Gateway to the Bureaus',
-      description: 'Elite Portfolio Management is fully integrated with the nation\'s three major credit bureaus: Experian, Equifax, and TransUnion. Our secure systems and reporting protocols ensure that authorized accounts are updated accurately, flagged appropriately, and tracked in real-time.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      description: 'Elite Portfolio Management\'s network, is fully integrated with the nation\'s three major credit bureaus, Experian, Equifax, and TransUnion. Our secure systems and reporting protocols ensure that authorized accounts are updated accurately, flagged appropriately, and tracked in real time.',
+      image: '/Pages/Calculator_Writing_Pro.jpeg',
       background: 'grey',
       imageLeft: true
     },
@@ -20,7 +12,7 @@ export default function CreditBureauReportingPage() {
       id: 'compliance-benefits',
       title: 'Stay Compliant & Save Time',
       description: 'We handle all bureau submissions on your behalf — no extra systems or staffing required. We ensure all reporting is accurate, up to date, and reflects the current account status (including disputes), in accordance with FCRA. No software costs, no integration burdens — we manage the full reporting process.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false
     },
@@ -28,7 +20,7 @@ export default function CreditBureauReportingPage() {
       id: 'recovery-enhancement',
       title: 'Improve Recovery Rates',
       description: 'Credit reporting, when used strategically, can increase repayment motivation without compromising consumer rights. Your team focuses on core business while we handle the credit reporting logistics and compliance protocols. Disputed accounts are flagged appropriately, and all consumer data is transmitted securely and responsibly.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      image: '/Pages/Signing_Doc_Laptop_Air.png',
       background: 'grey',
       imageLeft: true
     }
@@ -40,12 +32,11 @@ export default function CreditBureauReportingPage() {
       <section className="hero-banner relative h-96 flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/6077797/pexels-photo-6077797.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-center text-white">
           <h1 className="text-5xl font-bold mb-4">Credit Bureau Reporting</h1>
-          <p className="text-xl">Optional. Compliant. Powerful.</p>
         </div>
       </section>
 

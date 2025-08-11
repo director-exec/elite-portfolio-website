@@ -5,7 +5,7 @@
 :root {
   --primary-color: #1d2533;
   --secondary-color: #3b82f6;
-  --accent-color: #1d4ed8;
+  --accent-color: #36404d;
   --text-dark: #1e293b;
   --text-light: #64748b;
   --bg-light: #f8fafc;
@@ -152,6 +152,7 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  margin-left: 5px;
 }
 
 .logo img {
@@ -310,10 +311,19 @@ nav {
   z-index: 999;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu.show {
   display: block;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 /* Mobile Contact Info Section */
@@ -370,10 +380,19 @@ nav {
 }
 
 .mobile-menu-section h4 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
+}
+
+.mobile-menu-section a h4 {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-section a:hover h4 {
+  color: var(--primary-color);
 }
 
 .mobile-menu-links {
@@ -388,7 +407,7 @@ nav {
   padding: 0.5rem 0;
   color: var(--text-light);
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   transition: color 0.3s ease;
 }
 
@@ -961,6 +980,7 @@ footer {
     flex: 1;
     display: flex;
     justify-content: center;
+    margin-left: 5px;
   }
 
   .logo img {
@@ -999,6 +1019,32 @@ footer {
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+
+  .hero {
+    min-height: 120vh;
+    padding-bottom: 4rem;
+  }
+
+  .hero .container {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .cta-buttons {
+    margin-bottom: 2rem;
+    margin-top: auto;
+  }
+
+  .hero .description {
+    display: none;
+  }
+
+  .hero .description-secondary {
+    display: none;
   }
 
   .about-container {
@@ -1275,7 +1321,7 @@ footer {
   }
 
   .hero-subtitle {
-    font-size: 1.25rem;
+    display: none;
   }
 
   .page-content {
@@ -1289,7 +1335,7 @@ footer {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 3.25rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 1rem;
@@ -1503,7 +1549,7 @@ footer {
 /* Mobile Responsive for Content */
 @media (max-width: 750px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   .section-subtitle {
