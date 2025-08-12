@@ -26,13 +26,12 @@ export async function POST(request: NextRequest) {
 
     console.log('File uploaded successfully to Vercel Blob:', {
       url: blob.url,
-      size: blob.size,
       uploadedAt: blob.uploadedAt
     })
 
     return NextResponse.json({
       url: blob.url,
-      size: blob.size,
+      size: file.size,
       uploadedAt: blob.uploadedAt
     })
   } catch (error) {
