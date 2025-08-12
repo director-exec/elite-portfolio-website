@@ -101,8 +101,8 @@ export default function Header() {
                     <li className="nav-item">
                       <Link href="/solutions">Solutions</Link>
                       <div className="dropdown-menu">
-                        <Link href="/solutions/pre-charge-off-collections">Pre-Charge Off Collections</Link>
-                        <Link href="/solutions/post-charge-off-collections">Post Charge-Off Collections</Link>
+                                              <Link href="/solutions/pre-charge-off-collections">Pre Charge-Off Collections</Link>
+                      <Link href="/solutions/post-charge-off-collections">Post Charge-Off Collections</Link>
                         <Link href="/solutions/secondary-tertiary-collections">Secondary & Tertiary Collections</Link>
                         <Link href="/solutions/credit-bureau-reporting">Credit Bureau Reporting</Link>
                         <Link href="/solutions/network-of-attorneys">Network of Attorneys</Link>
@@ -168,7 +168,7 @@ export default function Header() {
                   <li className="nav-item">
                     <Link href="/solutions">Solutions</Link>
                     <div className="dropdown-menu">
-                      <Link href="/solutions/pre-charge-off-collections">Pre-Charge Off Collections</Link>
+                      <Link href="/solutions/pre-charge-off-collections">Pre Charge-Off Collections</Link>
                       <Link href="/solutions/post-charge-off-collections">Post Charge-Off Collections</Link>
                       <Link href="/solutions/secondary-tertiary-collections">Secondary & Tertiary Collections</Link>
                       <Link href="/solutions/credit-bureau-reporting">Credit Bureau Reporting</Link>
@@ -230,7 +230,7 @@ export default function Header() {
             <h4>Solutions</h4>
           </Link>
           <div className="mobile-menu-links">
-            <Link href="/solutions/pre-charge-off-collections" onClick={closeMobileMenu}>Pre-Charge Off Collections</Link>
+            <Link href="/solutions/pre-charge-off-collections" onClick={closeMobileMenu}>Pre Charge-Off Collections</Link>
             <Link href="/solutions/post-charge-off-collections" onClick={closeMobileMenu}>Post Charge-Off Collections</Link>
             <Link href="/solutions/secondary-tertiary-collections" onClick={closeMobileMenu}>Secondary & Tertiary Collections</Link>
             <Link href="/solutions/credit-bureau-reporting" onClick={closeMobileMenu}>Credit Bureau Reporting</Link>

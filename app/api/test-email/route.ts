@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     // Test email
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'john.a.h.flores@gmail.com',
+      to: 'info@eliteportfoliomgmt.com',
       subject: 'Test Email - Elite Portfolio Management',
       html: `
         <h2>Test Email</h2>

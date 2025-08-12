@@ -4,7 +4,7 @@ export default function SolutionsPage() {
   const serviceSections = [
     {
       id: 'pre-collection',
-      title: 'Pre-Charge Off Collections',
+      title: 'Pre Charge-Off Collections',
       description: 'Early intervention strategies to prevent charge-offs and maximize recovery potential. Our proactive approach helps clients maintain account relationships while maximizing recovery rates through strategic communication and payment arrangements.',
       image: 'https://images.pexels.com/photos/7433837/pexels-photo-7433837.jpeg',
       link: '/solutions/pre-charge-off-collections',
