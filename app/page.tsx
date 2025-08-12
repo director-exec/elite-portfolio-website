@@ -18,10 +18,10 @@ export default function Home() {
           </p>
           <div className="cta-buttons">
             <Link href="/consumer-tools" className="btn btn-hero">
-              I'm a Consumer
+              For Consumers
             </Link>
             <Link href="/solutions" className="btn btn-hero">
-              I'm a Business
+              For Businesses
             </Link>
           </div>
         </div>
