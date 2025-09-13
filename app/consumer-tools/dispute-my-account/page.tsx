@@ -113,7 +113,7 @@ export default function DisputeMyAccountPage() {
             
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Elite Account Number (8-digit) <span className="text-red-500">*</span></label>
+                <label className="block text-sm font-medium mb-1">Elite Account Number<span className="text-red-500">*</span></label>
                 <input 
                   type="text" 
                   name="accountNumber"

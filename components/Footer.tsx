@@ -27,15 +27,24 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="footer-section follow-us-section">
-              <h3>Follow Us</h3>
-              <div className="social-links">
-                <a href="#linkedin" aria-label="LinkedIn">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href="#instagram" aria-label="Instagram">
-                  <i className="fab fa-instagram"></i>
-                </a>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '40px' }}>
+              <div className="footer-section follow-us-section">
+                <h3>Follow Us</h3>
+                <div className="social-links" style={{ marginTop: '0 !important', paddingBottom: '0 !important' }}>
+                  <a href="#linkedin" aria-label="LinkedIn">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href="#instagram" aria-label="Instagram">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+              <div className="bbb-logo" style={{ marginTop: '2rem' }}>
+                <img 
+                  src="/LOGO/BBBLogo.png" 
+                  alt="Better Business Bureau" 
+                  style={{ height: '120px', width: 'auto' }}
+                />
               </div>
             </div>
           </div>
@@ -65,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 Elite Portfolio Management. All rights reserved.</p>
+          <p>&copy; 2025 Elite Portfolio Management. All rights reserved.</p>
         </div>
       </div>
     </footer>

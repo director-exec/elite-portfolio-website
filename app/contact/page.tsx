@@ -12,21 +12,21 @@ export default function ContactPage() {
       title: 'Need Help With Receivables?',
       description: 'Looking to improve collections or streamline your accounts receivable process? Contact our solutions team to learn how we help clients maximize recovery while protecting their brand.',
       image: 'https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw',
-      email: 'compliance@eliteportmgmt.com'
+      email: 'info@eliteportmgmt.com'
     },
     {
       id: 'client-support',
       title: 'Already a Client?',
       description: 'If you\'re a current client and need support, reporting access, or a service update, we\'re always here for you.',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
-      email: 'info@eliteportmgmt.com'
+      email: 'client@eliteportmgmt.com'
     },
     {
       id: 'hr-verification',
       title: 'Employment Verification or HR Questions?',
       description: 'Need to verify employment, check holiday hours, or inquire about benefits?',
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-      email: 'info@eliteportmgmt.com'
+      email: 'hr@eliteportmgmt.com'
     }
   ]
 

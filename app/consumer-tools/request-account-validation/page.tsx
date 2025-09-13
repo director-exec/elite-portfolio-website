@@ -31,7 +31,7 @@ export default function RequestAccountValidationPage() {
     {
       id: 'required-information',
       title: 'What You\'ll Need to Provide',
-      description: 'You\'ll need to provide your Elite Account Number (8-digit), Creditor Name, Your Full Legal Name, Mailing Address, Valid Phone Number, and Valid Email Address. You must also acknowledge that you may receive communications via phone, text, or email, confirm ownership of the contact details you\'ve submitted, request electronic delivery of this document, and understand you may revoke consent at any time through reasonable means.',
+      description: 'You\'ll need to provide your Elite Account Number, Creditor Name, Your Full Legal Name, Mailing Address, Valid Phone Number, and Valid Email Address. You must also acknowledge that you may receive communications via phone, text, or email, confirm ownership of the contact details you\'ve submitted, request electronic delivery of this document, and understand you may revoke consent at any time through reasonable means.',
       image: 'https://images.pexels.com/photos/7974/pexels-photo.jpg',
       background: 'white',
       imageLeft: false
@@ -200,7 +200,7 @@ export default function RequestAccountValidationPage() {
                         value={formData.accountNumber}
                         onChange={handleInputChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter 8-digit account number"
+                        placeholder="Enter account number"
                         required
                       />
                   </div>
