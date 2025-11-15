@@ -41,6 +41,14 @@ export default function PrivacyPolicyPage() {
       image: 'https://images.pexels.com/photos/6077587/pexels-photo-6077587.jpeg?_gl=1*1votr6i*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTUwODU0NDYkbzUkZzEkdDE3NTUwODU0NDckajU5JGwwJGgw',
       background: 'white',
       imageLeft: false
+    },
+    {
+      id: 'california-privacy-rights',
+      title: 'California Privacy Rights (CCPA)',
+      description: 'If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA). You have the right to: (1) Know what personal information we collect, use, disclose, and sell; (2) Request deletion of your personal information; (3) Opt-out of the sale of your personal information (we do not sell personal information); (4) Non-discrimination for exercising your privacy rights; and (5) Access your personal information in a portable format. To exercise any of these California privacy rights, please contact us using the information provided in the Contact Us section. We will respond to your request within the timeframes required by California law.',
+      image: '/Pages/Legal_Doc_Med.jpeg',
+      background: 'grey',
+      imageLeft: true
     }
   ]
 

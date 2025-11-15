@@ -9,12 +9,20 @@ export default function CompliancePage() {
       imageLeft: false
     },
     {
+      id: 'california-compliance',
+      title: 'California-Specific Compliance',
+      description: 'Elite Portfolio Management maintains full compliance with all California-specific regulations and licensing requirements. We are licensed by the California Department of Financial Protection and Innovation (DFPI) as a debt collector, License Number: 11645-99. Our operations strictly adhere to the Rosenthal Fair Debt Collection Practices Act (RFDCPA), which provides additional consumer protections beyond the federal FDCPA. We comply with California\'s strict privacy laws including the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA), ensuring that California residents have full transparency and control over their personal information. We also maintain compliance with California\'s restrictions on collection practices, including time and place restrictions, validation requirements, and consumer notification obligations. Our California-licensed operations are regularly audited to ensure ongoing compliance with all state-specific requirements.',
+      image: '/Pages/Legal_Doc_Med.jpeg',
+      background: 'grey',
+      imageLeft: true
+    },
+    {
       id: 'regulatory-change',
       title: 'Staying Ahead of Regulatory Change',
       description: 'Compliance is not static. That\'s why our Chief Compliance Officer maintains continuous oversight of legal and regulatory developments across the country. We proactively update policies and procedures to reflect new legislation and guidance, ensuring that your accounts are always handled in a legally sound and fully transparent manner.',
       image: '/Pages/Calculator_Writing_Pro.jpeg',
-      background: 'grey',
-      imageLeft: true
+      background: 'white',
+      imageLeft: false
     },
     {
       id: 'technology-compliance',
