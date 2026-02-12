@@ -40,7 +40,6 @@ const emailTemplates = {
       <p><strong>Phone:</strong> ${data.phoneNumber}</p>
       <p><strong>Email:</strong> ${data.email}</p>
       <p><strong>Bankruptcy Case Number:</strong> ${data.bankruptcyCaseNumber}</p>
-      <p><strong>Bankruptcy Case Number:</strong> ${data.bankruptcyCaseNumber}</p>
       <p><strong>Bankruptcy Chapter:</strong> ${data.bankruptcyChapter}</p>
       <p><strong>Filing Court:</strong> ${data.filingCourt}</p>
       <p><strong>Filing Date:</strong> ${data.filingDate}</p>

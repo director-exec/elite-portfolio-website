@@ -7,7 +7,7 @@ export default function ConsumerToolsPage() {
       title: 'Make a Payment',
       description: 'Use our secure, convenient payment options to resolve your account quickly and easily. We offer multiple payment methods including online payments, phone payments, and mail-in options to accommodate your preferences.',
       image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=800&auto=format&fit=crop',
-      link: 'https://portal.eliteportfoliomgmt.com/',
+      link: 'https://pay.eliteportmgmt.com/',
       external: true,
       background: 'white',
       imageLeft: false
@@ -56,7 +56,7 @@ export default function ConsumerToolsPage() {
       id: 'feedback',
       title: 'Submit Feedback',
       description: 'Share compliments or complaints to help us improve our service and better assist you. Your feedback is valuable and helps us maintain the highest standards of customer service.',
-      image: 'https://images.unsplash.com/photo-5fNmWej4tAA?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1565728744382-61accd4aa148?q=80&w=800&auto=format&fit=crop',
       link: '/consumer-tools/submit-compliment-complaint',
       external: false,
       background: 'grey',

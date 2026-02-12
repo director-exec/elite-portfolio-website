@@ -40,16 +40,20 @@ export default function Footer() {
                 </div>
               </div>
               <div className="footer-section" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                <img 
-                  src="/LOGO/BBBLogo.png" 
-                  alt="Better Business Bureau" 
+                <img
+                  src="/LOGO/BBBLogo.png"
+                  alt="Better Business Bureau"
                   style={{ height: '120px', width: 'auto' }}
                 />
-                <img 
-                  src="/LOGO/EC_BADGE.png" 
-                  alt="EC Badge" 
+                <img
+                  src="/LOGO/EC_BADGE.png"
+                  alt="EC Badge"
                   style={{ height: '120px', width: 'auto' }}
                 />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.85rem', color: '#cbd5e1', fontWeight: 500, letterSpacing: '0.025em' }}>
+                  <span>NMLS # 2724917</span>
+                  <span>CA License # 11645-99</span>
+                </div>
               </div>
             </div>
           </div>
@@ -59,9 +63,9 @@ export default function Footer() {
             <div className="resources-grid">
               <div className="resources-column">
                 <ul>
-                  <li><a href="https://portal.eliteportfoliomgmt.com/" target="_blank" rel="noopener noreferrer">Make a Payment</a></li>
+                  <li><a href="https://pay.eliteportmgmt.com/" target="_blank" rel="noopener noreferrer">Make a Payment</a></li>
                   <li><Link href="/consumer-tools">Consumer Tools</Link></li>
-                  <li><a href="https://portal.eliteportfoliomgmt.com/" target="_blank" rel="noopener noreferrer">Client Login</a></li>
+                  <li><a href="https://pay.eliteportmgmt.com/" target="_blank" rel="noopener noreferrer">Client Login</a></li>
                   <li><Link href="/solutions">Solutions</Link></li>
                   <li><Link href="/text-message-opt-in">Text Message Opt-in</Link></li>
                 </ul>
@@ -79,7 +83,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2025 Elite Portfolio Management. All rights reserved.</p>
+          <p>&copy; 2026 Elite Portfolio Management. All rights reserved.</p>
         </div>
       </div>
     </footer>

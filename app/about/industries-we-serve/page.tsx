@@ -35,7 +35,7 @@ export default function IndustriesWeServePage() {
     {
       id: 'commercial-b2b',
       title: 'Commercial / B2B',
-      description: 'For business-to-business collections, professionalism and discretion are everything. Elite Portfolioprovides commercial receivables management across industries with an emphasis on protecting long-term business relationships. Our team understands the nuances of corporate debt recovery and customizes strategies to fit your operations without disrupting your reputation.',
+      description: 'For business-to-business collections, professionalism and discretion are everything. Elite Portfolio provides commercial receivables management across industries with an emphasis on protecting long-term business relationships. Our team understands the nuances of corporate debt recovery and customizes strategies to fit your operations without disrupting your reputation.',
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'white',
       imageLeft: false

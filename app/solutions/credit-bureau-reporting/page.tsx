@@ -3,7 +3,7 @@ export default function CreditBureauReportingPage() {
     {
       id: 'bureau-integration',
       title: 'Your Gateway to the Bureaus',
-      description: 'Elite Portfolio Management\'s network, is fully integrated with the nation\'s three major credit bureaus, Experian, Equifax, and TransUnion. Our secure systems and reporting protocols ensure that authorized accounts are updated accurately, flagged appropriately, and tracked in real time.',
+      description: 'Elite Portfolio Management\'s network is fully integrated with the nation\'s three major credit bureaus, Experian, Equifax, and TransUnion. Our secure systems and reporting protocols ensure that authorized accounts are updated accurately, flagged appropriately, and tracked in real time.',
       image: 'https://media.istockphoto.com/id/989117546/photo/business-people-meeting-negotiating-a-contract-between-two-colleagues.jpg?b=1&s=612x612&w=0&k=20&c=Ir_c9w7uD2bD76E_6GSGF7N1hpPJexsDGbhgQwDWB3s=',
       
       background: 'grey',

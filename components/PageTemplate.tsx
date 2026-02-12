@@ -106,7 +106,7 @@ export default function PageTemplate({
           </div>
           
           <div className="company-info">
-            <p><strong>Diversified Adjustment Service, Inc.</strong></p>
+            <p><strong>Elite Portfolio Management</strong></p>
             <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
             <p>833-381-4416</p>
           </div>

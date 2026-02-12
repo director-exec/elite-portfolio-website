@@ -59,7 +59,7 @@ export default function SolutionsPage() {
     {
       id: 'credit-bureau',
       title: 'Credit Bureau Reporting',
-      description: 'As part of our full service recovery solutions. Elite Portfolio Management\'s network offers optional credit bureau reporting to enhance your collection strategy. We handle every file with full adherence to the Fair Credit Reporting Act (FCRFA) and all the applicable regulations. Our network will report only with your authorization.',
+      description: 'As part of our full-service recovery solutions, Elite Portfolio Management\'s network offers optional credit bureau reporting to enhance your collection strategy. We handle every file with full adherence to the Fair Credit Reporting Act (FCRA) and all applicable regulations. Our network will report only with your authorization.',
       image: 'https://media.istockphoto.com/id/955988522/photo/business-signing-a-contract-buy-sell-house.jpg?b=1&s=612x612&w=0&k=20&c=EET9rlkAU1PTC_BWtJNfSWZfpvnCYLct0IkE4uZvb5k=',
       link: '/solutions/credit-bureau-reporting',
       background: 'white',

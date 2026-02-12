@@ -54,7 +54,7 @@ export default function Header() {
               <Link href="/">
                 <Image 
                   src="/LOGO/UpdatedLogoFull.svg"
-                  alt="Diversified Adjustment Service, Inc." 
+                  alt="Elite Portfolio Management" 
                   width={600} 
                   height={150}
                   priority
@@ -69,7 +69,7 @@ export default function Header() {
                 <div className="contact-info">
                   Need Help? Call us at 833-381-4416
                 </div>
-                <a href="https://portal.eliteportfoliomgmt.com/" className="payment-button" target="_blank" rel="noopener noreferrer">
+                <a href="https://pay.eliteportmgmt.com/" className="payment-button" target="_blank" rel="noopener noreferrer">
                   Make A Payment
                 </a>
               </div>
@@ -132,7 +132,7 @@ export default function Header() {
               <Link href="/">
                 <Image 
                   src="/LOGO/UpdatedLogoMini.svg"
-                  alt="Diversified Adjustment Service, Inc." 
+                  alt="Elite Portfolio Management" 
                   width={350} 
                   height={75}
                   priority
@@ -196,7 +196,7 @@ export default function Header() {
           <a href="tel:833-381-4416" className="mobile-call-btn">
             Call Us
           </a>
-          <a href="https://portal.eliteportfoliomgmt.com/" className="mobile-payment-btn" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
+          <a href="https://pay.eliteportmgmt.com/" className="mobile-payment-btn" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
             Make A Payment
           </a>
         </div>

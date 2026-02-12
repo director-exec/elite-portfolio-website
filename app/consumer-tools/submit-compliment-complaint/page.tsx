@@ -96,14 +96,14 @@ export default function SubmitComplimentComplaintPage() {
       id: 'important-note',
       title: 'Important Note',
       description: 'Please complete the form below to tell us what went well — or where we can improve. If you\'re looking to dispute an account, please use our Dispute My Account form instead. We value your feedback and use it to improve our services.',
-      image: 'https://images.pexels.com/photos/33332413/pexels-photo-33332413.jpeg',
+      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?q=80&w=800&auto=format&fit=crop',
       background: 'white',
       imageLeft: false
     },
     {
       id: 'account-information',
       title: 'Account Information',
-      description: 'Please provide your Elite Account Number creditor name, first and last name, and complete mailing address including street, city, state, and zip code. This helps us locate your account quickly.',
+      description: 'Please provide your Elite Account Number, creditor name, first and last name, and complete mailing address including street, city, state, and zip code. This helps us locate your account quickly.',
       image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800',
       background: 'grey',
       imageLeft: true
