@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
 
     // Upload file to Vercel Blob Storage
     const blob = await put(file.name, file, {
-      access: 'private',
+      access: 'public',
     })
 
     console.log('File uploaded successfully to Vercel Blob:', {
