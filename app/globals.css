@@ -156,10 +156,18 @@ body {
   margin-left: 5px;
 }
 
-.logo img {
-  height: 65px;
-  width: auto;
-  max-width: 100%;
+.logo a {
+  text-decoration: none;
+}
+
+.logo-wordmark {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 /* Compact Header - Appears after scroll */
@@ -204,9 +212,8 @@ body {
   }
 }
 
-.compact-header .logo img {
-  height: 30px;
-  width: auto;
+.compact-header .logo-wordmark {
+  font-size: 1.125rem;
 }
 
 /* Navigation */
@@ -1024,16 +1031,12 @@ footer {
     padding: 0.375rem 0.75rem;
   }
   
-  .logo img {
-    height: 55px;
-    width: auto;
-    max-width: 300px;
+  .logo-wordmark {
+    font-size: 1.25rem;
   }
-  
-  .compact-header .logo img {
-    height: 25px;
-    width: auto;
-    max-width: 140px;
+
+  .compact-header .logo-wordmark {
+    font-size: 1rem;
   }
 }
 
@@ -1061,16 +1064,12 @@ footer {
     margin-left: 5px;
   }
 
-  .logo img {
-    height: 55px;
-    width: auto;
-    max-width: 250px;
+  .logo-wordmark {
+    font-size: 1.125rem;
   }
 
-  .compact-header .logo img {
-    height: 50px;
-    width: auto;
-    max-width: 180px;
+  .compact-header .logo-wordmark {
+    font-size: 1rem;
   }
 
   .mobile-menu-btn {

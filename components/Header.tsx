@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,13 +51,7 @@ export default function Header() {
             {/* Logo */}
             <div className="logo">
               <Link href="/">
-                <Image 
-                  src="/LOGO/UpdatedLogoFull.svg"
-                  alt="Elite Portfolio Management" 
-                  width={600} 
-                  height={150}
-                  priority
-                />
+                <span className="logo-wordmark">Elite Portfolio Management</span>
               </Link>
             </div>
             
@@ -130,13 +123,7 @@ export default function Header() {
             {/* Logo */}
             <div className="logo">
               <Link href="/">
-                <Image 
-                  src="/LOGO/UpdatedLogoMini.svg"
-                  alt="Elite Portfolio Management" 
-                  width={350} 
-                  height={75}
-                  priority
-                />
+                <span className="logo-wordmark">Elite Portfolio Management</span>
               </Link>
             </div>
             
