@@ -1,6 +1,61 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 export default function TextMessageOptInPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
+  const [formData, setFormData] = useState({
+    phone: '',
+    name: '',
+    email: '',
+    consent: false
+  })
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target
+    setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'text-message-opt-in',
+          formData: formData
+        }),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitMessage('Thank you! You have successfully opted in to text message notifications.')
+        setFormData({
+          phone: '',
+          name: '',
+          email: '',
+          consent: false
+        })
+      } else {
+        setSubmitMessage('There was an error submitting your request. Please try again or contact us directly.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitMessage('There was an error submitting your request. Please try again or contact us directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   const optInSections = [
     {
       id: 'timely-notifications',
@@ -40,7 +95,7 @@ export default function TextMessageOptInPage() {
     <>
       {/* Hero Banner Section */}
       <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: 'url(https://images.pexels.com/photos/768474/pexels-photo-768474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)' }}
         ></div>
@@ -57,8 +112,8 @@ export default function TextMessageOptInPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Stay in Control of Your Finances</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Opt in today to receive essential updates and payment reminders, ensuring you never miss a deadline. 
-              Our convenient text messaging service provides hassle-free updates to help you manage your account 
+              Opt in today to receive essential updates and payment reminders, ensuring you never miss a deadline.
+              Our convenient text messaging service provides hassle-free updates to help you manage your account
               effectively and maintain good payment history.
             </p>
           </div>
@@ -74,8 +129,8 @@ export default function TextMessageOptInPage() {
                 {section.imageLeft ? (
                   <>
                     <div className="order-1">
-                      <img 
-                        src={section.image} 
+                      <img
+                        src={section.image}
                         alt={section.title}
                         className="w-full h-80 object-cover rounded-lg shadow-lg"
                       />
@@ -96,8 +151,8 @@ export default function TextMessageOptInPage() {
                       </div>
                     </div>
                     <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
+                      <img
+                        src={section.image}
                         alt={section.title}
                         className="w-full h-80 object-cover rounded-lg shadow-lg"
                       />
@@ -122,7 +177,7 @@ export default function TextMessageOptInPage() {
                 </p>
               </div>
 
-              <form className="max-w-md mx-auto space-y-6">
+              <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
@@ -131,6 +186,8 @@ export default function TextMessageOptInPage() {
                     type="tel"
                     id="phone"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="(555) 123-4567"
@@ -145,6 +202,8 @@ export default function TextMessageOptInPage() {
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="John Doe"
@@ -159,6 +218,8 @@ export default function TextMessageOptInPage() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="john.doe@example.com"
                   />
@@ -169,6 +230,8 @@ export default function TextMessageOptInPage() {
                     type="checkbox"
                     id="consent"
                     name="consent"
+                    checked={formData.consent}
+                    onChange={handleInputChange}
                     required
                     className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                   />
@@ -179,10 +242,21 @@ export default function TextMessageOptInPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  OPT IN NOW
+                  {isSubmitting ? 'Submitting...' : 'OPT IN NOW'}
                 </button>
+
+                {submitMessage && (
+                  <div className={`mt-4 p-4 rounded-md ${
+                    submitMessage.includes('error')
+                      ? 'bg-red-100 text-red-700 border border-red-300'
+                      : 'bg-green-100 text-green-700 border border-green-300'
+                  }`}>
+                    {submitMessage}
+                  </div>
+                )}
               </form>
             </div>
           </div>

@@ -48,22 +48,13 @@ export default function SolutionsPage() {
       imageLeft: false
     },
     {
-      id: 'reporting',
-      title: 'Reporting Services',
-      description: 'Comprehensive reporting and analytics for portfolio performance tracking. We provide detailed reporting on collection activities, recovery rates, and portfolio performance to help you make informed business decisions.',
-      image: 'https://media.istockphoto.com/id/989117546/photo/business-people-meeting-negotiating-a-contract-between-two-colleagues.jpg?b=1&s=612x612&w=0&k=20&c=Ir_c9w7uD2bD76E_6GSGF7N1hpPJexsDGbhgQwDWB3s=',
-      link: '/solutions/credit-bureau-reporting',
-      background: 'grey',
-      imageLeft: true
-    },
-    {
       id: 'credit-bureau',
       title: 'Credit Bureau Reporting',
       description: 'As part of our full-service recovery solutions, Elite Portfolio Management\'s network offers optional credit bureau reporting to enhance your collection strategy. We handle every file with full adherence to the Fair Credit Reporting Act (FCRA) and all applicable regulations. Our network will report only with your authorization.',
       image: 'https://media.istockphoto.com/id/955988522/photo/business-signing-a-contract-buy-sell-house.jpg?b=1&s=612x612&w=0&k=20&c=EET9rlkAU1PTC_BWtJNfSWZfpvnCYLct0IkE4uZvb5k=',
       link: '/solutions/credit-bureau-reporting',
-      background: 'white',
-      imageLeft: false
+      background: 'grey',
+      imageLeft: true
     }
   ]
 

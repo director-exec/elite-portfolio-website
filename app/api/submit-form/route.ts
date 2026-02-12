@@ -101,6 +101,18 @@ const emailTemplates = {
       <p><strong>Consent Given:</strong> ${data.consent ? 'Yes' : 'No'}</p>
       <p><strong>Submission Date:</strong> ${new Date().toLocaleString()}</p>
     `
+  },
+  'text-message-opt-in': {
+    subject: 'Text Message Opt-In Submission',
+    to: 'compliance@eliteportmgmt.com',
+    template: (data: any) => `
+      <h2>Text Message Opt-In Submission</h2>
+      <p><strong>Phone Number:</strong> ${data.phone}</p>
+      <p><strong>Full Name:</strong> ${data.name}</p>
+      <p><strong>Email:</strong> ${data.email || 'Not provided'}</p>
+      <p><strong>Consent Given:</strong> ${data.consent ? 'Yes' : 'No'}</p>
+      <p><strong>Submission Date:</strong> ${new Date().toLocaleString()}</p>
+    `
   }
 }
 
