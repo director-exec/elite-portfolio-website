@@ -1,12 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Source_Sans_3, Cormorant_Garamond } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 
-const inter = Inter({ subsets: ['latin'] })
+const sourceSans = Source_Sans_3({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-body',
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-heading',
+})
 
 export const metadata: Metadata = {
   title: 'Elite Portfolio Management - Digital Recovery. Human Respect. Total Compliance.',
@@ -27,7 +37,7 @@ export default function RootLayout({
         {/* Font Awesome */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body className={inter.className}>
+      <body className={`${sourceSans.variable} ${cormorant.variable} ${sourceSans.className}`}>
         <Header />
         <main>
           {children}

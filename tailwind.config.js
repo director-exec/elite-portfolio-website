@@ -50,13 +50,15 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom Elite Portfolio colors
+        // Custom Elite Portfolio colors — matched to payment portal
         elite: {
-          primary: "#1a365d",
-          secondary: "#2d5aa0",
-          accent: "#38a169",
-          gold: "#f59e0b",
-          silver: "#94a3b8",
+          primary: "#1c2a3f",
+          secondary: "#162036",
+          deep: "#0a1628",
+          accent: "#c9a84c",
+          cream: "#f8f6f2",
+          border: "#eee9e0",
+          muted: "#6b7280",
         },
       },
       borderRadius: {
