@@ -614,16 +614,7 @@ body.mobile-menu-open {
   margin-top: 2rem;
 }
 
-/* Thin decorative divider between hero and services */
-.hero + .services::before {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 1px;
-  background: var(--navy-primary);
-  margin: 0 auto 2rem;
-  opacity: 0.2;
-}
+/* Thin line separators above and below services */
 
 /* ============================================
    BUTTONS — PORTAL STYLE
@@ -684,6 +675,8 @@ body.mobile-menu-open {
 .services {
   padding: var(--section-padding) 0;
   background: var(--bg-cream);
+  border-top: 1px solid rgba(28, 42, 63, 0.12);
+  border-bottom: 1px solid rgba(28, 42, 63, 0.12);
 }
 
 .services-grid {
