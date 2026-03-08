@@ -4,54 +4,49 @@ export default function Footer() {
   return (
     <footer>
       <div className="container">
-        {/* Legal Disclosure Banner */}
+        {/* Legal Disclosure — single line, small */}
         <div className="footer-legal-banner">
           <p>
             This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
           </p>
         </div>
 
-        {/* Main Footer Grid */}
-        <div className="footer-main">
-          {/* Column 1: Mailing Address */}
-          <div className="footer-section">
-            <h3>Mailing Address</h3>
+        {/* Compact Footer Content — single row layout */}
+        <div className="footer-compact">
+          {/* Left: Address + Contact */}
+          <div className="footer-info">
             <p>
-              Elite Portfolio Management<br />
-              2200 N Frazier St.<br />
-              STE 120 Box 142<br />
-              Conroe TX, 77301<br />
-              833-381-4416<br />
-              info@eliteportmgmt.com
+              Elite Portfolio Management &nbsp;|&nbsp; 2200 N Frazier St. STE 120 Box 142, Conroe TX 77301
+              &nbsp;|&nbsp; <a href="tel:833-381-4416">833-381-4416</a>
+              &nbsp;|&nbsp; <a href="mailto:info@eliteportmgmt.com">info@eliteportmgmt.com</a>
             </p>
           </div>
 
-          {/* Column 2: Site Resources */}
-          <div className="footer-section">
-            <h3>Site Resources</h3>
-            <div className="resources-grid">
-              <div className="resources-column">
-                <ul>
-                  <li><a href="https://pay.eliteportmgmt.com/" target="_blank" rel="noopener noreferrer">Make a Payment</a></li>
-                  <li><Link href="/consumer-tools">Consumer Tools</Link></li>
-                  <li><a href="https://pay.eliteportmgmt.com/" target="_blank" rel="noopener noreferrer">Client Login</a></li>
-                  <li><Link href="/solutions">Solutions</Link></li>
-                  <li><Link href="/text-message-opt-in">Text Message Opt-in</Link></li>
-                </ul>
-              </div>
-              <div className="resources-column">
-                <ul>
-                  <li><Link href="/about">About Us</Link></li>
-                  <li><Link href="/contact">Contact Us</Link></li>
-                  <li><Link href="/privacy">Privacy Policy</Link></li>
-                  <li><Link href="/terms">Terms and Conditions</Link></li>
-                </ul>
-              </div>
-            </div>
+          {/* Center: Quick Links */}
+          <div className="footer-links">
+            <a href="https://pay.eliteportmgmt.com/" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+            <Link href="/consumer-tools">Consumer Tools</Link>
+            <Link href="/solutions">Solutions</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
           </div>
 
-          {/* Column 3: Social + Badges */}
-          <div className="footer-social-badges">
+          {/* Right: Badges + Social — prominent */}
+          <div className="footer-badges-social">
+            <div className="footer-badges">
+              <img
+                src="/LOGO/BBBLogo.png"
+                alt="Better Business Bureau"
+                className="badge-bbb"
+              />
+              <img
+                src="/LOGO/EC_BADGE.png"
+                alt="EverChain Certified Network Member"
+                className="badge-ec"
+              />
+            </div>
             <div className="social-links">
               <a href="#linkedin" aria-label="LinkedIn">
                 <i className="fab fa-linkedin"></i>
@@ -60,20 +55,10 @@ export default function Footer() {
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
-            <div className="footer-badges">
-              <img
-                src="/LOGO/BBBLogo.png"
-                alt="Better Business Bureau"
-              />
-              <img
-                src="/LOGO/EC_BADGE.png"
-                alt="EverChain Certified Network Member"
-              />
-            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar — licenses + copyright */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
             <span>NMLS # 2724917</span>

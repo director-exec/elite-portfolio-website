@@ -67,25 +67,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about">
-        <div className="container">
-          <div className="about-container">
-            <div className="about-image"></div>
-            <div className="about-content">
-              <h2>About Elite Portfolio</h2>
-              <p>
-                We maintain a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership. Our ethics, technology, and performance set us apart.
-              </p>
-              <Link href="/about" className="btn btn-primary">
-                <i className="fas fa-arrow-right"></i>
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Compliance Section */}
       <section className="compliance">
         <div className="container">
@@ -120,6 +101,25 @@ export default function Home() {
                   <li>Regular compliance audits and training</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="about">
+        <div className="container">
+          <div className="about-container">
+            <div className="about-image"></div>
+            <div className="about-content">
+              <h2>About Elite Portfolio</h2>
+              <p>
+                We maintain a compliance-first culture, treating every consumer with respect and every client relationship as a long-term partnership. Our ethics, technology, and performance set us apart.
+              </p>
+              <Link href="/about" className="btn btn-primary">
+                <i className="fas fa-arrow-right"></i>
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
