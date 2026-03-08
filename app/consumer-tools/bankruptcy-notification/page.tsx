@@ -260,23 +260,23 @@ export default function BankruptcyNotificationPage() {
       <section className="subpage-section subpage-section-white">
         <div className="subpage-container">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-blue-900 mb-2">
+            <h2>
               Bankruptcy Notification Form
             </h2>
-            <p className="text-lg text-gray-700">
-              Please include Elite's eight-digit account number on your statement.
+            <p>
+              Please include Elite&apos;s eight-digit account number on your statement.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="subpage-form">
               {/* General Account Information */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">General Account Information</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <h3 >General Account Information</h3>
+                <div className="form-row">
                   {/* Left Column */}
-                  <div className="space-y-6">
+                  <div >
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Account Number <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -284,14 +284,13 @@ export default function BankruptcyNotificationPage() {
                         name="accountNumber"
                         value={formData.accountNumber}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter account number"
+                                                placeholder="Enter account number"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         First Name <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -299,14 +298,13 @@ export default function BankruptcyNotificationPage() {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your first name"
+                                                placeholder="Enter your first name"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Address <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -314,14 +312,13 @@ export default function BankruptcyNotificationPage() {
                         name="address"
                         value={formData.address}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your mailing address"
+                                                placeholder="Enter your mailing address"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         City <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -329,23 +326,21 @@ export default function BankruptcyNotificationPage() {
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your city"
+                                                placeholder="Enter your city"
                         required
                       />
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="form-row">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label >
                           State <span className="text-blue-900">*</span>
                         </label>
                         <select
                           name="state"
                           value={formData.state}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                          required
+                                                    required
                         >
                           <option value="">Select State</option>
                           <option value="AL">Alabama</option>
@@ -402,7 +397,7 @@ export default function BankruptcyNotificationPage() {
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label >
                           ZIP Code <span className="text-blue-900">*</span>
                         </label>
                         <input
@@ -410,8 +405,7 @@ export default function BankruptcyNotificationPage() {
                           name="zipCode"
                           value={formData.zipCode}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                          placeholder="Enter ZIP code"
+                                                    placeholder="Enter ZIP code"
                           required
                         />
                       </div>
@@ -419,9 +413,9 @@ export default function BankruptcyNotificationPage() {
                   </div>
                   
                   {/* Right Column */}
-                  <div className="space-y-6">
+                  <div >
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Creditor <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -429,14 +423,13 @@ export default function BankruptcyNotificationPage() {
                         name="creditor"
                         value={formData.creditor}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter creditor name"
+                                                placeholder="Enter creditor name"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Last Name <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -444,14 +437,13 @@ export default function BankruptcyNotificationPage() {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your last name"
+                                                placeholder="Enter your last name"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Phone Number <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -459,14 +451,13 @@ export default function BankruptcyNotificationPage() {
                         name="phoneNumber"
                         value={formData.phoneNumber}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your phone number"
+                                                placeholder="Enter your phone number"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Email Address <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -474,8 +465,7 @@ export default function BankruptcyNotificationPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your email address"
+                                                placeholder="Enter your email address"
                         required
                       />
                     </div>
@@ -485,10 +475,10 @@ export default function BankruptcyNotificationPage() {
 
               {/* Bankruptcy Case Details */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">Bankruptcy Case Details</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <h3 >Bankruptcy Case Details</h3>
+                <div className="form-row">
                                       <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Bankruptcy Case Number <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -496,22 +486,20 @@ export default function BankruptcyNotificationPage() {
                         name="bankruptcyCaseNumber"
                         value={formData.bankruptcyCaseNumber}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter bankruptcy case number"
+                                                placeholder="Enter bankruptcy case number"
                         required
                       />
                     </div>
                   
                                       <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Bankruptcy Chapter <span className="text-blue-900">*</span>
                       </label>
                       <select
                         name="bankruptcyChapter"
                         value={formData.bankruptcyChapter}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        required
+                                                required
                       >
                       <option value="">Select Chapter</option>
                       <option value="7">Chapter 7</option>
@@ -523,7 +511,7 @@ export default function BankruptcyNotificationPage() {
                   </div>
                   
                                       <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Filing Court/Jurisdiction <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -531,14 +519,13 @@ export default function BankruptcyNotificationPage() {
                         name="filingCourt"
                         value={formData.filingCourt}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter filing court or jurisdiction"
+                                                placeholder="Enter filing court or jurisdiction"
                         required
                       />
                     </div>
                   
                                       <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         Date of Bankruptcy Filing <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -546,8 +533,7 @@ export default function BankruptcyNotificationPage() {
                         name="filingDate"
                         value={formData.filingDate}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        required
+                                                required
                       />
                     </div>
                 </div>
@@ -555,11 +541,11 @@ export default function BankruptcyNotificationPage() {
 
               {/* Additional Information */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">Additional Information</h3>
+                <h3 >Additional Information</h3>
                 
                 {/* File Upload Section */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label >
                     Upload Bankruptcy Documents (Optional)
                   </label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
@@ -617,7 +603,7 @@ export default function BankruptcyNotificationPage() {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label >
                     Comments or Additional Information
                   </label>
                   <textarea
@@ -625,45 +611,35 @@ export default function BankruptcyNotificationPage() {
                     value={formData.comments}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                    placeholder="Please provide any additional information about your bankruptcy filing..."
+                                        placeholder="Please provide any additional information about your bankruptcy filing..."
                   />
                 </div>
               </div>
               
               {/* Consent Checkbox */}
               <div className="mb-8">
-                <div className="flex items-start space-x-3">
+                <div className="form-checkbox">
                   <input
                     type="checkbox"
                     name="consent"
                     checked={formData.consent}
                     onChange={handleInputChange}
-                    className="mt-1 h-4 w-4 text-blue-900 focus:ring-blue-500 border-gray-300 rounded"
-                    required
+                                        required
                   />
-                  <label className="text-sm text-gray-700">
+                  <label>
                     I confirm that I have filed for bankruptcy and that the information provided above is accurate and complete. I understand that this notification will be used to ensure my account is handled appropriately in accordance with bankruptcy laws.
                   </label>
                 </div>
               </div>
               
               {/* Submit Button */}
-              <div className="text-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-blue-900 text-white py-3 px-8 rounded-md hover:bg-blue-800 transition-colors duration-200 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+              <div className="form-submit-wrap">
+                <button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? 'Submitting...' : 'Submit Bankruptcy Notification'}
                 </button>
-                
+
                 {submitMessage && (
-                  <div className={`mt-4 p-4 rounded-md ${
-                    submitMessage.includes('error') 
-                      ? 'bg-red-100 text-red-700 border border-red-300' 
-                      : 'bg-blue-900 text-white border border-blue-800'
-                  }`}>
+                  <div className={submitMessage.includes('error') ? 'form-error' : 'form-success'}>
                     {submitMessage}
                   </div>
                 )}
@@ -675,16 +651,14 @@ export default function BankruptcyNotificationPage() {
       {/* Need Assistance Section */}
       <section className="subpage-section subpage-section-cream">
         <div className="subpage-container">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Need Assistance?</h2>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                We're here to help ensure your legal rights are fully respected.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Call us at 833-381-4416 to speak with an account representative.
-              </p>
-            </div>
+          <h2>Need Assistance?</h2>
+          <div>
+            <p>
+              We&apos;re here to help ensure your legal rights are fully respected.
+            </p>
+            <p>
+              Call us at 833-381-4416 to speak with an account representative.
+            </p>
           </div>
         </div>
       </section>
@@ -692,9 +666,9 @@ export default function BankruptcyNotificationPage() {
       {/* Legal Notice Section */}
       <section className="subpage-section subpage-section-white">
         <div className="subpage-container">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Legal Notice</h2>
-          <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-            <p className="text-lg text-gray-700 leading-relaxed text-center">
+          <h2>Legal Notice</h2>
+          <div>
+            <p>
               This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
             </p>
           </div>
@@ -704,48 +678,32 @@ export default function BankruptcyNotificationPage() {
       {/* Contact Information Section */}
       <section className="subpage-section subpage-section-cream">
         <div className="subpage-container">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="text-lg text-gray-700">
-                <p className="font-semibold">Elite Portfolio Management</p>
-                <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
-                <p>833-381-4416</p>
-                <p className="mt-4">
-                  <strong>Compliance Email:</strong> compliance@eliteportmgmt.com
-                </p>
-              </div>
-            </div>
+          <h2>Contact Information</h2>
+          <div>
+            <p>Elite Portfolio Management</p>
+            <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+            <p>833-381-4416</p>
+            <p>
+              <strong>Compliance Email:</strong> compliance@eliteportmgmt.com
+            </p>
           </div>
         </div>
       </section>
 
       {/* Pop-up Modal */}
       {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" 
-          style={{ zIndex: 9999 }}
-          onClick={closeModal}
-        >
-          <div 
-            className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">IMPORTANT</h3>
-              <p className="text-sm text-gray-700 mb-4">
-                This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
-              </p>
-              <p className="text-sm text-gray-700 mb-6">
-                Calls to and from this company may be monitored and/or recorded.
-              </p>
-              <button
-                onClick={closeModal}
-                className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-200"
-              >
-                I Accept
-              </button>
-            </div>
+        <div className="disclosure-overlay" onClick={closeModal}>
+          <div className="disclosure-modal" onClick={(e) => e.stopPropagation()}>
+            <h2>IMPORTANT</h2>
+            <p>
+              This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
+            </p>
+            <p>
+              Calls to and from this company may be monitored and/or recorded.
+            </p>
+            <button className="disclosure-modal-btn" onClick={closeModal}>
+              I Accept
+            </button>
           </div>
         </div>
       )}

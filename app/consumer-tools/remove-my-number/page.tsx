@@ -181,118 +181,114 @@ export default function RemoveMyNumberPage() {
       <section className="subpage-section subpage-section-cream">
         <div className="subpage-container">
           <h2>Contact Preference Form</h2>
-            <form onSubmit={handleSubmit} className="subpage-form">
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label>First Name <span>*</span></label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label>Last Name <span>*</span></label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label>The Number We Are Currently Calling <span>*</span></label>
-                  <input
-                    type="tel"
-                    name="phoneNumberToRemove"
-                    value={formData.phoneNumberToRemove}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div>
-                  <label>Select One: <span>*</span></label>
-                  <div className="space-y-2">
-                    <label className="flex items-center">
-                      <input
-                        type="radio"
-                        name="preference"
-                        value="remove"
-                        checked={formData.preference === 'remove'}
-                        onChange={handleInputChange}
-                        className="mr-2"
-                        required
-                      />
-                      <span>The number is incorrect — please remove it</span>
-                    </label>
-                    <label className="flex items-center">
-                      <input
-                        type="radio"
-                        name="preference"
-                        value="different"
-                        checked={formData.preference === 'different'}
-                        onChange={handleInputChange}
-                        className="mr-2"
-                        required
-                      />
-                      <span>The number is correct, but I prefer to be reached at a different number</span>
-                    </label>
-                  </div>
-                </div>
-                <div>
-                  <label>Preferred Contact Number (if different)</label>
-                  <input
-                    type="tel"
-                    name="preferredContactNumber"
-                    value={formData.preferredContactNumber}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div>
-                  <label>Comments or Additional Notes (optional)</label>
-                  <textarea
-                    rows={4}
-                    name="comments"
-                    value={formData.comments}
-                    onChange={handleInputChange}
-                  ></textarea>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    checked={formData.consent}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <label className="text-sm">
-                    I confirm that the information provided above is accurate and complete. I understand that this request will be processed within 5 business days.
-                  </label>
-                </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-navy text-white py-3 px-6 hover:bg-opacity-90 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit Request'}
-                </button>
-
-                {submitMessage && (
-                  <div className={`mt-4 p-4 ${
-                    submitMessage.includes('error')
-                      ? 'bg-red-100 text-red-700'
-                      : 'bg-navy text-white'
-                  }`}>
-                    {submitMessage}
-                  </div>
-                )}
+          <form onSubmit={handleSubmit} className="subpage-form">
+            <div className="form-row">
+              <div>
+                <label>First Name <span>*</span></label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  required
+                />
               </div>
-            </form>
+              <div>
+                <label>Last Name <span>*</span></label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label>The Number We Are Currently Calling <span>*</span></label>
+              <input
+                type="tel"
+                name="phoneNumberToRemove"
+                value={formData.phoneNumberToRemove}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label>Select One: <span>*</span></label>
+              <div className="form-radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name="preference"
+                    value="remove"
+                    checked={formData.preference === 'remove'}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <span>The number is incorrect — please remove it</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="preference"
+                    value="different"
+                    checked={formData.preference === 'different'}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <span>The number is correct, but I prefer to be reached at a different number</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label>Preferred Contact Number (if different)</label>
+              <input
+                type="tel"
+                name="preferredContactNumber"
+                value={formData.preferredContactNumber}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div>
+              <label>Comments or Additional Notes (optional)</label>
+              <textarea
+                rows={4}
+                name="comments"
+                value={formData.comments}
+                onChange={handleInputChange}
+              ></textarea>
+            </div>
+
+            <div className="form-checkbox">
+              <input
+                type="checkbox"
+                name="consent"
+                checked={formData.consent}
+                onChange={handleInputChange}
+                required
+              />
+              <label>
+                I confirm that the information provided above is accurate and complete. I understand that this request will be processed within 5 business days.
+              </label>
+            </div>
+
+            <div className="form-submit-wrap">
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'SUBMIT REQUEST'}
+              </button>
+            </div>
+
+            {submitMessage && (
+              <div className={submitMessage.includes('error') ? 'form-error' : 'form-success'}>
+                {submitMessage}
+              </div>
+            )}
+          </form>
         </div>
       </section>
 
@@ -323,30 +319,18 @@ export default function RemoveMyNumberPage() {
 
       {/* Pop-up Modal */}
       {showModal && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-          style={{ zIndex: 9999 }}
-          onClick={closeModal}
-        >
-          <div
-            className="bg-white shadow-xl max-w-md w-full mx-4 p-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="text-center">
-              <h3 className="text-xl font-bold mb-4">IMPORTANT</h3>
-              <p className="text-sm mb-4">
-                This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
-              </p>
-              <p className="text-sm mb-6">
-                Calls to and from this company may be monitored and/or recorded.
-              </p>
-              <button
-                onClick={closeModal}
-                className="w-full bg-navy text-white py-2 px-4 hover:bg-opacity-90 transition-colors duration-200"
-              >
-                I Accept
-              </button>
-            </div>
+        <div className="disclosure-overlay" onClick={closeModal}>
+          <div className="disclosure-modal" onClick={(e) => e.stopPropagation()}>
+            <h2>IMPORTANT</h2>
+            <p>
+              This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
+            </p>
+            <p>
+              Calls to and from this company may be monitored and/or recorded.
+            </p>
+            <button className="disclosure-modal-btn" onClick={closeModal}>
+              I Accept
+            </button>
           </div>
         </div>
       )}

@@ -341,11 +341,7 @@ export default function DisputeMyAccountPage() {
           </button>
           
               {submitMessage && (
-                <div className={`mt-4 p-4 rounded-md ${
-                  submitMessage.includes('error')
-                    ? 'bg-red-100 text-red-700 border border-red-300'
-                    : 'bg-navy text-white border border-navy'
-                }`}>
+                <div className={submitMessage.includes('error') ? 'form-error' : 'form-success'}>
                   {submitMessage}
                 </div>
               )}

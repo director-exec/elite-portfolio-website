@@ -184,11 +184,11 @@ export default function RequestAccountValidationPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="subpage-form">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="form-row">
                 {/* Left Column */}
-                <div className="space-y-6">
+                <div>
                   <div>
-                                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                                          <label >
                         Account Number <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -196,14 +196,13 @@ export default function RequestAccountValidationPage() {
                         name="accountNumber"
                         value={formData.accountNumber}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter account number"
+                                                placeholder="Enter account number"
                         required
                       />
                   </div>
                   
                   <div>
-                                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                                          <label >
                         First Name <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -211,14 +210,13 @@ export default function RequestAccountValidationPage() {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your first name"
+                                                placeholder="Enter your first name"
                         required
                       />
                   </div>
                   
                   <div>
-                                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                                          <label >
                         Address <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -226,14 +224,13 @@ export default function RequestAccountValidationPage() {
                         name="address"
                         value={formData.address}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your mailing address"
+                                                placeholder="Enter your mailing address"
                         required
                       />
                   </div>
                   
                   <div>
-                                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                                          <label >
                         City <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -241,23 +238,21 @@ export default function RequestAccountValidationPage() {
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter your city"
+                                                placeholder="Enter your city"
                         required
                       />
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="form-row">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         State <span className="text-blue-900">*</span>
                       </label>
                       <select
                         name="state"
                         value={formData.state}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        required
+                                                required
                       >
                         <option value="">Select State</option>
                         <option value="AL">Alabama</option>
@@ -314,7 +309,7 @@ export default function RequestAccountValidationPage() {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label >
                         ZIP Code <span className="text-blue-900">*</span>
                       </label>
                       <input
@@ -322,8 +317,7 @@ export default function RequestAccountValidationPage() {
                         name="zipCode"
                         value={formData.zipCode}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                        placeholder="Enter ZIP code"
+                                                placeholder="Enter ZIP code"
                         required
                       />
                     </div>
@@ -331,9 +325,9 @@ export default function RequestAccountValidationPage() {
                 </div>
                 
                 {/* Right Column */}
-                <div className="space-y-6">
+                <div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label >
                       Creditor <span className="text-blue-900">*</span>
                     </label>
                     <input
@@ -341,14 +335,13 @@ export default function RequestAccountValidationPage() {
                       name="creditor"
                       value={formData.creditor}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                      placeholder="Enter creditor name"
+                                            placeholder="Enter creditor name"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label >
                       Last Name <span className="text-blue-900">*</span>
                     </label>
                     <input
@@ -356,14 +349,13 @@ export default function RequestAccountValidationPage() {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                      placeholder="Enter your last name"
+                                            placeholder="Enter your last name"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label >
                       Phone Number <span className="text-blue-900">*</span>
                     </label>
                     <input
@@ -371,14 +363,13 @@ export default function RequestAccountValidationPage() {
                       name="phoneNumber"
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                      placeholder="Enter your phone number"
+                                            placeholder="Enter your phone number"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label >
                       Email Address <span className="text-blue-900">*</span>
                     </label>
                     <input
@@ -386,8 +377,7 @@ export default function RequestAccountValidationPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-                      placeholder="Enter your email address"
+                                            placeholder="Enter your email address"
                       required
                     />
                   </div>
@@ -395,52 +385,42 @@ export default function RequestAccountValidationPage() {
               </div>
               
               {/* Consent Checkboxes */}
-              <div className="mt-8 space-y-4">
-                <div className="flex items-start space-x-3">
+              <div>
+                <div className="form-checkbox">
                   <input
                     type="checkbox"
                     name="consent"
                     checked={formData.consent}
                     onChange={handleInputChange}
-                    className="mt-1 h-4 w-4 text-blue-900 focus:ring-blue-500 border-gray-300 rounded"
                     required
                   />
-                  <label className="text-sm text-gray-700">
-                    I acknowledge that I may receive communications via phone, text, or email, and I confirm ownership of the contact details I've submitted.
+                  <label>
+                    I acknowledge that I may receive communications via phone, text, or email, and I confirm ownership of the contact details I&apos;ve submitted.
                   </label>
                 </div>
-                
-                <div className="flex items-start space-x-3">
+
+                <div className="form-checkbox">
                   <input
                     type="checkbox"
                     name="electronicDelivery"
                     checked={formData.electronicDelivery}
                     onChange={handleInputChange}
-                    className="mt-1 h-4 w-4 text-blue-900 focus:ring-blue-500 border-gray-300 rounded"
                     required
                   />
-                  <label className="text-sm text-gray-700">
+                  <label>
                     I request electronic delivery of this document and understand I may revoke consent at any time through reasonable means.
                   </label>
                 </div>
               </div>
               
               {/* Submit Button */}
-              <div className="mt-8 text-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-blue-900 text-white py-3 px-8 rounded-md hover:bg-blue-800 transition-colors duration-200 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+              <div className="form-submit-wrap">
+                <button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? 'Submitting...' : 'Submit Request'}
                 </button>
-                
+
                 {submitMessage && (
-                  <div className={`mt-4 p-4 rounded-md ${
-                    submitMessage.includes('error') 
-                      ? 'bg-red-100 text-red-700 border border-red-300' 
-                      : 'bg-blue-900 text-white border border-blue-800'
-                  }`}>
+                  <div className={submitMessage.includes('error') ? 'form-error' : 'form-success'}>
                     {submitMessage}
                   </div>
                 )}
@@ -480,30 +460,18 @@ export default function RequestAccountValidationPage() {
 
       {/* Pop-up Modal */}
       {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" 
-          style={{ zIndex: 9999 }}
-          onClick={closeModal}
-        >
-          <div 
-            className="bg-white rounded-lg shadow-xl max-w-lg w-full mx-4 p-8"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-blue-900 mb-6">IMPORTANT</h3>
-              <p className="text-lg text-gray-700 mb-6">
-                This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
-              </p>
-              <p className="text-lg text-gray-700 mb-8">
-                Calls to and from this company may be monitored and/or recorded.
-              </p>
-              <button
-                onClick={closeModal}
-                className="w-full bg-blue-900 text-white py-3 px-6 rounded-md hover:bg-blue-800 transition-colors duration-200 text-lg font-semibold"
-              >
-                I Accept
-              </button>
-            </div>
+        <div className="disclosure-overlay" onClick={closeModal}>
+          <div className="disclosure-modal" onClick={(e) => e.stopPropagation()}>
+            <h2>IMPORTANT</h2>
+            <p>
+              This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
+            </p>
+            <p>
+              Calls to and from this company may be monitored and/or recorded.
+            </p>
+            <button className="disclosure-modal-btn" onClick={closeModal}>
+              I Accept
+            </button>
           </div>
         </div>
       )}
