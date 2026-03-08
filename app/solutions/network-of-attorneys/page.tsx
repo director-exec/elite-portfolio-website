@@ -4,15 +4,15 @@ export default function NetworkOfAttorneysPage() {
       id: 'trusted-representation',
       title: 'Trusted Legal Representation — Anywhere in the U.S.',
       description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across all 50 states. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
-      image: 'https://images.pexels.com/photos/8730998/pexels-photo-8730998.jpeg?auto=compress&cs=tinysrgb&w=800',
-      background: 'grey',
+      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800',
+      background: 'cream',
       imageLeft: true
     },
     {
       id: 'client-directed-strategy',
       title: 'Client-Directed Legal Strategy',
       description: 'No lawsuit is initiated and no settlement is accepted without your explicit approval. The attorney represents you, and we manage the communication, documentation, and execution on your behalf. Before recommending litigation, Elite Portfolio conducts a collectability review including asset investigation, employment verification, and compliance checklists.',
-      image: 'https://images.pexels.com/photos/6077587/pexels-photo-6077587.jpeg?_gl=1*1votr6i*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTUwODU0NDYkbzUkZzEkdDE3NTUwODU0NDckajU5JGwwJGgw',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
       background: 'white',
       imageLeft: false
     },
@@ -20,8 +20,8 @@ export default function NetworkOfAttorneysPage() {
       id: 'comprehensive-services',
       title: 'Comprehensive Legal Services',
       description: 'Our Elite Portfolio Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation in every state. Whether you\'re pursuing a single claim or managing a national portfolio, we have the legal infrastructure to execute with confidence.',
-      image: 'https://images.pexels.com/photos/8112172/pexels-photo-8112172.jpeg?auto=compress&cs=tinysrgb&w=800',
-      background: 'grey',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800',
+      background: 'cream',
       imageLeft: true
     }
   ]
@@ -29,101 +29,98 @@ export default function NetworkOfAttorneysPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.pexels.com/photos/8730998/pexels-photo-8730998.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
-        ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Nationwide Legal Network</h1>
-          <p className="text-xl">Strategic Legal Escalation When It Matters Most</p>
+      <section className="subpage-hero">
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800)' }}></div>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Nationwide Legal Network</h1>
+          <p>Strategic Legal Escalation When It Matters Most</p>
         </div>
       </section>
 
       {/* Main Content Introduction */}
-      <section className="main-intro py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Strategic Legal Escalation When It Matters Most</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response. 
-              The Elite Portfolio Management team offers comprehensive nationwide legal support through a vetted network of experienced collection 
-              attorneys. So when legal action is required, you have the infrastructure in place to act decisively and compliantly.
-            </p>
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <div className="subpage-intro">
+            <div className="subpage-intro-inner">
+              <h2>Strategic Legal Escalation When It Matters Most</h2>
+              <p>
+                While over 98% of debts are resolved without the need for litigation, certain situations demand a formal legal response.
+                The Elite Portfolio Management team offers comprehensive nationwide legal support through a vetted network of experienced collection
+                attorneys. So when legal action is required, you have the infrastructure in place to act decisively and compliantly.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Service Sections */}
       {serviceSections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
+        <section key={section.id} className={`subpage-section ${section.background === 'cream' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div className="subpage-text">
+                      {section.description}
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div className="subpage-text">
+                      {section.description}
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                  </div>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* Summary Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">When Legal Action Is Warranted</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Whether you're pursuing a single claim or managing a national portfolio, Elite Portfolio Management has the legal 
-              infrastructure to execute with confidence — without ever losing sight of your brand reputation or compliance obligations.
-            </p>
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div className="subpage-intro">
+            <div className="subpage-intro-inner">
+              <h2>When Legal Action Is Warranted</h2>
+              <p>
+                Whether you're pursuing a single claim or managing a national portfolio, Elite Portfolio Management has the legal
+                infrastructure to execute with confidence — without ever losing sight of your brand reputation or compliance obligations.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-6 text-white">
-            Ready for strategic legal escalation?
-          </h3>
-          <a href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
-            Contact Us Today!
+      <section className="subpage-cta">
+        <div className="subpage-container">
+          <h3>Ready for strategic legal escalation?</h3>
+          <a href="/contact" className="subpage-btn">
+            Contact Us Today
           </a>
         </div>
       </section>
     </>
   )
-} 
+}

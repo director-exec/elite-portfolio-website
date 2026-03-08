@@ -14,7 +14,7 @@ export default function AboutPage() {
       id: 'what-we-stand-for',
       title: 'What We Stand For',
       description: 'We treat your brand as an extension of our own. Every touchpoint reflects our dedication to preserving your reputation, communicating with empathy, and aligning our operations with your values. Whether we\'re recovering past-due balances or handling sensitive account situations, we work as silent stewards of your public image.',
-      image: 'https://media.istockphoto.com/id/989117546/photo/business-people-meeting-negotiating-a-contract-between-two-colleagues.jpg?b=1&s=612x612&w=0&k=20&c=Ir_c9w7uD2bD76E_6GSGF7N1hpPJexsDGbhgQwDWB3s=',
+      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800',
       background: 'grey',
       imageLeft: true
     },
@@ -30,7 +30,7 @@ export default function AboutPage() {
       id: 'our-people',
       title: 'Our People',
       description: 'Our team is our power. We hire experienced professionals who thrive in a culture of integrity, collaboration, and continuous improvement. Every team member undergoes rigorous training and performance auditing — not just to maintain standards, but to raise them. At Elite, excellence is a shared expectation.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800',
       background: 'grey',
       imageLeft: true
     },
@@ -46,7 +46,7 @@ export default function AboutPage() {
       id: 'where-we-work',
       title: 'Where We Work',
       description: 'Elite Portfolio Management is licensed, bonded, and fully operational in all 50 U.S. states. We maintain Certificates of Authority, statutory bonds, trust accounts, and resident office requirements in every jurisdiction where applicable law demands it. Your nationwide presence is supported by ours.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800',
       background: 'grey',
       imageLeft: true
     }
@@ -82,89 +82,85 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
+      <section className="subpage-hero">
+        <div
+          className="subpage-hero-bg"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800)' }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Precision Meets Resolution</h1>
-          <p className="text-xl">A Digital Approach to Strategic Outcomes</p>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Precision Meets Resolution</h1>
+          <p>A Digital Approach to Strategic Outcomes</p>
         </div>
       </section>
 
       {/* About Sections */}
       {aboutSections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-xl"
-                      />
+        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div style={{ whiteSpace: 'pre-line' }}>
+                      {section.description}
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
-                        {section.description}
-                      </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div style={{ whiteSpace: 'pre-line' }}>
+                      {section.description}
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-xl"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                  </div>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* Additional Sections Grid */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">Learn More About Elite Portfolio</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {additionalSections.map((section) => (
-                <Link key={section.id} href={section.link} className="block">
-                  <div className="bg-gray-50 rounded-lg p-6 h-full shadow-2xl hover:shadow-2xl transition-shadow duration-300" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{section.title}</h3>
-                    <p className="text-gray-700 leading-relaxed">{section.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Learn More About Elite Portfolio</h2>
+          <div className="subpage-cards">
+            {additionalSections.map((section) => (
+              <Link key={section.id} href={section.link} className="block">
+                <div className="subpage-card">
+                  <h3>{section.title}</h3>
+                  <p>{section.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-6 text-white">
+      <section className="subpage-cta">
+        <div className="subpage-container">
+          <h3>
             Ready to partner with a company that values integrity, compliance, and results?
           </h3>
-          <Link href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#414757' }}>
+          <Link href="/contact" className="subpage-btn">
             Contact Us Today!
           </Link>
         </div>

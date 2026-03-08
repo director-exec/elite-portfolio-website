@@ -58,98 +58,88 @@ export default function FraudIdentityTheftPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <section className="subpage-hero">
+        <div
+          className="subpage-hero-bg"
           style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Fraud & Identity Theft</h1>
-          <p className="text-xl">Suspect Fraud? We're Here to Help.</p>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Fraud & Identity Theft</h1>
+          <p>Suspect Fraud? We're Here to Help.</p>
         </div>
       </section>
 
       {/* Main Content Introduction */}
-      <section className="main-intro py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Protecting Your Identity and Financial Security</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              If you believe your account has been impacted by fraud or identity theft, 
-              Elite Portfolio Management is here to help you resolve the matter with urgency and care. 
-              We take these situations seriously and will work quickly to protect your financial security.
-            </p>
-          </div>
+      <section className="subpage-intro">
+        <div className="subpage-intro-inner">
+          <h2>Protecting Your Identity and Financial Security</h2>
+          <p>
+            If you believe your account has been impacted by fraud or identity theft,
+            Elite Portfolio Management is here to help you resolve the matter with urgency and care.
+            We take these situations seriously and will work quickly to protect your financial security.
+          </p>
         </div>
       </section>
 
       {/* Fraud Sections */}
       {fraudSections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div className="subpage-image-col">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div className="subpage-text-col">
+                    <h2>{section.title}</h2>
+                    <p>{section.description}</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="subpage-text-col">
+                    <h2>{section.title}</h2>
+                    <p>{section.description}</p>
+                  </div>
+                  <div className="subpage-image-col">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* Resources Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">Important Resources</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">Credit Bureaus</h3>
-                <div className="space-y-2 text-gray-700">
-                  <p><strong>Equifax:</strong> 1-800-525-6285</p>
-                  <p><strong>Experian:</strong> 1-888-397-3742</p>
-                  <p><strong>TransUnion:</strong> 1-800-680-7289</p>
-                </div>
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <h2>Important Resources</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="subpage-card">
+              <h3>Credit Bureaus</h3>
+              <div className="space-y-2">
+                <p><strong>Equifax:</strong> 1-800-525-6285</p>
+                <p><strong>Experian:</strong> 1-888-397-3742</p>
+                <p><strong>TransUnion:</strong> 1-800-680-7289</p>
               </div>
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">Federal Agencies</h3>
-                <div className="space-y-2 text-gray-700">
-                  <p><strong>FTC:</strong> 1-877-438-4338</p>
-                  <p><strong>Social Security:</strong> 1-800-772-1213</p>
-                  <p><strong>IRS:</strong> 1-800-908-4490</p>
-                </div>
+            </div>
+            <div className="subpage-card">
+              <h3>Federal Agencies</h3>
+              <div className="space-y-2">
+                <p><strong>FTC:</strong> 1-877-438-4338</p>
+                <p><strong>Social Security:</strong> 1-800-772-1213</p>
+                <p><strong>IRS:</strong> 1-800-908-4490</p>
               </div>
             </div>
           </div>
@@ -157,45 +147,35 @@ export default function FraudIdentityTheftPage() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-              <div className="text-lg text-gray-700 space-y-4">
-                <p className="font-semibold">Elite Portfolio Management</p>
-                <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
-                <p className="text-xl font-semibold text-blue-900">833-381-4416</p>
-                <p className="mt-4">
-                  <strong>Compliance Email:</strong> compliance@eliteportmgmt.com
-                </p>
-              </div>
-            </div>
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <h2>Contact Information</h2>
+          <div className="text-center">
+            <p className="font-semibold">Elite Portfolio Management</p>
+            <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+            <p className="text-xl font-semibold">833-381-4416</p>
+            <p className="mt-4">
+              <strong>Compliance Email:</strong> compliance@eliteportmgmt.com
+            </p>
           </div>
         </div>
       </section>
 
       {/* Legal Disclosure Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Legal Disclosure</h2>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
-                This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
-              </p>
-            </div>
-          </div>
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <h2>Legal Disclosure</h2>
+          <p>
+            This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+          </p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-6 text-white">
-            Need immediate assistance with fraud or identity theft?
-          </h3>
-          <Link href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#414757' }}>
+      <section className="subpage-cta">
+        <div className="subpage-container">
+          <h3>Need immediate assistance with fraud or identity theft?</h3>
+          <Link href="/contact" className="subpage-btn">
             Contact Us Today!
           </Link>
         </div>
@@ -203,26 +183,26 @@ export default function FraudIdentityTheftPage() {
 
       {/* Pop-up Modal */}
       {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" 
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
           style={{ zIndex: 9999 }}
           onClick={closeModal}
         >
-          <div 
-            className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
+          <div
+            className="bg-white shadow-xl max-w-md w-full mx-4 p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">IMPORTANT</h3>
-              <p className="text-sm text-gray-700 mb-4">
+              <h3 className="text-xl font-bold mb-4">IMPORTANT</h3>
+              <p className="text-sm mb-4">
                 This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
               </p>
-              <p className="text-sm text-gray-700 mb-6">
+              <p className="text-sm mb-6">
                 Calls to and from this company may be monitored and/or recorded.
               </p>
               <button
                 onClick={closeModal}
-                className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-200"
+                className="w-full bg-navy text-white py-2 px-4 hover:bg-opacity-90 transition-colors duration-200"
               >
                 I Accept
               </button>

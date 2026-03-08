@@ -53,26 +53,26 @@ export default function TCPACompliancePage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <section className="subpage-hero">
+        <div
+          className="subpage-hero-bg"
           style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">TCPA Compliance</h1>
-          <p className="text-xl">Our Commitment to Consumer Protection and Regulatory Adherence</p>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>TCPA Compliance</h1>
+          <p>Our Commitment to Consumer Protection and Regulatory Adherence</p>
         </div>
       </section>
 
       {/* Main Content Introduction */}
-      <section className="main-intro py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Our Commitment to TCPA Compliance</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              At Elite Portfolio Management, we take the Telephone Consumer Protection Act (TCPA) seriously. 
-              We operate with a structured, auditable, and aggressively compliant communication framework. 
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2>Our Commitment to TCPA Compliance</h2>
+            <p>
+              At Elite Portfolio Management, we take the Telephone Consumer Protection Act (TCPA) seriously.
+              We operate with a structured, auditable, and aggressively compliant communication framework.
               Our processes are designed to protect consumers, deter abusive litigation, and demonstrate full regulatory adherence.
             </p>
           </div>
@@ -81,68 +81,66 @@ export default function TCPACompliancePage() {
 
       {/* TCPA Sections */}
       {tcpaSections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
+        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div>
+                      {section.description}
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div>
+                      {section.description}
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                  </div>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Our Compliance Team</h2>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="text-lg text-gray-700 space-y-4">
-                <p className="font-semibold">If you received a call or message from us and believe it was in error:</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2>Contact Our Compliance Team</h2>
+            <div style={{ backgroundColor: 'white', borderRadius: '8px', padding: '2rem', marginTop: '1.5rem' }}>
+              <div style={{ textAlign: 'left' }}>
+                <p style={{ fontWeight: '600', marginBottom: '1rem' }}>If you received a call or message from us and believe it was in error:</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                   <div>
-                    <p className="font-semibold text-blue-600">Phone</p>
+                    <p style={{ fontWeight: '600', color: '#1c2a3f', marginBottom: '0.5rem' }}>Phone</p>
                     <p>833-381-4416</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-blue-600">Email</p>
+                    <p style={{ fontWeight: '600', color: '#1c2a3f', marginBottom: '0.5rem' }}>Email</p>
                     <p>compliance@eliteportmgmt.com</p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 mt-6">
+                <p style={{ fontSize: '0.875rem', color: '#666', marginTop: '1.5rem' }}>
                   This page serves as public notice of our TCPA compliance program.
                 </p>
               </div>
@@ -152,12 +150,12 @@ export default function TCPACompliancePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-6 text-white">
+      <section className="subpage-cta">
+        <div className="subpage-container">
+          <h3>
             Ready to partner with a company that prioritizes TCPA compliance?
           </h3>
-          <Link href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#414757' }}>
+          <Link href="/contact" className="subpage-btn">
             Contact Us Today!
           </Link>
         </div>

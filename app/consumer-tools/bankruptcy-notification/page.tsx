@@ -201,77 +201,74 @@ export default function BankruptcyNotificationPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <section className="subpage-hero">
+        <div
+          className="subpage-hero-bg"
           style={{ backgroundImage: 'url(/Pages/Writing_Signing_Doc_Meeting.jpeg)' }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Bankruptcy Notification</h1>
-          <p className="text-xl">Have You Filed for Bankruptcy?</p>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Bankruptcy Notification</h1>
+          <p>Have You Filed for Bankruptcy?</p>
         </div>
       </section>
 
       {/* Bankruptcy Sections */}
       {bankruptcySections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
+        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div className="order-1">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div className="order-2">
+                    <h2>{section.title}</h2>
+                    <div>
+                      {section.description}
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="order-2 lg:order-1">
+                    <h2>{section.title}</h2>
+                    <div>
+                      {section.description}
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* Bankruptcy Notification Form Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-blue-900 mb-2">
-                Bankruptcy Notification Form
-              </h2>
-              <p className="text-lg text-gray-700">
-                Please include Elite's eight-digit account number on your statement.
-              </p>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-blue-900 mb-2">
+              Bankruptcy Notification Form
+            </h2>
+            <p className="text-lg text-gray-700">
+              Please include Elite's eight-digit account number on your statement.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="subpage-form">
               {/* General Account Information */}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-blue-900 mb-4">General Account Information</h3>
@@ -672,14 +669,13 @@ export default function BankruptcyNotificationPage() {
                 )}
               </div>
             </form>
-          </div>
         </div>
       </section>
 
       {/* Need Assistance Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Need Assistance?</h2>
             <div className="bg-white rounded-lg shadow-lg p-8">
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -694,23 +690,21 @@ export default function BankruptcyNotificationPage() {
       </section>
 
       {/* Legal Notice Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Legal Notice</h2>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
-                This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
-              </p>
-            </div>
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Legal Notice</h2>
+          <div className="bg-gray-50 rounded-lg shadow-lg p-8">
+            <p className="text-lg text-gray-700 leading-relaxed text-center">
+              This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="text-lg text-gray-700">

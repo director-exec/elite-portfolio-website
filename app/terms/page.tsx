@@ -55,96 +55,93 @@ export default function TermsAndConditionsPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1200)' }}
-        ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Terms and Conditions of Use</h1>
-          <p className="text-xl">Please read these terms carefully before using our website</p>
+      <section className="subpage-hero">
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800)' }}></div>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Terms and Conditions of Use</h1>
+          <p>Please read these terms carefully before using our website</p>
         </div>
       </section>
 
       {/* Main Content Introduction */}
-      <section className="main-intro py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Understanding Our Terms</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Welcome to the website of Elite Portfolio Management LLC. By accessing and using eliteportmgmt.com, 
-              you agree to comply with and be bound by these Terms and Conditions. Please read them carefully to understand 
-              your rights and obligations.
-            </p>
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div className="subpage-intro">
+            <div className="subpage-intro-inner">
+              <h2>Understanding Our Terms</h2>
+              <p>
+                Welcome to the website of Elite Portfolio Management LLC. By accessing and using eliteportmgmt.com,
+                you agree to comply with and be bound by these Terms and Conditions. Please read them carefully to understand
+                your rights and obligations.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Terms Sections */}
-      {termsSections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="legal-page">
+        {termsSections.map((section, index) => (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div style={{ maxWidth: '72rem', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', alignItems: 'center' }}>
                 {section.imageLeft ? (
                   <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
+                    <div>
+                      <img
+                        src={section.image}
                         alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                        style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
                       />
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
+                    <div>
+                      <h2>{section.title}</h2>
+                      <p style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
                         {section.description}
-                      </div>
+                      </p>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
+                    <div>
+                      <h2>{section.title}</h2>
+                      <p style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
                         {section.description}
-                      </div>
+                      </p>
                     </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
+                    <div>
+                      <img
+                        src={section.image}
                         alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                        style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
                       />
                     </div>
                   </>
                 )}
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        ))}
+      </div>
 
       {/* Additional Terms Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Additional Terms</h2>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="space-y-6 text-lg text-gray-700">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Third-Party Links</h3>
-                  <p>Our Website may contain links to third-party websites. We are not responsible for the content, accuracy, or practices of any third-party websites.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Governing Law</h3>
-                  <p>These Terms and Conditions are governed by and construed in accordance with the laws of the state of Texas, without regard to its conflict of law principles.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Termination of Use</h3>
-                  <p>We reserve the right to suspend or terminate your access to the Website at any time for violation of these Terms and Conditions or for any other reason.</p>
-                </div>
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+            <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Additional Terms</h2>
+            <div style={{ backgroundColor: 'white', borderRadius: '0px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.125rem' }}>
+              <div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Third-Party Links</h3>
+                <p>Our Website may contain links to third-party websites. We are not responsible for the content, accuracy, or practices of any third-party websites.</p>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Governing Law</h3>
+                <p>These Terms and Conditions are governed by and construed in accordance with the laws of the state of Texas, without regard to its conflict of law principles.</p>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Termination of Use</h3>
+                <p>We reserve the right to suspend or terminate your access to the Website at any time for violation of these Terms and Conditions or for any other reason.</p>
               </div>
             </div>
           </div>
@@ -152,18 +149,18 @@ export default function TermsAndConditionsPage() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Us</h2>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-              <p className="text-lg text-gray-700 mb-6">
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '56rem', margin: '0 auto', textAlign: 'center' }}>
+            <h2>Contact Us</h2>
+            <div style={{ backgroundColor: '#f8f6f2', borderRadius: '0px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '2rem' }}>
+              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem' }}>
                 For any questions regarding these Terms and Conditions, please contact us at:
               </p>
-              <div className="text-lg text-gray-700 space-y-4">
-                <p className="font-semibold">Elite Portfolio Management LLC</p>
-                <p className="text-xl font-semibold text-blue-900">833-381-4416</p>
-                <p className="mt-4">
+              <div style={{ fontSize: '1.125rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <p style={{ fontWeight: '600' }}>Elite Portfolio Management LLC</p>
+                <p style={{ fontSize: '1.25rem', fontWeight: '600', color: '#1c2a3f' }}>833-381-4416</p>
+                <p>
                   <strong>Email:</strong> info@eliteportmgmt.com
                 </p>
               </div>

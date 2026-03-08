@@ -1773,7 +1773,464 @@ footer {
 .company-info p { margin-bottom: 0.5rem; }
 .company-info p:last-child { margin-bottom: 0; }
 
+/* ============================================
+   SUBPAGE SHARED STYLES
+   Used across all inner pages (About, Solutions, Consumer Tools, etc.)
+   ============================================ */
+
+/* Subpage hero — navy overlay on background image */
+.subpage-hero {
+  position: relative;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.subpage-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.subpage-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.88) 0%, rgba(28, 42, 63, 0.78) 50%, rgba(10, 22, 40, 0.68) 100%);
+}
+
+.subpage-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--text-on-dark);
+  padding: 0 1.5rem;
+}
+
+.subpage-hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-on-dark);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.subpage-hero-content p {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--text-on-dark-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Alternating content sections */
+.subpage-section {
+  padding: 4rem 0;
+}
+
+.subpage-section-cream {
+  background: var(--bg-cream);
+}
+
+.subpage-section-white {
+  background: var(--bg-white);
+}
+
+.subpage-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Two-column grid with image */
+.subpage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.subpage-grid h2 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.subpage-grid p,
+.subpage-grid .subpage-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.subpage-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Intro section after hero */
+.subpage-intro {
+  padding: 4rem 0;
+  background: var(--bg-cream);
+}
+
+.subpage-intro-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.subpage-intro h2 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.subpage-intro p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* Subpage CTA (navy bar) */
+.subpage-cta {
+  background: var(--navy-deep);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.subpage-cta h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-on-dark);
+}
+
+.subpage-cta .btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-on-dark);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.875rem 2.25rem;
+}
+
+.subpage-cta .btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Subpage cards grid */
+.subpage-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.subpage-card {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: 0;
+  border: 1px solid var(--border-light);
+  border-top: 2px solid var(--navy-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.subpage-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-medium);
+  border-top-color: var(--navy-deep);
+}
+
+.subpage-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.subpage-card p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Subpage inline button (in content sections) */
+.subpage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--navy-primary);
+  color: var(--text-on-dark);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 0;
+  border: 1px solid var(--navy-primary);
+  transition: all 0.3s ease;
+  margin-top: 1.25rem;
+}
+
+.subpage-btn:hover {
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+}
+
+/* Form styling for subpages */
+.subpage-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.subpage-form label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.375rem;
+  letter-spacing: 0.02em;
+}
+
+.subpage-form input,
+.subpage-form textarea,
+.subpage-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  transition: border-color 0.3s ease;
+  margin-bottom: 1.25rem;
+}
+
+.subpage-form input:focus,
+.subpage-form textarea:focus,
+.subpage-form select:focus {
+  outline: none;
+  border-color: var(--navy-primary);
+  box-shadow: 0 0 0 2px rgba(28, 42, 63, 0.1);
+}
+
+.subpage-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.subpage-form button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  background: var(--navy-primary);
+  color: var(--text-on-dark);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid var(--navy-primary);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subpage-form button[type="submit"]:hover {
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+}
+
+.subpage-form button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Contact-specific card with image header */
+.contact-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.contact-card-image-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.75), rgba(28, 42, 63, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.contact-card-image-overlay h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  text-align: center;
+}
+
+.contact-card-body {
+  padding: 1.5rem;
+}
+
+.contact-card-body p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.contact-card-info {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+.contact-card-info .email {
+  color: var(--navy-primary);
+  font-weight: 600;
+}
+
+.contact-card-info .phone {
+  color: var(--text-muted);
+}
+
+/* Legal page styles */
+.legal-page {
+  padding: 4rem 0;
+  background: var(--bg-cream);
+}
+
+.legal-page-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.legal-page h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.legal-page .last-updated {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.legal-page h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-page h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-page p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.legal-page ul, .legal-page ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.legal-page li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+.legal-page a {
+  color: var(--navy-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.legal-page a:hover {
+  border-bottom-color: var(--navy-primary);
+}
+
 @media (max-width: 900px) {
+  .subpage-hero { height: 260px; }
+  .subpage-hero-content h1 { font-size: 2.25rem; }
+  .subpage-hero-content p { font-size: 1rem; }
+  .subpage-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .subpage-image { height: 250px; }
+  .subpage-intro h2 { font-size: 1.75rem; }
+  .subpage-cards { grid-template-columns: 1fr; }
   .section-title { font-size: 2.5rem; }
   .section-subtitle { font-size: 1.5rem; }
   .content-grid { grid-template-columns: 1fr; gap: 2rem; }

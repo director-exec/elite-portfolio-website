@@ -6,7 +6,7 @@ export default function PrivacyPolicyPage() {
       id: 'information-collection',
       title: 'Information We Collect',
       description: 'We may collect various types of personal information including contact information (name, address, email, phone), financial information (payment history, bank details), debt information (account numbers, balances), identification information (government IDs), and communications records (phone calls, emails, correspondence).',
-      image: 'https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
       background: 'white',
       imageLeft: false
     },
@@ -55,85 +55,84 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw)' }}
-        ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-xl">Protecting Your Personal Information</p>
+      <section className="subpage-hero">
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800)' }}></div>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Privacy Policy</h1>
+          <p>Protecting Your Personal Information</p>
         </div>
       </section>
 
       {/* Main Content Introduction */}
-      <section className="main-intro py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Your Privacy Matters to Us</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Elite Portfolio Management LLC is committed to safeguarding the privacy and confidentiality of personal information. 
-              This Privacy Policy outlines how we collect, use, disclose, and protect individuals' personal information 
-              in connection with our account recovery services.
-            </p>
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div className="subpage-intro">
+            <div className="subpage-intro-inner">
+              <h2>Your Privacy Matters to Us</h2>
+              <p>
+                Elite Portfolio Management LLC is committed to safeguarding the privacy and confidentiality of personal information.
+                This Privacy Policy outlines how we collect, use, disclose, and protect individuals' personal information
+                in connection with our account recovery services.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Privacy Sections */}
-      {privacySections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="legal-page">
+        {privacySections.map((section, index) => (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div style={{ maxWidth: '72rem', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', alignItems: 'center' }}>
                 {section.imageLeft ? (
                   <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
+                    <div>
+                      <img
+                        src={section.image}
                         alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                        style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
                       />
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
+                    <div>
+                      <h2>{section.title}</h2>
+                      <p style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
                         {section.description}
-                      </div>
+                      </p>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
+                    <div>
+                      <h2>{section.title}</h2>
+                      <p style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
                         {section.description}
-                      </div>
+                      </p>
                     </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
+                    <div>
+                      <img
+                        src={section.image}
                         alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
+                        style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
                       />
                     </div>
                   </>
                 )}
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        ))}
+      </div>
 
       {/* Changes to Policy Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Changes to This Policy</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              We may update this Privacy Policy at any time. Any material changes will be communicated through our website 
-              or other appropriate channels. We encourage you to review this policy periodically to stay informed about 
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '56rem', margin: '0 auto', textAlign: 'center' }}>
+            <h2>Changes to This Policy</h2>
+            <p style={{ fontSize: '1.125rem', lineHeight: '1.75' }}>
+              We may update this Privacy Policy at any time. Any material changes will be communicated through our website
+              or other appropriate channels. We encourage you to review this policy periodically to stay informed about
               how we protect your information.
             </p>
           </div>
@@ -141,18 +140,18 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Us</h2>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-              <p className="text-lg text-gray-700 mb-6">
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '56rem', margin: '0 auto', textAlign: 'center' }}>
+            <h2>Contact Us</h2>
+            <div style={{ backgroundColor: '#f8f6f2', borderRadius: '0px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '2rem' }}>
+              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem' }}>
                 For any questions or concerns regarding this Privacy Policy, please contact us at:
               </p>
-              <div className="text-lg text-gray-700 space-y-4">
-                <p className="font-semibold">Elite Portfolio Management LLC</p>
-                <p className="text-xl font-semibold text-blue-600">833-381-4416</p>
-                <p className="mt-4">
+              <div style={{ fontSize: '1.125rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <p style={{ fontWeight: '600' }}>Elite Portfolio Management LLC</p>
+                <p style={{ fontSize: '1.25rem', fontWeight: '600', color: '#1c2a3f' }}>833-381-4416</p>
+                <p>
                   <strong>Email:</strong> info@eliteportmgmt.com
                 </p>
               </div>
@@ -162,10 +161,10 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Copyright Section */}
-      <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gray-600">
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <div style={{ maxWidth: '56rem', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ color: '#6b7280' }}>
               Copyright © 2026 Elite Portfolio Management – All Rights Reserved.
             </p>
           </div>

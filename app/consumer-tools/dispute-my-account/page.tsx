@@ -89,22 +89,31 @@ export default function DisputeMyAccountPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-4">Dispute My Account</h1>
-      <h2 className="text-xl font-semibold mb-6 text-gray-700">We're Here to Help — Let's Resolve It Together</h2>
-      
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <p className="mb-6">
-          If you believe an account placed with Elite Portfolio Management is inaccurate or invalid, you have the right to dispute it. 
-          Please complete the form below to initiate a review of your account.
-        </p>
-        
-        <p className="mb-8">
-          You're welcome (but not required) to explain the reason for your dispute or upload supporting documentation 
-          to help us investigate your claim as efficiently as possible.
-        </p>
+    <>
+      {/* Hero Banner Section */}
+      <section className="subpage-hero">
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800)' }}></div>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Dispute My Account</h1>
+          <p>We're Here to Help — Let's Resolve It Together</p>
+        </div>
+      </section>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <p className="mb-6">
+              If you believe an account placed with Elite Portfolio Management is inaccurate or invalid, you have the right to dispute it.
+              Please complete the form below to initiate a review of your account.
+            </p>
+
+            <p className="mb-8">
+              You're welcome (but not required) to explain the reason for your dispute or upload supporting documentation
+              to help us investigate your claim as efficiently as possible.
+            </p>
+
+            <form onSubmit={handleSubmit} className="subpage-form space-y-8">
           <div>
                             <h3 className="text-lg font-semibold mb-4">Account Information</h3>
             <p className="text-sm text-gray-600 mb-4">
@@ -296,7 +305,7 @@ export default function DisputeMyAccountPage() {
               name="consent"
               checked={formData.consent}
               onChange={handleInputChange}
-              className="mt-1 h-4 w-4 text-blue-900 focus:ring-blue-500 border-gray-300 rounded"
+              className="mt-1 h-4 w-4 text-navy focus:ring-navy border-gray-300 rounded"
               required
             />
             <label className="text-sm text-gray-700">
@@ -304,7 +313,7 @@ export default function DisputeMyAccountPage() {
             </label>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
+          <div className="bg-cream border-l-4 border-navy p-6">
             <h3 className="text-lg font-semibold mb-2">Need to Speak with Someone?</h3>
             <p className="mb-2">You can contact us directly to speak with an account representative:</p>
             <p className="font-semibold text-lg">833-381-4416</p>
@@ -323,39 +332,41 @@ export default function DisputeMyAccountPage() {
             </p>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-navy text-white py-3 px-6 hover:bg-opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Submitting...' : 'Submit Dispute'}
           </button>
           
-                          {submitMessage && (
-                  <div className={`mt-4 p-4 rounded-md ${
-                    submitMessage.includes('error') 
-                      ? 'bg-red-100 text-red-700 border border-red-300' 
-                      : 'bg-blue-900 text-white border border-blue-800'
-                  }`}>
-                    {submitMessage}
-                  </div>
-                )}
-        </form>
-      </div>
+              {submitMessage && (
+                <div className={`mt-4 p-4 rounded-md ${
+                  submitMessage.includes('error')
+                    ? 'bg-red-100 text-red-700 border border-red-300'
+                    : 'bg-navy text-white border border-navy'
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      </section>
 
       {/* Pop-up Modal */}
       {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" 
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
           style={{ zIndex: 9999 }}
           onClick={closeModal}
         >
-          <div 
+          <div
             className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">IMPORTANT</h3>
+              <h3 className="text-xl font-bold text-navy mb-4">IMPORTANT</h3>
               <p className="text-sm text-gray-700 mb-4">
                 This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
               </p>
@@ -364,7 +375,7 @@ export default function DisputeMyAccountPage() {
               </p>
               <button
                 onClick={closeModal}
-                className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-200"
+                className="w-full bg-navy text-white py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors duration-200"
               >
                 I Accept
               </button>
@@ -372,6 +383,6 @@ export default function DisputeMyAccountPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 } 

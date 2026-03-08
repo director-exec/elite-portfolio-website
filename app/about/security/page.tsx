@@ -4,7 +4,7 @@ export default function SecurityPage() {
       id: 'data-protection',
       title: 'Data Protection & Encryption',
       description: 'At Elite Portfolio Management, safeguarding data isn\'t just a priority — it\'s embedded in our DNA. We understand the critical importance of protecting both your information and your customers\' data at every level. Our track record is spotless — zero data breaches — and our infrastructure is built to meet and exceed today\'s most stringent security and compliance standards.',
-      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
       background: 'white',
       imageLeft: false
     },
@@ -29,70 +29,68 @@ export default function SecurityPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <section className="subpage-hero">
+        <div
+          className="subpage-hero-bg"
           style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Security</h1>
-          <p className="text-xl">Security Is the Foundation of Our Operations</p>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Security</h1>
+          <p>Security Is the Foundation of Our Operations</p>
         </div>
       </section>
 
       {/* Security Sections */}
       {securitySections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
+        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div>
+                      {section.description}
                     </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <h2>{section.title}</h2>
+                    <div>
+                      {section.description}
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                  </div>
+                  <div>
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* CTA Section */}
-      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-6 text-white">
+      <section className="subpage-cta">
+        <div className="subpage-container">
+          <h3>
             Ready to partner with a company that prioritizes security and compliance?
           </h3>
-          <a href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block" style={{ color: '#414757' }}>
+          <a href="/contact" className="subpage-btn">
             Contact Us Today!
           </a>
         </div>

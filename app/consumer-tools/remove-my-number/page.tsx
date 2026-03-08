@@ -115,141 +115,129 @@ export default function RemoveMyNumberPage() {
   return (
     <>
       {/* Hero Banner Section */}
-      <section className="hero-banner relative h-96 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <section className="subpage-hero">
+        <div
+          className="subpage-hero-bg"
           style={{ backgroundImage: 'url(/Pages/Calculator_Writing_Pro.jpeg)' }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Remove My Number</h1>
-          <p className="text-xl">Need Us to Stop Calling a Number? Let Us Know.</p>
+        <div className="subpage-hero-overlay"></div>
+        <div className="subpage-hero-content">
+          <h1>Remove My Number</h1>
+          <p>Need Us to Stop Calling a Number? Let Us Know.</p>
         </div>
       </section>
 
       {/* Main Content Introduction */}
-      <section className="main-intro py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Update Your Contact Preferences</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              If you've received calls from Elite Portfolio Management in error — or if you would prefer we contact you at a different number — 
-              please complete the form below. Your request will be processed within 5 business days.
-            </p>
-          </div>
+      <section className="subpage-intro">
+        <div className="subpage-intro-inner">
+          <h2>Update Your Contact Preferences</h2>
+          <p>
+            If you've received calls from Elite Portfolio Management in error — or if you would prefer we contact you at a different number —
+            please complete the form below. Your request will be processed within 5 business days.
+          </p>
         </div>
       </section>
 
       {/* Remove Number Sections */}
       {removeNumberSections.map((section, index) => (
-        <section key={section.id} className={`py-16 ${section.background === 'grey' ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {section.imageLeft ? (
-                  <>
-                    <div className="order-1">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                    <div className="order-2">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1">
-                      <h2 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h2>
-                      <div className="text-lg text-gray-700 leading-relaxed">
-                        {section.description}
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <img 
-                        src={section.image} 
-                        alt={section.title}
-                        className="w-full h-80 object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+          <div className="subpage-container">
+            <div className="subpage-grid">
+              {section.imageLeft ? (
+                <>
+                  <div className="subpage-image-col">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                  <div className="subpage-text-col">
+                    <h2>{section.title}</h2>
+                    <p>{section.description}</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="subpage-text-col">
+                    <h2>{section.title}</h2>
+                    <p>{section.description}</p>
+                  </div>
+                  <div className="subpage-image-col">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="subpage-image"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
       ))}
 
       {/* Form Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-blue-900">Contact Preference Form</h2>
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <h2>Contact Preference Form</h2>
+            <form onSubmit={handleSubmit} className="subpage-form">
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name <span className="text-blue-900">*</span></label>
-                    <input 
-                      type="text" 
+                    <label>First Name <span>*</span></label>
+                    <input
+                      type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name <span className="text-blue-900">*</span></label>
-                    <input 
-                      type="text" 
+                    <label>Last Name <span>*</span></label>
+                    <input
+                      type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">The Number We Are Currently Calling <span className="text-blue-900">*</span></label>
-                  <input 
-                    type="tel" 
+                  <label>The Number We Are Currently Calling <span>*</span></label>
+                  <input
+                    type="tel"
                     name="phoneNumberToRemove"
                     value={formData.phoneNumberToRemove}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Select One: <span className="text-blue-900">*</span></label>
+                  <label>Select One: <span>*</span></label>
                   <div className="space-y-2">
                     <label className="flex items-center">
-                      <input 
-                        type="radio" 
-                        name="preference" 
+                      <input
+                        type="radio"
+                        name="preference"
                         value="remove"
                         checked={formData.preference === 'remove'}
                         onChange={handleInputChange}
-                        className="mr-2" 
+                        className="mr-2"
                         required
                       />
                       <span>The number is incorrect — please remove it</span>
                     </label>
                     <label className="flex items-center">
-                      <input 
-                        type="radio" 
-                        name="preference" 
+                      <input
+                        type="radio"
+                        name="preference"
                         value="different"
                         checked={formData.preference === 'different'}
                         onChange={handleInputChange}
-                        className="mr-2" 
+                        className="mr-2"
                         required
                       />
                       <span>The number is correct, but I prefer to be reached at a different number</span>
@@ -257,23 +245,21 @@ export default function RemoveMyNumberPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Contact Number (if different)</label>
-                  <input 
-                    type="tel" 
+                  <label>Preferred Contact Number (if different)</label>
+                  <input
+                    type="tel"
                     name="preferredContactNumber"
                     value={formData.preferredContactNumber}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Comments or Additional Notes (optional)</label>
-                  <textarea 
-                    rows={4} 
+                  <label>Comments or Additional Notes (optional)</label>
+                  <textarea
+                    rows={4}
                     name="comments"
                     value={formData.comments}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   ></textarea>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -282,62 +268,54 @@ export default function RemoveMyNumberPage() {
                     name="consent"
                     checked={formData.consent}
                     onChange={handleInputChange}
-                    className="mt-1 h-4 w-4 text-blue-900 focus:ring-blue-500 border-gray-300 rounded"
                     required
                   />
-                  <label className="text-sm text-gray-700">
+                  <label className="text-sm">
                     I confirm that the information provided above is accurate and complete. I understand that this request will be processed within 5 business days.
                   </label>
                 </div>
-                <button 
+                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-900 text-white py-3 px-6 rounded-md hover:bg-blue-800 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-navy text-white py-3 px-6 hover:bg-opacity-90 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Request'}
                 </button>
-                
+
                 {submitMessage && (
-                  <div className={`mt-4 p-4 rounded-md ${
-                    submitMessage.includes('error') 
-                      ? 'bg-red-100 text-red-700 border border-red-300' 
-                      : 'bg-blue-900 text-white border border-blue-800'
+                  <div className={`mt-4 p-4 ${
+                    submitMessage.includes('error')
+                      ? 'bg-red-100 text-red-700'
+                      : 'bg-navy text-white'
                   }`}>
                     {submitMessage}
                   </div>
                 )}
               </div>
             </form>
-          </div>
         </div>
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-              <div className="text-lg text-gray-700 space-y-4">
-                <p className="font-semibold">Elite Portfolio Management</p>
-                <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
-                <p className="text-xl font-semibold text-blue-900">833-381-4416</p>
-                <p className="mt-4">
-                  <strong>Compliance Email:</strong> compliance@eliteportmgmt.com
-                </p>
-              </div>
-            </div>
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <h2>Contact Information</h2>
+          <div className="text-center">
+            <p className="font-semibold">Elite Portfolio Management</p>
+            <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
+            <p className="text-xl font-semibold">833-381-4416</p>
+            <p className="mt-4">
+              <strong>Compliance Email:</strong> compliance@eliteportmgmt.com
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta text-center py-24" style={{ backgroundColor: '#414757' }}>
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-6 text-white">
-            Need immediate assistance with removing your number?
-          </h3>
-          <Link href="/contact" className="btn bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#414757' }}>
+      <section className="subpage-cta">
+        <div className="subpage-container">
+          <h3>Need immediate assistance with removing your number?</h3>
+          <Link href="/contact" className="subpage-btn">
             Contact Us Today!
           </Link>
         </div>
@@ -345,26 +323,26 @@ export default function RemoveMyNumberPage() {
 
       {/* Pop-up Modal */}
       {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" 
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
           style={{ zIndex: 9999 }}
           onClick={closeModal}
         >
-          <div 
-            className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
+          <div
+            className="bg-white shadow-xl max-w-md w-full mx-4 p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">IMPORTANT</h3>
-              <p className="text-sm text-gray-700 mb-4">
+              <h3 className="text-xl font-bold mb-4">IMPORTANT</h3>
+              <p className="text-sm mb-4">
                 This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
               </p>
-              <p className="text-sm text-gray-700 mb-6">
+              <p className="text-sm mb-6">
                 Calls to and from this company may be monitored and/or recorded.
               </p>
               <button
                 onClick={closeModal}
-                className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-200"
+                className="w-full bg-navy text-white py-2 px-4 hover:bg-opacity-90 transition-colors duration-200"
               >
                 I Accept
               </button>
