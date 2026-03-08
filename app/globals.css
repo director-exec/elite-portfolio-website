@@ -199,26 +199,49 @@ h1, h2, h3 {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   margin-left: 5px;
 }
 
-.logo a {
+.logo a,
+.logo .logo-link {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+}
+
+.logo-shield {
+  color: var(--text-on-dark);
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .logo-wordmark {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   color: var(--text-on-dark);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   white-space: nowrap;
   line-height: 1;
+  text-transform: uppercase;
+}
+
+.logo-subtitle {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6rem;
+  color: var(--text-on-dark-muted);
+  letter-spacing: 0.12em;
   font-variant: small-caps;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 /* ============================================
@@ -257,7 +280,11 @@ h1, h2, h3 {
 }
 
 .compact-header .logo-wordmark {
-  font-size: 1.125rem;
+  font-size: 0.95rem;
+}
+
+.compact-header .logo-subtitle {
+  display: none;
 }
 
 /* ============================================
@@ -494,28 +521,48 @@ body.mobile-menu-open {
 }
 
 /* ============================================
-   HERO SECTION — PORTAL AESTHETIC
+   HERO SECTION — CLEAN CREAM WITH VISUAL CHARACTER
+   No dark background. Elegant, light, professional.
    ============================================ */
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  padding: 6rem 0 5rem;
   display: flex;
   align-items: center;
-  background: url('https://images.unsplash.com/photo-1651628001161-3481a6cce2cd?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+  background: var(--bg-cream);
+  overflow: hidden;
 }
 
+/* Subtle geometric accent — thin navy line decoration */
 .hero::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 22, 40, 0.85) 0%,
-    rgba(28, 42, 63, 0.75) 50%,
-    rgba(10, 22, 40, 0.7) 100%
-  );
-  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: var(--navy-primary);
+  opacity: 0.25;
+}
+
+/* Faint watermark shield in background for visual depth */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  background-image: url("data:image/svg+xml,%3Csvg width='420' height='420' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L4 5.5v5.5c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V5.5L12 2z' stroke='%231c2a3f' stroke-width='0.3' fill='none'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero .container {
@@ -524,41 +571,34 @@ body.mobile-menu-open {
   text-align: center;
 }
 
-.hero h1, .hero .description, .hero .description-secondary {
-  color: var(--text-on-dark);
-}
-
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 3.75rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: 0.02em;
-  text-shadow: none;
-}
-
-.hero h1 span {
-  color: var(--text-on-dark);
+  color: var(--navy-primary);
 }
 
 .hero .description {
   font-family: var(--font-body);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   max-width: 42rem;
   margin: 0 auto 1.5rem auto;
-  color: var(--text-on-dark);
+  color: var(--navy-primary);
   line-height: 1.6;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  font-variant: small-caps;
 }
 
 .hero .description-secondary {
   font-family: var(--font-body);
   font-size: 1.05rem;
   max-width: 48rem;
-  margin: 0 auto 2rem auto;
-  color: var(--text-on-dark-muted);
+  margin: 0 auto 1.5rem auto;
+  color: var(--text-secondary);
   line-height: 1.75;
   font-weight: 400;
 }
@@ -569,6 +609,17 @@ body.mobile-menu-open {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2.5rem;
+}
+
+/* Thin decorative divider between hero and services */
+.hero + .services::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: var(--navy-primary);
+  margin: 0 auto 3rem;
+  opacity: 0.2;
 }
 
 /* ============================================
@@ -598,14 +649,14 @@ body.mobile-menu-open {
 }
 
 .btn-hero {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--navy-primary);
   color: var(--text-on-dark);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--navy-primary);
 }
 
 .btn-hero:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
 }
 
 .btn-primary:hover {
@@ -646,6 +697,7 @@ body.mobile-menu-open {
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   border: 1px solid var(--border-light);
+  border-top: 3px solid transparent;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -657,6 +709,7 @@ body.mobile-menu-open {
 .service-card:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--border-medium);
+  border-top-color: var(--navy-primary);
 }
 
 .service-icon {
@@ -707,6 +760,19 @@ body.mobile-menu-open {
 .about {
   padding: var(--section-padding) 0;
   background: var(--bg-white);
+  position: relative;
+}
+
+/* Thin navy accent line at left edge of about section */
+.about::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, var(--navy-primary), transparent);
+  opacity: 0.1;
 }
 
 .about-container {
@@ -1099,8 +1165,10 @@ footer {
   .header-bottom-right { margin-left: auto; }
   .nav-menu { gap: 0.25rem; }
   .nav-menu a { font-size: 0.75rem; font-weight: 600; padding: 0.375rem 0.5rem; }
-  .logo-wordmark { font-size: 1.25rem; }
-  .compact-header .logo-wordmark { font-size: 1rem; }
+  .logo-wordmark { font-size: 0.95rem; }
+  .compact-header .logo-wordmark { font-size: 0.85rem; }
+  .logo-subtitle { display: none; }
+  .logo-shield { width: 26px; height: 26px; }
 }
 
 @media (max-width: 900px) {
@@ -1121,8 +1189,10 @@ footer {
     margin-left: 5px;
   }
 
-  .logo-wordmark { font-size: 1.125rem; }
-  .compact-header .logo-wordmark { font-size: 1rem; }
+  .logo-wordmark { font-size: 0.9rem; }
+  .compact-header .logo-wordmark { font-size: 0.85rem; }
+  .logo-subtitle { display: none; }
+  .logo-shield { width: 24px; height: 24px; }
 
   .mobile-menu-btn {
     position: absolute;
@@ -1141,16 +1211,15 @@ footer {
   .mobile-menu-btn:hover { color: var(--text-on-dark); }
   .mobile-menu-btn i { color: var(--text-on-dark-muted); }
 
-  .hero h1 { font-size: 2.5rem; }
+  .hero h1 { font-size: 2.25rem; }
 
   .hero {
-    min-height: 60vh;
-    padding-bottom: 1rem;
+    padding: 3.5rem 0 3rem;
   }
 
   .hero .container {
-    padding-bottom: 2rem;
-    padding-top: 4rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

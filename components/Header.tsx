@@ -48,13 +48,20 @@ export default function Header() {
       <header className="normal-header">
         <div className="container">
           <div className="header-content">
-            {/* Logo */}
+            {/* Logo with Shield */}
             <div className="logo">
-              <Link href="/">
-                <span className="logo-wordmark">Elite Portfolio Management</span>
+              <Link href="/" className="logo-link">
+                <svg className="logo-shield" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L4 5.5v5.5c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V5.5L12 2z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                  <path d="M9 12.5l2.5 2.5L15.5 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+                <div className="logo-text">
+                  <span className="logo-wordmark">Elite Portfolio Management</span>
+                  <span className="logo-subtitle">Digital Recovery &middot; Human Respect &middot; Total Compliance</span>
+                </div>
               </Link>
             </div>
-            
+
             {/* Desktop Navigation - Hidden on mobile */}
             <div className="header-right hidden mobile:flex">
               {/* Top Right: Contact Info + Payment Button */}
@@ -120,9 +127,13 @@ export default function Header() {
       <header className={`compact-header ${isScrolled ? 'show' : ''}`}>
         <div className="container">
           <div className="header-content">
-            {/* Logo */}
+            {/* Logo with Shield */}
             <div className="logo">
-              <Link href="/">
+              <Link href="/" className="logo-link">
+                <svg className="logo-shield" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L4 5.5v5.5c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V5.5L12 2z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                  <path d="M9 12.5l2.5 2.5L15.5 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
                 <span className="logo-wordmark">Elite Portfolio Management</span>
               </Link>
             </div>
