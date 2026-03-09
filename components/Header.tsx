@@ -51,7 +51,7 @@ export default function Header() {
             {/* Logo with Shield */}
             <div className="logo">
               <Link href="/" className="logo-link">
-                <svg className="logo-shield" width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="logo-shield" width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L4 5.5v5.5c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V5.5L12 2z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                   <path d="M9 12.5l2.5 2.5L15.5 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                 </svg>
@@ -130,7 +130,7 @@ export default function Header() {
             {/* Logo with Shield */}
             <div className="logo">
               <Link href="/" className="logo-link">
-                <svg className="logo-shield" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="logo-shield" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L4 5.5v5.5c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V5.5L12 2z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                   <path d="M9 12.5l2.5 2.5L15.5 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                 </svg>

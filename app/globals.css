@@ -226,7 +226,7 @@ h1, h2, h3 {
 .logo-wordmark {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   color: var(--text-on-dark);
   letter-spacing: 0.12em;
   white-space: nowrap;
@@ -237,7 +237,7 @@ h1, h2, h3 {
 .logo-subtitle {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: var(--text-on-dark-muted);
   letter-spacing: 0.12em;
   font-variant: small-caps;
@@ -576,7 +576,7 @@ body.mobile-menu-open {
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 3.25rem;
+  font-size: 3.75rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   line-height: 1.1;
@@ -586,7 +586,7 @@ body.mobile-menu-open {
 
 .hero .description {
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   max-width: 42rem;
   margin: 0 auto 1.25rem auto;
   color: var(--navy-primary);
@@ -598,7 +598,7 @@ body.mobile-menu-open {
 
 .hero .description-secondary {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   max-width: 48rem;
   margin: 0 auto 0.75rem auto;
   color: var(--text-secondary);
