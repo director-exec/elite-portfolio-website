@@ -583,7 +583,7 @@ body.mobile-menu-open {
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 3.75rem;
+  font-size: 4.25rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   line-height: 1.1;
@@ -593,7 +593,7 @@ body.mobile-menu-open {
 
 .hero .description {
   font-family: var(--font-body);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   max-width: 42rem;
   margin: 0 auto 2rem auto;
   color: var(--navy-primary);
@@ -605,7 +605,7 @@ body.mobile-menu-open {
 
 .hero .description-secondary {
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   max-width: 48rem;
   margin: 0 auto 1.25rem auto;
   color: var(--text-secondary);
@@ -654,8 +654,8 @@ body.mobile-menu-open {
   background: var(--navy-primary);
   color: var(--text-on-dark);
   border: 1px solid var(--navy-primary);
-  padding: 1.25rem 3.5rem;
-  font-size: 0.95rem;
+  padding: 1.5rem 4rem;
+  font-size: 1.05rem;
   letter-spacing: 3px;
 }
 
