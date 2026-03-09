@@ -557,8 +557,8 @@ body.mobile-menu-open {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 520px;
-  height: 520px;
+  width: 720px;
+  height: 720px;
   background-image: url("data:image/svg+xml,%3Csvg width='520' height='520' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L4 5.5v5.5c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V5.5L12 2z' stroke='%231c2a3f' stroke-width='0.3' fill='none'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
@@ -572,13 +572,20 @@ body.mobile-menu-open {
   position: relative;
   z-index: 2;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  min-height: calc(100vh - 160px);
 }
 
 .hero h1 {
   font-family: var(--font-heading);
   font-size: 3.75rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--navy-primary);
@@ -588,7 +595,7 @@ body.mobile-menu-open {
   font-family: var(--font-body);
   font-size: 1.35rem;
   max-width: 42rem;
-  margin: 0 auto 1.25rem auto;
+  margin: 0 auto 2rem auto;
   color: var(--navy-primary);
   line-height: 1.6;
   font-weight: 500;
@@ -600,7 +607,7 @@ body.mobile-menu-open {
   font-family: var(--font-body);
   font-size: 1.15rem;
   max-width: 48rem;
-  margin: 0 auto 0.75rem auto;
+  margin: 0 auto 1.25rem auto;
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 400;
@@ -608,10 +615,11 @@ body.mobile-menu-open {
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
 /* Thin line separators above and below services */
@@ -646,6 +654,9 @@ body.mobile-menu-open {
   background: var(--navy-primary);
   color: var(--text-on-dark);
   border: 1px solid var(--navy-primary);
+  padding: 1.25rem 3.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 3px;
 }
 
 .btn-hero:hover {
