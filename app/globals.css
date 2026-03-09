@@ -576,8 +576,8 @@ body.mobile-menu-open {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
   min-height: calc(100vh - 160px);
 }
 
@@ -585,7 +585,7 @@ body.mobile-menu-open {
   font-family: var(--font-heading);
   font-size: 4.25rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--navy-primary);
@@ -593,9 +593,9 @@ body.mobile-menu-open {
 
 .hero .description {
   font-family: var(--font-body);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   max-width: 42rem;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2.5rem auto;
   color: var(--navy-primary);
   line-height: 1.6;
   font-weight: 500;
@@ -605,9 +605,9 @@ body.mobile-menu-open {
 
 .hero .description-secondary {
   font-family: var(--font-body);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   max-width: 48rem;
-  margin: 0 auto 1.25rem auto;
+  margin: 0 auto 2rem auto;
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 400;
@@ -618,8 +618,8 @@ body.mobile-menu-open {
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: auto;
-  padding-top: 2rem;
+  margin-top: 3rem;
+  padding-top: 0;
 }
 
 /* Thin line separators above and below services */
