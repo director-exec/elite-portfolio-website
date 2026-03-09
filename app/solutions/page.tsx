@@ -41,7 +41,7 @@ export default function SolutionsPage() {
     {
       id: 'network-attorneys',
       title: 'Network of Attorneys',
-      description: 'Legal collection services nationwide with experienced legal professionals. Our network of licensed attorneys provides legal collection services across all 50 states, ensuring compliance with state-specific regulations and maximizing recovery through legal channels.',
+      description: 'Legal collection services with experienced legal professionals. Our network of licensed attorneys provides legal collection services across multiple jurisdictions, ensuring compliance with state-specific regulations and maximizing recovery through legal channels.',
       image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
       link: '/solutions/network-of-attorneys',
       background: 'white',

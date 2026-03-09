@@ -97,7 +97,7 @@ export default function Home() {
                 <h3>Industry Standards</h3>
                 <ul className="standards-list">
                   <li>FDCPA and TCPA oversight and documentation standards</li>
-                  <li>State licensing, COAs, and bond requirements across all 50 states</li>
+                  <li>State licensing, COAs, and bond requirements in every jurisdiction we operate</li>
                   <li>Regular compliance audits and training</li>
                 </ul>
               </div>

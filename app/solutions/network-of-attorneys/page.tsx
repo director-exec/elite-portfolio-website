@@ -3,7 +3,7 @@ export default function NetworkOfAttorneysPage() {
     {
       id: 'trusted-representation',
       title: 'Trusted Legal Representation — Anywhere in the U.S.',
-      description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across all 50 states. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
+      description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across multiple U.S. jurisdictions. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
       image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800',
       background: 'cream',
       imageLeft: true
@@ -19,7 +19,7 @@ export default function NetworkOfAttorneysPage() {
     {
       id: 'comprehensive-services',
       title: 'Comprehensive Legal Services',
-      description: 'Our Elite Portfolio Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation in every state. Whether you\'re pursuing a single claim or managing a national portfolio, we have the legal infrastructure to execute with confidence.',
+      description: 'Our Elite Portfolio Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation wherever we operate. Whether you\'re pursuing a single claim or managing a large portfolio, we have the legal infrastructure to execute with confidence.',
       image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800',
       background: 'cream',
       imageLeft: true

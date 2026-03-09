@@ -45,7 +45,7 @@ export default function AboutPage() {
     {
       id: 'where-we-work',
       title: 'Where We Work',
-      description: 'Elite Portfolio Management is licensed, bonded, and fully operational in all 50 U.S. states. We maintain Certificates of Authority, statutory bonds, trust accounts, and resident office requirements in every jurisdiction where applicable law demands it. Your nationwide presence is supported by ours.',
+      description: 'Elite Portfolio Management is licensed, bonded, and insured. We maintain Certificates of Authority, statutory bonds, trust accounts, and resident office requirements in every jurisdiction where applicable law demands it. As our footprint continues to grow, our compliance infrastructure scales with it — so wherever you operate, we are ready to support you.',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800',
       background: 'grey',
       imageLeft: true
