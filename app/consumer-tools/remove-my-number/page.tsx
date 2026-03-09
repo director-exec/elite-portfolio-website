@@ -82,7 +82,7 @@ export default function RemoveMyNumberPage() {
       id: 'urgent-matters',
       title: 'Urgent Matters',
       description: 'If the matter is urgent, we recommend calling us directly at 833-381-4416. For immediate assistance with removing your number from our calling list, our team is available to help you right away.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/remove_sec_urgent.png',
       background: 'white',
       imageLeft: false
     },
@@ -90,7 +90,7 @@ export default function RemoveMyNumberPage() {
       id: 'update-contact-preference',
       title: 'Update Your Contact Preference',
       description: 'Please provide the following information so we can update our records accurately: your first and last name, the number we are currently calling, whether the number is incorrect or you prefer a different contact number, and any additional comments or notes.',
-      image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/remove_sec_preference.png',
       background: 'grey',
       imageLeft: true
     },
@@ -98,7 +98,7 @@ export default function RemoveMyNumberPage() {
       id: 'what-happens-next',
       title: 'What Happens Next?',
       description: 'Your request will be reviewed within 24 hours, changes will be implemented within 5 business days, you\'ll receive a confirmation email once processed, and if you provided an alternative number, we\'ll begin using it immediately.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/remove_sec_next.png',
       background: 'white',
       imageLeft: false
     },
@@ -106,7 +106,7 @@ export default function RemoveMyNumberPage() {
       id: 'important-notice',
       title: 'Important Notice',
       description: 'This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector. We take your privacy seriously and will process your request promptly.',
-      image: '/Pages/Stamp_Doc.jpeg',
+      image: '/Pages/remove_sec_notice.png',
       background: 'grey',
       imageLeft: true
     }
@@ -118,8 +118,7 @@ export default function RemoveMyNumberPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/Calculator_Writing_Pro.jpeg)' }}
-        ></div>
+          style={{ backgroundImage: 'url(/Pages/remove_number_hero_bg.png)' }}>        </div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Remove My Number</h1>

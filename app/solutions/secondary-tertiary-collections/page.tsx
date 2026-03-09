@@ -4,7 +4,7 @@ export default function SecondaryTertiaryCollectionsPage() {
       id: 'specialized-recovery',
       title: 'Specialized Recovery for Difficult Accounts',
       description: 'When accounts have been through multiple collection attempts without resolution, they require a specialized approach. Elite Portfolio Management\'s Secondary & Tertiary Collections services are designed specifically for these challenging cases that demand advanced strategies and experienced handling. Our team brings decades of experience in handling complex collection scenarios.',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800',
+      image: '/Pages/secondary_sec_aged.png',
       background: 'white',
       imageLeft: false
     },
@@ -12,7 +12,7 @@ export default function SecondaryTertiaryCollectionsPage() {
       id: 'specialized-communication',
       title: 'Specialized Communication Strategies',
       description: 'Customized approaches based on account history and consumer behavior patterns. We provide access to specialized legal resources for complex regulatory and compliance matters, and creative payment arrangements tailored to individual consumer circumstances.',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800',
+      image: '/Pages/secondary_sec_strategy.png',
       background: 'cream',
       imageLeft: true
     },
@@ -20,7 +20,7 @@ export default function SecondaryTertiaryCollectionsPage() {
       id: 'flexible-solutions',
       title: 'Flexible Payment Solutions',
       description: 'Creative payment arrangements tailored to individual consumer circumstances. Our specialized services provide recovery of previously uncollectible accounts, specialized handling of complex cases, advanced location and contact services, expert legal and compliance support, and customized payment arrangements.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800',
+      image: '/Pages/secondary_sec_compliance.png',
       background: 'white',
       imageLeft: false
     }
@@ -30,7 +30,7 @@ export default function SecondaryTertiaryCollectionsPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/secondary_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Secondary & Tertiary Collections</h1>

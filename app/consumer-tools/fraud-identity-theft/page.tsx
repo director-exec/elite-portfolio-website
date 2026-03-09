@@ -17,7 +17,7 @@ export default function FraudIdentityTheftPage() {
       id: 'immediate-action',
       title: 'Immediate Action Required',
       description: 'If you believe your account has been impacted by fraud or identity theft, please contact Elite Portfolio Management immediately so we can assist you in resolving the matter with urgency and care. Your privacy and security are our priority. Call us at 833-381-4416 for immediate assistance.',
-      image: '/Pages/Stamp_Doc.jpeg',
+      image: '/Pages/fraud_sec_immediate.png',
       background: 'white',
       imageLeft: false
     },
@@ -33,7 +33,7 @@ export default function FraudIdentityTheftPage() {
       id: 'police-report',
       title: 'File a Police Report',
       description: 'In cases of identity theft, it\'s important to file a police report with your local law enforcement agency. This creates an official record of the crime and may be required by creditors, banks, and credit bureaus. Bring your FTC Identity Theft Report, government-issued photo ID, proof of address, and any evidence of the identity theft.',
-      image: 'https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw',
+      image: '/Pages/fraud_sec_police.png',
       background: 'white',
       imageLeft: false
     },
@@ -41,7 +41,7 @@ export default function FraudIdentityTheftPage() {
       id: 'what-to-expect',
       title: 'What to Expect',
       description: 'When you report fraud or identity theft to us, you can expect immediate account review and security measures, assistance with documentation and reporting, guidance on protecting your identity going forward, and regular updates on the status of your case. We work quickly to resolve these issues and protect your financial security.',
-      image: 'https://images.pexels.com/photos/9068372/pexels-photo-9068372.jpeg?_gl=1*269x10*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MjU3MjAkbzEkZzEkdDE3NTQ5MjYwNzckajUxJGwwJGgw',
+      image: '/Pages/fraud_sec_expect.png',
       background: 'grey',
       imageLeft: true
     },
@@ -49,7 +49,7 @@ export default function FraudIdentityTheftPage() {
       id: 'additional-resources',
       title: 'Additional Resources',
       description: 'We provide access to important resources including credit bureaus (Equifax, Experian, TransUnion) and federal agencies (FTC, Social Security Administration, IRS). These organizations can help you place fraud alerts, freeze your credit, and report identity theft to the appropriate authorities.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/fraud_sec_resources.png',
       background: 'white',
       imageLeft: false
     }
@@ -61,8 +61,8 @@ export default function FraudIdentityTheftPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
-        ></div>
+          style={{ backgroundImage: 'url(/Pages/fraud_hero_bg.png)' }}>
+        </div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Fraud & Identity Theft</h1>

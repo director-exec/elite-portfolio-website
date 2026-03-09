@@ -6,7 +6,7 @@ export default function SolutionsPage() {
       id: 'pre-collection',
       title: 'Pre Charge-Off Collections',
       description: 'Early intervention strategies to prevent charge-offs and maximize recovery potential. Our proactive approach helps clients maintain account relationships while maximizing recovery rates through strategic communication and payment arrangements.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
+      image: '/Pages/solutions_sec_pre_chargeoff.png',
       link: '/solutions/pre-charge-off-collections',
       background: 'white',
       imageLeft: false
@@ -15,7 +15,7 @@ export default function SolutionsPage() {
       id: 'post-charge-off',
       title: 'Post Charge-Off Collections',
       description: 'Recovery solutions for charged-off accounts with proven results. We specialize in recovering balances from accounts that have been written off using advanced strategic collection techniques.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800',
+      image: '/Pages/solutions_sec_post_chargeoff.png',
       link: '/solutions/post-charge-off-collections',
       background: 'cream',
       imageLeft: true
@@ -24,7 +24,7 @@ export default function SolutionsPage() {
       id: 'secondary-tertiary',
       title: 'Secondary & Tertiary Collections',
       description: 'Specialized recovery for difficult accounts requiring advanced strategies. Our experienced team handles accounts that have been through multiple collection attempts, using innovative approaches to locate and engage debtors.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+      image: '/Pages/solutions_sec_secondary.png',
       link: '/solutions/secondary-tertiary-collections',
       background: 'white',
       imageLeft: false
@@ -33,7 +33,7 @@ export default function SolutionsPage() {
       id: 'warehousing',
       title: 'Warehousing Management',
       description: 'Portfolio management and optimization for maximum recovery efficiency. We provide comprehensive portfolio analysis, segmentation, and strategic management to maximize your recovery potential while minimizing operational costs.',
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800',
+      image: '/Pages/solutions_sec_warehousing.png',
       link: '/solutions/warehousing-management',
       background: 'cream',
       imageLeft: true
@@ -42,7 +42,7 @@ export default function SolutionsPage() {
       id: 'network-attorneys',
       title: 'Network of Attorneys',
       description: 'Legal collection services with experienced legal professionals. Our network of licensed attorneys provides legal collection services across multiple jurisdictions, ensuring compliance with state-specific regulations and maximizing recovery through legal channels.',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
+      image: '/Pages/solutions_sec_attorneys.png',
       link: '/solutions/network-of-attorneys',
       background: 'white',
       imageLeft: false
@@ -51,7 +51,7 @@ export default function SolutionsPage() {
       id: 'credit-bureau',
       title: 'Credit Bureau Reporting',
       description: 'As part of our full-service recovery solutions, Elite Portfolio Management\'s network offers optional credit bureau reporting to enhance your collection strategy. We handle every file with full adherence to the Fair Credit Reporting Act (FCRA) and all applicable regulations. Our network will report only with your authorization.',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800',
+      image: '/Pages/solutions_sec_credit.png',
       link: '/solutions/credit-bureau-reporting',
       background: 'cream',
       imageLeft: true
@@ -62,7 +62,7 @@ export default function SolutionsPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/solutions_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Business Solutions</h1>

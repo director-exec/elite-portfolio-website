@@ -61,7 +61,7 @@ export default function TextMessageOptInPage() {
       id: 'timely-notifications',
       title: 'Get Timely Notifications',
       description: 'Receive important updates about billing and upcoming payments directly to your phone. Stay informed about your account status and never miss a payment deadline with our convenient text message alerts.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+      image: '/Pages/text_optin_hero_bg.png',
       background: 'white',
       imageLeft: false
     },
@@ -69,7 +69,7 @@ export default function TextMessageOptInPage() {
       id: 'real-time-updates',
       title: 'Stay Updated in Real Time',
       description: 'Get instant notifications about your account status changes, payment confirmations, and important account updates. Our text messaging service ensures you\'re always in the know about your financial obligations.',
-      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/text_sec_realtime.png',
       background: 'grey',
       imageLeft: true
     },
@@ -77,7 +77,7 @@ export default function TextMessageOptInPage() {
       id: 'avoid-late-payments',
       title: 'Avoid Late Payments',
       description: 'Receive helpful due-date alerts and payment reminders to help you stay on top of your financial obligations. Our proactive messaging system helps you maintain good payment history and avoid late fees.',
-      image: 'https://images.pexels.com/photos/6077587/pexels-photo-6077587.jpeg?_gl=1*1votr6i*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTUwODU0NDYkbzUkZzEkdDE3NTUwODU0NDckajU5JGwwJGgw',
+      image: '/Pages/text_sec_late.png',
       background: 'white',
       imageLeft: false
     },
@@ -85,7 +85,7 @@ export default function TextMessageOptInPage() {
       id: 'exclusive-offers',
       title: 'Access Exclusive Offers',
       description: 'Receive notifications about exclusive offers and flexible payment options to better manage your account. Take advantage of special programs and payment arrangements designed to help you succeed.',
-      image: 'https://images.pexels.com/photos/8112172/pexels-photo-8112172.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/text_sec_offers.png',
       background: 'grey',
       imageLeft: true
     }
@@ -97,7 +97,7 @@ export default function TextMessageOptInPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800)' }}
+          style={{ backgroundImage: 'url(/Pages/text_optin_hero_bg.png)' }}
         ></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">

@@ -4,7 +4,7 @@ export default function PostChargeOffCollectionsPage() {
       id: 'advanced-recovery',
       title: 'Advanced Recovery Solutions',
       description: 'When accounts go unpaid and age beyond internal efforts, Elite Portfolio Management delivers the experience, systems, and compliance infrastructure needed to convert them into revenue — while protecting your brand reputation every step of the way. Our post charge-off collections are powered by advanced analytics, multichannel communication, and fully compliant protocols.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800',
+      image: '/Pages/post_sec_recovery.png',
       background: 'white',
       imageLeft: false
     },
@@ -12,7 +12,7 @@ export default function PostChargeOffCollectionsPage() {
       id: 'omnichannel-outreach',
       title: 'Omnichannel Contact Tools',
       description: 'Voice, SMS, email, and mail — tailored to consumer behavior and channel preference. Every decision is backed by data: segmentation, scoring, and behavioral tracking guide our workflows to optimize recovery. We train all agents to handle post-charge-off consumers with empathy, clarity, and professionalism.',
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800',
+      image: '/Pages/post_sec_process.png',
       background: 'cream',
       imageLeft: true
     },
@@ -20,7 +20,7 @@ export default function PostChargeOffCollectionsPage() {
       id: 'compliance-first',
       title: 'Compliance-First Process',
       description: 'FDCPA, FCRA, TCPA, GLBA, HIPAA — our internal legal oversight ensures full regulatory alignment at every stage. Whether you\'re a financial institution, healthcare provider, utility, or commercial business, our approach is designed to reduce friction and increase resolution — fast.',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
+      image: '/Pages/post_sec_legal.png',
       background: 'white',
       imageLeft: false
     },
@@ -28,7 +28,7 @@ export default function PostChargeOffCollectionsPage() {
       id: 'proven-results',
       title: 'Proven Results',
       description: 'Our post charge-off collection programs consistently deliver superior recovery rates while maintaining the highest standards of compliance and customer service. We understand that every account represents a relationship that can be restored. With decades of results in regulated industries, we\'ve developed a refined, effective approach.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+      image: '/Pages/post_sec_results.png',
       background: 'cream',
       imageLeft: true
     }
@@ -38,7 +38,7 @@ export default function PostChargeOffCollectionsPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/post_chargeoff_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Post Charge-Off Collections</h1>

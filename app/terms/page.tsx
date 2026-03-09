@@ -6,7 +6,7 @@ export default function TermsAndConditionsPage() {
       id: 'acceptance-of-terms',
       title: 'Acceptance of Terms',
       description: 'By accessing and using the Website, you acknowledge and agree to abide by these Terms and Conditions and all applicable laws and regulations. If you do not agree to any of these terms, please do not use the Website.',
-      image: 'https://images.pexels.com/photos/6077587/pexels-photo-6077587.jpeg?_gl=1*1votr6i*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTUwODU0NDYkbzUkZzEkdDE3NTUwODU0NDckajU5JGwwJGgw',
+      image: '/Pages/terms_sec_liability.png',
       background: 'white',
       imageLeft: false
     },
@@ -14,7 +14,7 @@ export default function TermsAndConditionsPage() {
       id: 'modifications-to-terms',
       title: 'Modifications to Terms',
       description: 'We reserve the right to update or modify these Terms and Conditions at any time without prior notice. Your continued use of the Website constitutes acceptance of any changes.',
-      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
+      image: '/Pages/terms_sec_service.png',
       background: 'grey',
       imageLeft: true
     },
@@ -22,7 +22,7 @@ export default function TermsAndConditionsPage() {
       id: 'privacy-policy',
       title: 'Privacy Policy',
       description: 'Your use of the Website is also governed by our Privacy Policy, which is incorporated into these Terms and Conditions by reference. We encourage you to review our Privacy Policy to understand how we collect, use, and protect your information.',
-      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/terms_sec_privacy.png',
       background: 'white',
       imageLeft: false
     },
@@ -30,7 +30,7 @@ export default function TermsAndConditionsPage() {
       id: 'intellectual-property',
       title: 'Intellectual Property',
       description: 'All content on the Website, including text, graphics, logos, and software, is the property of Elite Portfolio Management LLC and is protected by copyright laws. You may not use, reproduce, or distribute any content without our express written permission.',
-      image: 'https://images.pexels.com/photos/6077587/pexels-photo-6077587.jpeg?_gl=1*1votr6i*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTUwODU0NDYkbzUkZzEkdDE3NTUwODU0NDckajU5JGwwJGgw',
+      image: '/Pages/terms_sec_liability.png',
       background: 'grey',
       imageLeft: true
     },
@@ -38,7 +38,7 @@ export default function TermsAndConditionsPage() {
       id: 'limitation-of-liability',
       title: 'Limitation of Liability',
       description: 'We are not liable for any damages resulting from your use of, or inability to use, the Website or any services provided. This includes, without limitation, damages due to errors, interruptions, or data loss.',
-      image: 'https://images.pexels.com/photos/8112172/pexels-photo-8112172.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/terms_sec_changes.png',
       background: 'white',
       imageLeft: false
     },
@@ -46,7 +46,7 @@ export default function TermsAndConditionsPage() {
       id: 'text-messaging-terms',
       title: 'Text Messaging Terms and Conditions',
       description: 'By consenting to receive text messages from Elite Portfolio Management LLC, you agree to electronic consent, message and data rates may apply, variable message frequency, help information availability, opt-out procedures, MMS vs. SMS delivery, and service provider liability limitations.',
-      image: '/Pages/Signing_Doc_Laptop_Air.png',
+      image: '/Pages/terms_sec_contact.png',
       background: 'grey',
       imageLeft: true
     }
@@ -56,7 +56,7 @@ export default function TermsAndConditionsPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/terms_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Terms and Conditions of Use</h1>

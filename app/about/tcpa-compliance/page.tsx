@@ -12,7 +12,7 @@ export default function TCPACompliancePage() {
       id: 'consent-protocol',
       title: 'Consent-First Communication Protocol',
       description: 'We only contact consumers whose phone numbers are provided with valid consent. All numbers used are tied to documented consent status and monthly-reviewed internal archives. We aggressively honor consumer requests for removal, including STOP messages via SMS, verbal opt-outs during calls, and wrong-number notifications. Each request is documented, acted upon, and suppressed across future campaigns.',
-      image: '/Pages/Stamp_Doc.jpeg',
+      image: '/Pages/tcpa_sec_consent.png',
       background: 'white',
       imageLeft: false
     },
@@ -20,7 +20,7 @@ export default function TCPACompliancePage() {
       id: 'caller-transparency',
       title: 'Caller ID & Transparency',
       description: 'Every number we use to communicate with is valid, active, callback-capable, and directly linked to our company. We never spoof or falsify caller identity. We register numbers with carrier-level caller ID systems when available and comply with FCC 47 CFR § 64.1601(e). Due to limitations from carriers and mobile data networks, our company name may not always appear — but the number will always trace directly to us.',
-      image: 'https://images.pexels.com/photos/2312369/pexels-photo-2312369.jpeg',
+      image: '/Pages/tcpa_sec_caller_id.png',
       background: 'grey',
       imageLeft: true
     },
@@ -28,7 +28,7 @@ export default function TCPACompliancePage() {
       id: 'internal-documentation',
       title: 'Internal Documentation & Oversight',
       description: 'Each month, our team compiles an internal TCPA Consent Packet that includes number verification, oversight validation, and compliance policies and procedures. These records are securely stored and can be audited or reviewed if necessary. We do not use prerecorded messages on phone numbers without documented consent. Our internal controls and policy enforcement procedures make this non-negotiable.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/tcpa_sec_documentation.png',
       background: 'white',
       imageLeft: false
     },
@@ -36,7 +36,7 @@ export default function TCPACompliancePage() {
       id: 'why-contacted',
       title: 'Why Was I Contacted?',
       description: 'Consumers can contact us directly to request removal, ask where we received their number, or flag a wrong number or inquiry. We provide multiple contact options including phone, email, and website forms with preset options for "Why was I contacted?", "Where did you get my number?", and "Please remove my number." All inquiries are routed to our compliance team for immediate attention.',
-      image: 'https://cdn.pixabay.com/photo/2019/07/14/16/27/pen-4337521_1280.jpg',
+      image: '/Pages/tcpa_sec_why_contacted.png',
       background: 'grey',
       imageLeft: true
     },
@@ -44,7 +44,7 @@ export default function TCPACompliancePage() {
       id: 'zero-tolerance',
       title: 'Zero Tolerance for TCPA Abuse',
       description: 'We do not tolerate violations — internal or external. All calls are regulated, consent is validated, and audit logs are maintained. If you received a call or message from us and believe it was in error, contact us immediately. Our compliance team is available to address any concerns and ensure proper handling of your request.',
-      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
+      image: '/Pages/tcpa_sec_zero_tolerance.png',
       background: 'white',
       imageLeft: false
     }
@@ -56,8 +56,7 @@ export default function TCPACompliancePage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/Stamp_Doc.jpeg)' }}
-        ></div>
+          style={{ backgroundImage: 'url(/Pages/tcpa_hero_bg.png)' }}>        </div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>TCPA Compliance</h1>

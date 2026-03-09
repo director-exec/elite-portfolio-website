@@ -4,28 +4,28 @@ export default function ContactPage() {
       id: 'account-resolution',
       title: 'Trying to Resolve an Account?',
       description: 'If you\'ve received a communication from Elite Portfolio Management and want to discuss your account or make a payment, our team is here to assist you.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/contact_sec_resolve.png',
       email: 'validation@eliteportmgmt.com'
     },
     {
       id: 'receivables-help',
       title: 'Need Help With Receivables?',
       description: 'Looking to improve collections or streamline your accounts receivable process? Contact our solutions team to learn how we help clients maximize recovery while protecting their brand.',
-      image: 'https://images.pexels.com/photos/4792288/pexels-photo-4792288.jpeg?_gl=1*17w92mj*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MzA3MjckbzIkZzEkdDE3NTQ5MzA3NTQkajMzJGwwJGgw',
+      image: '/Pages/contact_sec_receivables.png',
       email: 'info@eliteportmgmt.com'
     },
     {
       id: 'client-support',
       title: 'Already a Client?',
       description: 'If you\'re a current client and need support, reporting access, or a service update, we\'re always here for you.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+      image: '/Pages/contact_sec_client.png',
       email: 'client@eliteportmgmt.com'
     },
     {
       id: 'hr-verification',
       title: 'Employment Verification or HR Questions?',
       description: 'Need to verify employment, check holiday hours, or inquire about benefits?',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800',
+      image: '/Pages/contact_hero_bg.png',
       email: 'hr@eliteportmgmt.com'
     }
   ]
@@ -34,7 +34,7 @@ export default function ContactPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/contact_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Contact Us</h1>

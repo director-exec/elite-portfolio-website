@@ -4,7 +4,7 @@ export default function CommunityInvolvementPage() {
       id: 'mission-beyond',
       title: 'Our Commitment Reaches Beyond Collections',
       description: 'At Elite Portfolio Management, our mission goes deeper than financial recovery — it\'s rooted in creating lasting, positive impact in the communities we serve. We believe true leadership includes giving back, and we proudly uphold that responsibility through active volunteerism, charitable partnerships, and community-driven initiatives.',
-      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
+      image: '/Pages/community_sec_commitment.png',
       background: 'white',
       imageLeft: false
     },
@@ -12,7 +12,7 @@ export default function CommunityInvolvementPage() {
       id: 'charitable-partnerships',
       title: 'Charitable Partnerships & Support',
       description: 'As part of our ongoing commitment, we support local and national nonprofits through monthly contributions, employee-led fundraising efforts, and direct involvement in events that uplift those in need. From supporting children\'s health organizations to addressing urgent community issues, our goal is to drive measurable change — not just in business, but in people\'s lives.',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
+      image: '/Pages/community_sec_partnerships.png',
       background: 'grey',
       imageLeft: true
     },
@@ -20,7 +20,7 @@ export default function CommunityInvolvementPage() {
       id: 'elite-standard',
       title: 'Elite Portfolio Isn\'t Just a Name — It\'s Our Standard',
       description: 'Elite Portfolio isn\'t just a name — it\'s a standard we uphold in everything we do; including how we serve our communities. We believe that true success is measured not just by business performance, but by the positive impact we have on the world around us. Through our community involvement, we strive to create lasting change and build stronger, more resilient communities.',
-      image: '/Pages/Board_Meeting_Consult_Building.jpeg',
+      image: '/Pages/community_sec_name.png',
       background: 'white',
       imageLeft: false
     }
@@ -32,7 +32,7 @@ export default function CommunityInvolvementPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800)' }}
+          style={{ backgroundImage: 'url(/Pages/community_hero_bg.png)' }}
         ></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">

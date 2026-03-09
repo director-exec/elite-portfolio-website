@@ -16,7 +16,7 @@ export default function RequestAccountValidationPage() {
       id: 'account-details',
       title: 'Get Account Details Delivered to Your Inbox',
       description: 'If you would like account validation for your account with Elite Portfolio Management, please complete the form below. By submitting your request, you confirm that you are the authorized account holder and that the information you\'ve provided is complete and accurate. A member of our team will reach out within 24 hours to follow up with your request.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/validation_sec_info.png',
       background: 'white',
       imageLeft: false
     },
@@ -24,7 +24,7 @@ export default function RequestAccountValidationPage() {
       id: 'email-delivery',
       title: 'Important Notice Regarding Email Delivery',
       description: 'Your account validation or account details will be sent via standard (unencrypted) email. While convenient, this method may not offer the same level of security as postal mail. By submitting this form, you acknowledge and accept delivery in this format. To avoid delivery issues, we recommend adding our email address — support@eliteportmgmt.com — to your safe sender list.',
-      image: 'https://images.pexels.com/photos/9068372/pexels-photo-9068372.jpeg?_gl=1*269x10*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5MjU3MjAkbzEkZzEkdDE3NTQ5MjYwNzckajUxJGwwJGgw',
+      image: '/Pages/validation_sec_response.png',
       background: 'grey',
       imageLeft: true
     },
@@ -32,7 +32,7 @@ export default function RequestAccountValidationPage() {
       id: 'required-information',
       title: 'What You\'ll Need to Provide',
       description: 'You\'ll need to provide your Elite Account Number, Creditor Name, Your Full Legal Name, Mailing Address, Valid Phone Number, and Valid Email Address. You must also acknowledge that you may receive communications via phone, text, or email, confirm ownership of the contact details you\'ve submitted, request electronic delivery of this document, and understand you may revoke consent at any time through reasonable means.',
-      image: 'https://images.pexels.com/photos/7974/pexels-photo.jpg',
+      image: '/Pages/validation_sec_rights.png',
       background: 'white',
       imageLeft: false
     }
@@ -119,7 +119,7 @@ export default function RequestAccountValidationPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/Calculator_Writing_Pro.jpeg)' }}
+          style={{ backgroundImage: 'url(/Pages/validation_hero_bg.png)' }}
         ></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">

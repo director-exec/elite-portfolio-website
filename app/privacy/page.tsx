@@ -6,7 +6,7 @@ export default function PrivacyPolicyPage() {
       id: 'information-collection',
       title: 'Information We Collect',
       description: 'We may collect various types of personal information including contact information (name, address, email, phone), financial information (payment history, bank details), debt information (account numbers, balances), identification information (government IDs), and communications records (phone calls, emails, correspondence).',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
+      image: '/Pages/privacy_hero_bg.png',
       background: 'white',
       imageLeft: false
     },
@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
       id: 'information-usage',
       title: 'Information Usage and Disclosure',
       description: 'We do not sell personal information to third parties. However, we may share information for business operations with affiliates and service providers, during business transfers such as mergers or sales, and for legal compliance as required by law, regulation, or legal process.',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: '/Pages/privacy_sec_usage.png',
       background: 'grey',
       imageLeft: true
     },
@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
       id: 'data-security',
       title: 'Data Security',
       description: 'We employ technical and organizational measures to safeguard the confidentiality, integrity, and security of personal information. However, no method of transmission or storage is entirely secure, and we cannot guarantee absolute data security.',
-      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Pages/privacy_sec_security.png',
       background: 'white',
       imageLeft: false
     },
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
       id: 'text-messaging',
       title: 'Text Messaging Privacy',
       description: 'We do not share, transfer, or sell mobile numbers, text messaging opt-in data, or consent information to third parties. For more details on text communications, please refer to our Terms and Conditions page.',
-      image: 'https://images.pexels.com/photos/2312369/pexels-photo-2312369.jpeg?_gl=1*kss10t*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTQ5NDQ2NDckbzQkZzEkdDE3NTQ5NDQ2NTYkajUxJGwwJGgw',
+      image: '/Pages/privacy_sec_text.png',
       background: 'grey',
       imageLeft: true
     },
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
       id: 'your-rights',
       title: 'Your Rights',
       description: 'Individuals have the right to access, update, or request the deletion of their personal information. To exercise these rights or for any questions regarding this Privacy Policy, please contact us using the information provided.',
-      image: 'https://images.pexels.com/photos/6077587/pexels-photo-6077587.jpeg?_gl=1*1votr6i*_ga*ODY5MjgwMTU0LjE3NTQ5MjU3MjE.*_ga_8JE65Q40S6*czE3NTUwODU0NDYkbzUkZzEkdDE3NTUwODU0NDckajU5JGwwJGgw',
+      image: '/Pages/privacy_sec_rights.png',
       background: 'white',
       imageLeft: false
     },
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
       id: 'california-privacy-rights',
       title: 'California Privacy Rights (CCPA)',
       description: 'If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA). You have the right to: (1) Know what personal information we collect, use, disclose, and sell; (2) Request deletion of your personal information; (3) Opt-out of the sale of your personal information (we do not sell personal information); (4) Non-discrimination for exercising your privacy rights; and (5) Access your personal information in a portable format. To exercise any of these California privacy rights, please contact us using the information provided in the Contact Us section. We will respond to your request within the timeframes required by California law.',
-      image: '/Pages/Legal_Doc_Med.jpeg',
+      image: '/Pages/privacy_sec_ccpa.png',
       background: 'grey',
       imageLeft: true
     }
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/privacy_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Privacy Policy</h1>

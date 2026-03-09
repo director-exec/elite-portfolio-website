@@ -4,7 +4,7 @@ export default function NetworkOfAttorneysPage() {
       id: 'trusted-representation',
       title: 'Trusted Legal Representation — Anywhere in the U.S.',
       description: 'Our partners include licensed, bonded, and highly rated collection attorneys operating across multiple U.S. jurisdictions. You don\'t have to manage multiple firms. We oversee every claim — from filing to settlement — through our centralized system, so you get full visibility and efficiency from one point of contact.',
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800',
+      image: '/Pages/attorneys_sec_network.png',
       background: 'cream',
       imageLeft: true
     },
@@ -12,7 +12,7 @@ export default function NetworkOfAttorneysPage() {
       id: 'client-directed-strategy',
       title: 'Client-Directed Legal Strategy',
       description: 'No lawsuit is initiated and no settlement is accepted without your explicit approval. The attorney represents you, and we manage the communication, documentation, and execution on your behalf. Before recommending litigation, Elite Portfolio conducts a collectability review including asset investigation, employment verification, and compliance checklists.',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
+      image: '/Pages/attorneys_sec_compliance.png',
       background: 'white',
       imageLeft: false
     },
@@ -20,7 +20,7 @@ export default function NetworkOfAttorneysPage() {
       id: 'comprehensive-services',
       title: 'Comprehensive Legal Services',
       description: 'Our Elite Portfolio Legal Network Services include lawsuit initiation and monitoring, judgment enforcement, settlement negotiation, court cost tracking, payment forwarding and accounting, multi-jurisdictional coverage, and bonded representation wherever we operate. Whether you\'re pursuing a single claim or managing a large portfolio, we have the legal infrastructure to execute with confidence.',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800',
+      image: '/Pages/attorneys_sec_results.png',
       background: 'cream',
       imageLeft: true
     }
@@ -30,7 +30,7 @@ export default function NetworkOfAttorneysPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/attorneys_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Nationwide Legal Network</h1>

@@ -33,7 +33,7 @@ export default function BankruptcyNotificationPage() {
       id: 'bankruptcy-notification',
       title: 'Have You Filed for Bankruptcy?',
       description: 'If you\'ve filed for bankruptcy and received a notice from Elite Portfolio Management, please let us know as soon as possible by submitting the form below or uploading your bankruptcy documentation directly through our secure portal. This information helps ensure your account is handled appropriately and in accordance with all applicable laws.',
-      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
+      image: '/Pages/bankruptcy_sec_filed.png',
       background: 'white',
       imageLeft: false
     },
@@ -41,7 +41,7 @@ export default function BankruptcyNotificationPage() {
       id: 'account-information',
       title: 'General Account Information',
       description: 'Please provide the following details as shown on your Elite statement: Elite Account Number, Creditor Name, First and Last Name, and Full Mailing Address (Street, City, State, Zip). This information helps us identify your account and ensure proper handling.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/bankruptcy_sec_account.png',
       background: 'grey',
       imageLeft: true
     },
@@ -49,7 +49,7 @@ export default function BankruptcyNotificationPage() {
       id: 'case-details',
       title: 'Bankruptcy Case Details',
       description: 'You\'ll need to provide your Bankruptcy Case Number, Chapter (e.g., 7, 11, 13), Filing Court or Jurisdiction, and Date of Bankruptcy Filing. These details help us understand the specifics of your bankruptcy case and ensure compliance with bankruptcy laws.',
-      image: '/Pages/Stamp_Doc.jpeg',
+      image: '/Pages/bankruptcy_sec_case.png',
       background: 'white',
       imageLeft: false
     },
@@ -57,7 +57,7 @@ export default function BankruptcyNotificationPage() {
       id: 'documentation',
       title: 'Upload Documentation or Add Comments',
       description: 'You can attach any relevant bankruptcy documents (PDF, DOC, image files accepted) and include any notes or messages related to your filing. This helps us process your notification more efficiently and ensures we have all the necessary information.',
-      image: '/Pages/Signing_Doc_Laptop_Air.png',
+      image: '/Pages/bankruptcy_sec_upload.png',
       background: 'grey',
       imageLeft: true
     }
@@ -204,8 +204,7 @@ export default function BankruptcyNotificationPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/Writing_Signing_Doc_Meeting.jpeg)' }}
-        ></div>
+          style={{ backgroundImage: 'url(/Pages/bankruptcy_hero_bg.png)' }}>        </div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Bankruptcy Notification</h1>

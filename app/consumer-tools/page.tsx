@@ -6,7 +6,7 @@ export default function ConsumerToolsPage() {
       id: 'make-payment',
       title: 'Make a Payment',
       description: 'Use our secure, convenient payment options to resolve your account quickly and easily. We offer multiple payment methods including online payments, phone payments, and mail-in options to accommodate your preferences.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800',
+      image: '/Pages/consumer_sec_payment.png',
       link: 'https://pay.eliteportmgmt.com/',
       external: true,
       background: 'white',
@@ -16,7 +16,7 @@ export default function ConsumerToolsPage() {
       id: 'account-validation',
       title: 'Request Account Validation',
       description: 'Get account validation for your account delivered to your inbox. This detailed breakdown helps you understand your account balance and payment history for better financial planning.',
-      image: '/Pages/Calculator_Writing_Pro.jpeg',
+      image: '/Pages/consumer_sec_validation.png',
       link: '/consumer-tools/request-account-validation',
       external: false,
       background: 'cream',
@@ -26,7 +26,7 @@ export default function ConsumerToolsPage() {
       id: 'bankruptcy-notification',
       title: 'Bankruptcy Notification',
       description: 'Notify us if you\'ve filed for bankruptcy to ensure proper handling of your account. This helps us comply with bankruptcy laws and ensures your account is handled appropriately during the bankruptcy process.',
-      image: '/Pages/Writing_Signing_Doc_Meeting.jpeg',
+      image: '/Pages/consumer_sec_bankruptcy.png',
       link: '/consumer-tools/bankruptcy-notification',
       external: false,
       background: 'white',
@@ -36,7 +36,7 @@ export default function ConsumerToolsPage() {
       id: 'fraud-identity-theft',
       title: 'Fraud & Identity Theft',
       description: 'Report suspected fraud or identity theft for immediate assistance and protection. Our dedicated team will help you resolve fraudulent activity and protect your personal information.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032cdc0d14?w=800',
+      image: '/Pages/consumer_sec_fraud.png',
       link: '/consumer-tools/fraud-identity-theft',
       external: false,
       background: 'cream',
@@ -46,7 +46,7 @@ export default function ConsumerToolsPage() {
       id: 'remove-number',
       title: 'Remove My Number',
       description: 'Update your contact preferences or remove incorrect phone numbers from our records. This ensures we have your current contact information and respects your communication preferences.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
+      image: '/Pages/consumer_sec_remove_number.png',
       link: '/consumer-tools/remove-my-number',
       external: false,
       background: 'white',
@@ -56,7 +56,7 @@ export default function ConsumerToolsPage() {
       id: 'feedback',
       title: 'Submit Feedback',
       description: 'Share compliments or complaints to help us improve our service and better assist you. Your feedback is valuable and helps us maintain the highest standards of customer service.',
-      image: 'https://images.unsplash.com/photo-1565728744382-61accd4aa148?w=800',
+      image: '/Pages/consumer_sec_feedback.png',
       link: '/consumer-tools/submit-compliment-complaint',
       external: false,
       background: 'cream',
@@ -70,8 +70,7 @@ export default function ConsumerToolsPage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/Calculator_Writing_Pro.jpeg)' }}
-        ></div>
+          style={{ backgroundImage: 'url(/Pages/consumer_tools_hero_bg.png)' }}>        </div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Consumer Tools</h1>

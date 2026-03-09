@@ -4,7 +4,7 @@ export default function CreditBureauReportingPage() {
       id: 'bureau-integration',
       title: 'Your Gateway to the Bureaus',
       description: 'Elite Portfolio Management\'s network is fully integrated with the nation\'s three major credit bureaus, Experian, Equifax, and TransUnion. Our secure systems and reporting protocols ensure that authorized accounts are updated accurately, flagged appropriately, and tracked in real time.',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',
+      image: '/Pages/credit_sec_reporting.png',
       background: 'cream',
       imageLeft: true
     },
@@ -12,7 +12,7 @@ export default function CreditBureauReportingPage() {
       id: 'compliance-benefits',
       title: 'Stay Compliant & Save Time',
       description: 'We handle all bureau submissions on your behalf — no extra systems or staffing required. We ensure all reporting is accurate, up to date, and reflects the current account status (including disputes), in accordance with FCRA. No software costs, no integration burdens — we manage the full reporting process.',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800',
+      image: '/Pages/credit_sec_accuracy.png',
       background: 'white',
       imageLeft: false
     },
@@ -20,7 +20,7 @@ export default function CreditBureauReportingPage() {
       id: 'recovery-enhancement',
       title: 'Improve Recovery Rates',
       description: 'Credit reporting, when used strategically, can increase repayment motivation without compromising consumer rights. Your team focuses on core business while we handle the credit reporting logistics and compliance protocols. Disputed accounts are flagged appropriately, and all consumer data is transmitted securely and responsibly.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
+      image: '/Pages/credit_sec_disputes.png',
       background: 'cream',
       imageLeft: true
     }
@@ -30,7 +30,7 @@ export default function CreditBureauReportingPage() {
     <>
       {/* Hero Banner Section */}
       <section className="subpage-hero">
-        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800)' }}></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/credit_bureau_hero_bg.png)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
           <h1>Credit Bureau Reporting</h1>
