@@ -4,7 +4,7 @@ export default function CompliancePage() {
       id: 'regulatory-compliance',
       title: 'Regulatory Compliance',
       description: 'Elite Portfolio strictly adheres to all applicable statutes and regulations, including Fair Debt Collection Practices Act (FDCPA), Fair Credit Reporting Act (FCRA), Gramm-Leach-Bliley Act (GLBA), Health Insurance Portability and Accountability Act (HIPAA), Privacy Act of 1974, Protected Health Information (PHI) protocols, TCPA (Telephone Consumer Protection Act), and any other relevant state or federal statutes. We continuously align with evolving compliance frameworks to ensure that both our clients and their consumers are protected at all times.',
-      image: '/Pages/elite_compliance_fdcpa_reg_f.png',
+      image: '/Pages/compliance_section_reg.png',
       background: 'white',
       imageLeft: false
     },
@@ -64,7 +64,7 @@ export default function CompliancePage() {
       <section className="subpage-hero">
         <div
           className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/elite_compliance_fdcpa_reg_f.png)' }}
+          style={{ backgroundImage: 'url(/Pages/compliance_hero_bg.png)' }}
         ></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
