@@ -25,7 +25,7 @@ export default function FraudIdentityTheftPage() {
       id: 'ftc-reporting',
       title: 'Report Identity Theft to the FTC',
       description: 'You can also file a formal identity theft report with the Federal Trade Commission. Visit IdentityTheft.gov to create a comprehensive report that will help you resolve the issue with creditors, banks, and credit bureaus. This official report is often required by financial institutions and can help protect your rights.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Seal_of_the_United_States_Federal_Trade_Commission.svg/1024px-Seal_of_the_United_States_Federal_Trade_Commission.svg.png',
+      image: '/Pages/fraud_sec_ftc.png',
       background: 'grey',
       imageLeft: true
     },
