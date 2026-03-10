@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SectionCard from '../components/SectionCard'
 
 export default function AboutPage() {
   const aboutSections = [
@@ -102,11 +103,22 @@ export default function AboutPage() {
               {section.imageLeft ? (
                 <>
                   <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
+                    {section.id === 'how-we-operate' ? (
+                      <SectionCard
+                        subject="FDCPA & Reg F Compliance"
+                        bullets={[
+                          { text: 'Every consumer interaction follows FDCPA §1692 guidelines — no harassment, no misrepresentation, full validation rights disclosed.' },
+                          { text: 'Agents are trained on tone, timing, and approach from the Elite Training Manual: "Resolution over collection."' },
+                          { text: 'All calls are recorded, scored, and audited monthly for quality assurance and regulatory alignment.' },
+                        ]}
+                      />
+                    ) : (
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="subpage-image"
+                      />
+                    )}
                   </div>
                   <div>
                     <h2>{section.title}</h2>
@@ -124,11 +136,22 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
+                    {section.id === 'how-we-operate' ? (
+                      <SectionCard
+                        subject="FDCPA & Reg F Compliance"
+                        bullets={[
+                          { text: 'Every consumer interaction follows FDCPA §1692 guidelines — no harassment, no misrepresentation, full validation rights disclosed.' },
+                          { text: 'Agents are trained on tone, timing, and approach from the Elite Training Manual: "Resolution over collection."' },
+                          { text: 'All calls are recorded, scored, and audited monthly for quality assurance and regulatory alignment.' },
+                        ]}
+                      />
+                    ) : (
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="subpage-image"
+                      />
+                    )}
                   </div>
                 </>
               )}
