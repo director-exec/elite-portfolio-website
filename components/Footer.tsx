@@ -38,13 +38,23 @@ export default function Footer() {
             <div className="footer-badges">
               <img
                 src="/LOGO/BBBLogo.png"
-                alt="Better Business Bureau"
+                alt="Better Business Bureau A-Rated"
                 className="badge-bbb"
               />
               <img
                 src="/LOGO/EC_BADGE.png"
                 alt="EverChain Certified Network Member"
                 className="badge-ec"
+              />
+              <img
+                src="/LOGO/ACA_Member.svg"
+                alt="ACA International Certified Member"
+                className="badge-aca"
+              />
+              <img
+                src="/LOGO/RMAI_Member.svg"
+                alt="RMAI Certified Member"
+                className="badge-rmai"
               />
             </div>
             <div className="social-links">
