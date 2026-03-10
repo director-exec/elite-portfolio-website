@@ -2,6 +2,50 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import SectionCard from '../../components/SectionCard'
+
+const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
+  'immediate-action': {
+    subject: 'Immediate Fraud Response',
+    bullets: [
+      { text: 'Contact Elite Portfolio Management immediately at 833-381-4416 for urgent fraud assistance and account protection.' },
+      { text: 'Your account will be flagged for immediate security review and protective measures will be implemented.' },
+      { text: 'Our dedicated fraud team prioritizes your privacy and works quickly to secure your financial information.' },
+    ],
+  },
+  'ftc-reporting': {
+    subject: 'Federal Trade Commission Report',
+    bullets: [
+      { text: 'File a formal identity theft report at IdentityTheft.gov to create an official FTC Identity Theft Report.' },
+      { text: 'This comprehensive report is often required by creditors, banks, and credit bureaus to resolve disputes.' },
+      { text: 'The FTC report establishes your legal rights and provides a recovery plan tailored to your situation.' },
+    ],
+  },
+  'police-report': {
+    subject: 'Law Enforcement Documentation',
+    bullets: [
+      { text: 'File a police report with your local law enforcement to create an official record of the identity theft crime.' },
+      { text: 'Bring your FTC report, government-issued photo ID, proof of address, and any evidence of the theft.' },
+      { text: 'A police report may be required by creditors and credit bureaus to process fraud claims and disputes.' },
+    ],
+  },
+  'what-to-expect': {
+    subject: 'Our Commitment to You',
+    bullets: [
+      { text: 'Immediate account review with enhanced security measures applied to protect your information.' },
+      { text: 'Full assistance with documentation, reporting guidance, and coordination with relevant agencies.' },
+      { text: 'Regular status updates on your case and ongoing guidance to protect your identity going forward.' },
+    ],
+  },
+  'additional-resources': {
+    subject: 'Key Resource Contacts',
+    bullets: [
+      { text: 'Credit bureaus (Equifax, Experian, TransUnion) can place fraud alerts and freeze your credit reports.' },
+      { text: 'Federal agencies (FTC, Social Security Administration, IRS) handle identity theft reports and tax fraud.' },
+      { text: 'These organizations work together to help you recover from identity theft and prevent future incidents.' },
+    ],
+  },
+}
 
 export default function FraudIdentityTheftPage() {
   const [showModal, setShowModal] = useState(true)
@@ -17,7 +61,6 @@ export default function FraudIdentityTheftPage() {
       id: 'immediate-action',
       title: 'Immediate Action Required',
       description: 'If you believe your account has been impacted by fraud or identity theft, please contact Elite Portfolio Management immediately so we can assist you in resolving the matter with urgency and care. Your privacy and security are our priority. Call us at 833-381-4416 for immediate assistance.',
-      image: '/Pages/fraud_sec_immediate.png',
       background: 'white',
       imageLeft: false
     },
@@ -25,7 +68,6 @@ export default function FraudIdentityTheftPage() {
       id: 'ftc-reporting',
       title: 'Report Identity Theft to the FTC',
       description: 'You can also file a formal identity theft report with the Federal Trade Commission. Visit IdentityTheft.gov to create a comprehensive report that will help you resolve the issue with creditors, banks, and credit bureaus. This official report is often required by financial institutions and can help protect your rights.',
-      image: '/Pages/fraud_sec_ftc.png',
       background: 'grey',
       imageLeft: true
     },
@@ -33,7 +75,6 @@ export default function FraudIdentityTheftPage() {
       id: 'police-report',
       title: 'File a Police Report',
       description: 'In cases of identity theft, it\'s important to file a police report with your local law enforcement agency. This creates an official record of the crime and may be required by creditors, banks, and credit bureaus. Bring your FTC Identity Theft Report, government-issued photo ID, proof of address, and any evidence of the identity theft.',
-      image: '/Pages/fraud_sec_police.png',
       background: 'white',
       imageLeft: false
     },
@@ -41,7 +82,6 @@ export default function FraudIdentityTheftPage() {
       id: 'what-to-expect',
       title: 'What to Expect',
       description: 'When you report fraud or identity theft to us, you can expect immediate account review and security measures, assistance with documentation and reporting, guidance on protecting your identity going forward, and regular updates on the status of your case. We work quickly to resolve these issues and protect your financial security.',
-      image: '/Pages/fraud_sec_expect.png',
       background: 'grey',
       imageLeft: true
     },
@@ -49,7 +89,6 @@ export default function FraudIdentityTheftPage() {
       id: 'additional-resources',
       title: 'Additional Resources',
       description: 'We provide access to important resources including credit bureaus (Equifax, Experian, TransUnion) and federal agencies (FTC, Social Security Administration, IRS). These organizations can help you place fraud alerts, freeze your credit, and report identity theft to the appropriate authorities.',
-      image: '/Pages/fraud_sec_resources.png',
       background: 'white',
       imageLeft: false
     }
@@ -83,43 +122,38 @@ export default function FraudIdentityTheftPage() {
       </section>
 
       {/* Fraud Sections */}
-      {fraudSections.map((section, index) => (
-        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
-          <div className="subpage-container">
-            <div className="subpage-grid">
-              {section.imageLeft ? (
-                <>
-                  <div className="subpage-image-col">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                  <div className="subpage-text-col">
-                    <h2>{section.title}</h2>
-                    <p>{section.description}</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="subpage-text-col">
-                    <h2>{section.title}</h2>
-                    <p>{section.description}</p>
-                  </div>
-                  <div className="subpage-image-col">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                </>
-              )}
+      {fraudSections.map((section) => {
+        const card = sectionCards[section.id]
+        return (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div className="subpage-grid">
+                {section.imageLeft ? (
+                  <>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                    <div>
+                      <h2>{section.title}</h2>
+                      <p>{section.description}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h2>{section.title}</h2>
+                      <p>{section.description}</p>
+                    </div>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* Resources Section */}
       <section className="subpage-section subpage-section-cream">
@@ -212,4 +246,4 @@ export default function FraudIdentityTheftPage() {
       )}
     </>
   )
-} 
+}

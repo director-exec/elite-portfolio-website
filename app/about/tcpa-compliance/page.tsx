@@ -1,9 +1,53 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import SectionCard from '../../components/SectionCard'
 
 export const metadata: Metadata = {
   title: 'TCPA Compliance | Elite Portfolio Management',
   description: 'Learn about our commitment to TCPA compliance and consumer protection. We operate with structured, auditable, and aggressively compliant communication frameworks.',
+}
+
+const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
+  'consent-protocol': {
+    subject: 'Consent-First Framework',
+    bullets: [
+      { text: 'Only contact consumers whose phone numbers are provided with valid, documented consent status.' },
+      { text: 'Aggressively honor STOP messages via SMS, verbal opt-outs during calls, and wrong-number notifications.' },
+      { text: 'Monthly-reviewed internal archives ensure every consent record is current, documented, and suppressed as needed.' },
+    ],
+  },
+  'caller-transparency': {
+    subject: 'Full Caller Transparency',
+    bullets: [
+      { text: 'Every number we use is valid, active, callback-capable, and directly linked to our company — never spoofed.' },
+      { text: 'Registered with carrier-level caller ID systems and fully compliant with FCC 47 CFR § 64.1601(e).' },
+      { text: 'Our number always traces directly to us, even when carrier limitations prevent company name display.' },
+    ],
+  },
+  'internal-documentation': {
+    subject: 'Auditable Documentation',
+    bullets: [
+      { text: 'Monthly TCPA Consent Packets compiled with number verification, oversight validation, and policy documentation.' },
+      { text: 'All records securely stored and available for audit or review — full transparency at every level.' },
+      { text: 'No prerecorded messages on phone numbers without documented consent — this is non-negotiable.' },
+    ],
+  },
+  'why-contacted': {
+    subject: 'Consumer Inquiry Support',
+    bullets: [
+      { text: 'Multiple contact options including phone, email, and website forms for removal, source, and wrong-number requests.' },
+      { text: 'Preset form options for "Why was I contacted?", "Where did you get my number?", and "Please remove my number."' },
+      { text: 'All inquiries routed directly to our compliance team for immediate attention and resolution.' },
+    ],
+  },
+  'zero-tolerance': {
+    subject: 'Zero Tolerance Policy',
+    bullets: [
+      { text: 'We do not tolerate TCPA violations — internal or external. All calls are regulated and consent is validated.' },
+      { text: 'Comprehensive audit logs maintained for every communication to ensure full accountability and traceability.' },
+      { text: 'Compliance team available immediately to address any concerns about calls or messages received in error.' },
+    ],
+  },
 }
 
 export default function TCPACompliancePage() {
@@ -79,47 +123,42 @@ export default function TCPACompliancePage() {
       </section>
 
       {/* TCPA Sections */}
-      {tcpaSections.map((section, index) => (
-        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
-          <div className="subpage-container">
-            <div className="subpage-grid">
-              {section.imageLeft ? (
-                <>
-                  <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                  <div>
-                    <h2>{section.title}</h2>
+      {tcpaSections.map((section, index) => {
+        const card = sectionCards[section.id]
+        return (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div className="subpage-grid">
+                {section.imageLeft ? (
+                  <>
                     <div>
-                      {section.description}
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
                     </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div>
-                    <h2>{section.title}</h2>
                     <div>
-                      {section.description}
+                      <h2>{section.title}</h2>
+                      <div>
+                        {section.description}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                </>
-              )}
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h2>{section.title}</h2>
+                      <div>
+                        {section.description}
+                      </div>
+                    </div>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* Contact Information Section */}
       <section className="subpage-section subpage-section-cream">

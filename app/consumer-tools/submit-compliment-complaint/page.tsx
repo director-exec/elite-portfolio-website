@@ -2,6 +2,58 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import SectionCard from '../../components/SectionCard'
+
+const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
+  'important-note': {
+    subject: 'Before You Begin',
+    bullets: [
+      { text: 'Complete the form below to tell us what went well — or where we can improve.' },
+      { text: 'If you\'re looking to dispute an account, please use our Dispute My Account form instead.' },
+      { text: 'We value your feedback and use it to continuously improve our services and standards.' },
+    ],
+  },
+  'account-information': {
+    subject: 'Account Identification',
+    bullets: [
+      { text: 'Provide your Elite Account Number and creditor name as shown on your statement.' },
+      { text: 'Include your first and last name along with your complete mailing address.' },
+      { text: 'This information helps us locate your account quickly and address your feedback effectively.' },
+    ],
+  },
+  'contact-method': {
+    subject: 'How to Reach You',
+    bullets: [
+      { text: 'Let us know the best way to reach you if we need to follow up on your feedback.' },
+      { text: 'Provide a phone number (mobile, home, or work) and/or email address for contact.' },
+      { text: 'This ensures we can respond to your feedback promptly and through your preferred channel.' },
+    ],
+  },
+  'experience-details': {
+    subject: 'Describe Your Experience',
+    bullets: [
+      { text: 'Please describe your compliment or complaint in detail so we can fully understand the situation.' },
+      { text: 'You may upload relevant documents or screenshots if applicable to support your feedback.' },
+      { text: 'The more specific you can be, the better we can address your feedback and take appropriate action.' },
+    ],
+  },
+  'take-feedback-seriously': {
+    subject: 'Our Commitment to Quality',
+    bullets: [
+      { text: 'Every compliment and complaint is reviewed by our internal compliance and service quality teams.' },
+      { text: 'We ensure all feedback is evaluated against our professional standards and your expectations.' },
+      { text: 'Thank you for helping us serve you better — your input directly shapes our improvement efforts.' },
+    ],
+  },
+  'what-happens-next': {
+    subject: 'Next Steps After Submission',
+    bullets: [
+      { text: 'Your feedback will be reviewed within 2 business days of submission.' },
+      { text: 'If you provided contact information, we may reach out for additional details as needed.' },
+      { text: 'Complaints are escalated to our compliance team for thorough investigation with a response within 10 business days.' },
+    ],
+  },
+}
 
 export default function SubmitComplimentComplaintPage() {
   const [showModal, setShowModal] = useState(true)
@@ -169,43 +221,38 @@ export default function SubmitComplimentComplaintPage() {
       </section>
 
       {/* Feedback Sections */}
-      {feedbackSections.map((section, index) => (
-        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
-          <div className="subpage-container">
-            <div className="subpage-grid">
-              {section.imageLeft ? (
-                <>
-                  <div className="subpage-image-col">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                  <div className="subpage-text-col">
-                    <h2>{section.title}</h2>
-                    <p>{section.description}</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="subpage-text-col">
-                    <h2>{section.title}</h2>
-                    <p>{section.description}</p>
-                  </div>
-                  <div className="subpage-image-col">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                </>
-              )}
+      {feedbackSections.map((section, index) => {
+        const card = sectionCards[section.id]
+        return (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div className="subpage-grid">
+                {section.imageLeft ? (
+                  <>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                    <div className="subpage-text-col">
+                      <h2>{section.title}</h2>
+                      <p>{section.description}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="subpage-text-col">
+                      <h2>{section.title}</h2>
+                      <p>{section.description}</p>
+                    </div>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* Form Section */}
       <section className="subpage-section subpage-section-cream">

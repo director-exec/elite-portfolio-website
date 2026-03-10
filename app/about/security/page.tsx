@@ -1,3 +1,32 @@
+import SectionCard from '../../components/SectionCard'
+
+const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
+  'data-protection': {
+    subject: 'Enterprise-Grade Data Protection',
+    bullets: [
+      { text: 'Zero data breaches — safeguarding data is embedded in our DNA and drives every infrastructure decision.' },
+      { text: 'Infrastructure built to meet and exceed today\'s most stringent security and compliance standards.' },
+      { text: 'Protecting both your information and your customers\' data at every level of our operations.' },
+    ],
+  },
+  'security-protocols': {
+    subject: 'Advanced Security Protocols',
+    bullets: [
+      { text: 'Continuously updated, transparent protocols leveraging the latest encryption and secure storage systems.' },
+      { text: 'Controlled access systems, responsible document disposal, and fully secured digital and physical environments.' },
+      { text: 'Comprehensive disaster recovery plan ensures business continuity and data protection under any circumstances.' },
+    ],
+  },
+  'compliance-standards': {
+    subject: 'Regulatory & Industry Alignment',
+    bullets: [
+      { text: 'Rigorous compliance with all federal and state regulations alongside industry best practices for data security.' },
+      { text: 'Trusted by institutions across every industry to deliver collections support with the highest data protection.' },
+      { text: 'In a digital-first world, security isn\'t an option — it\'s our obligation to every client and consumer we serve.' },
+    ],
+  },
+}
+
 export default function SecurityPage() {
   const securitySections = [
     {
@@ -41,47 +70,42 @@ export default function SecurityPage() {
       </section>
 
       {/* Security Sections */}
-      {securitySections.map((section, index) => (
-        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
-          <div className="subpage-container">
-            <div className="subpage-grid">
-              {section.imageLeft ? (
-                <>
-                  <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                  <div>
-                    <h2>{section.title}</h2>
+      {securitySections.map((section, index) => {
+        const card = sectionCards[section.id]
+        return (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div className="subpage-grid">
+                {section.imageLeft ? (
+                  <>
                     <div>
-                      {section.description}
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
                     </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div>
-                    <h2>{section.title}</h2>
                     <div>
-                      {section.description}
+                      <h2>{section.title}</h2>
+                      <div>
+                        {section.description}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                </>
-              )}
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h2>{section.title}</h2>
+                      <div>
+                        {section.description}
+                      </div>
+                    </div>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* CTA Section */}
       <section className="subpage-cta">
@@ -96,4 +120,4 @@ export default function SecurityPage() {
       </section>
     </>
   )
-} 
+}

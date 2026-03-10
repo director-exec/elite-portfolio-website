@@ -2,6 +2,42 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import SectionCard from '../components/SectionCard'
+
+const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
+  'timely-notifications': {
+    subject: 'Payment Alert System',
+    bullets: [
+      { text: 'Receive important updates about billing and upcoming payments directly to your mobile phone.' },
+      { text: 'Stay informed about your account status and never miss a payment deadline with convenient text alerts.' },
+      { text: 'Proactive notifications help you maintain good payment history and avoid unnecessary late fees.' },
+    ],
+  },
+  'real-time-updates': {
+    subject: 'Instant Account Updates',
+    bullets: [
+      { text: 'Get instant notifications about account status changes, payment confirmations, and important updates.' },
+      { text: 'Our text messaging service ensures you are always informed about your financial obligations in real time.' },
+      { text: 'Receive confirmations immediately when payments are processed and applied to your account balance.' },
+    ],
+  },
+  'avoid-late-payments': {
+    subject: 'Due Date Reminders',
+    bullets: [
+      { text: 'Receive helpful due-date alerts and payment reminders to stay on top of your financial obligations.' },
+      { text: 'Our proactive messaging system helps you maintain good payment history and avoid late fees.' },
+      { text: 'Customized reminder schedules ensure you have enough time to arrange payment before each deadline.' },
+    ],
+  },
+  'exclusive-offers': {
+    subject: 'Special Payment Programs',
+    bullets: [
+      { text: 'Receive notifications about exclusive offers and flexible payment options to better manage your account.' },
+      { text: 'Take advantage of special programs and payment arrangements designed to help you succeed financially.' },
+      { text: 'Be the first to know about new payment plan options and settlement opportunities available to you.' },
+    ],
+  },
+}
 
 export default function TextMessageOptInPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -61,7 +97,6 @@ export default function TextMessageOptInPage() {
       id: 'timely-notifications',
       title: 'Get Timely Notifications',
       description: 'Receive important updates about billing and upcoming payments directly to your phone. Stay informed about your account status and never miss a payment deadline with our convenient text message alerts.',
-      image: '/Pages/text_optin_hero_bg.png',
       background: 'white',
       imageLeft: false
     },
@@ -69,7 +104,6 @@ export default function TextMessageOptInPage() {
       id: 'real-time-updates',
       title: 'Stay Updated in Real Time',
       description: 'Get instant notifications about your account status changes, payment confirmations, and important account updates. Our text messaging service ensures you\'re always in the know about your financial obligations.',
-      image: '/Pages/text_sec_realtime.png',
       background: 'grey',
       imageLeft: true
     },
@@ -77,7 +111,6 @@ export default function TextMessageOptInPage() {
       id: 'avoid-late-payments',
       title: 'Avoid Late Payments',
       description: 'Receive helpful due-date alerts and payment reminders to help you stay on top of your financial obligations. Our proactive messaging system helps you maintain good payment history and avoid late fees.',
-      image: '/Pages/text_sec_late.png',
       background: 'white',
       imageLeft: false
     },
@@ -85,7 +118,6 @@ export default function TextMessageOptInPage() {
       id: 'exclusive-offers',
       title: 'Access Exclusive Offers',
       description: 'Receive notifications about exclusive offers and flexible payment options to better manage your account. Take advantage of special programs and payment arrangements designed to help you succeed.',
-      image: '/Pages/text_sec_offers.png',
       background: 'grey',
       imageLeft: true
     }
@@ -123,18 +155,16 @@ export default function TextMessageOptInPage() {
       </section>
 
       {/* Opt-in Sections */}
-      {optInSections.map((section, index) => (
+      {optInSections.map((section, index) => {
+        const card = sectionCards[section.id]
+        return (
         <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
           <div className="subpage-container">
             <div style={{ maxWidth: '72rem', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', alignItems: 'center' }}>
               {section.imageLeft ? (
                 <>
                   <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
-                    />
+                    <SectionCard subject={card.subject} bullets={card.bullets} />
                   </div>
                   <div>
                     <h2>{section.title}</h2>
@@ -152,18 +182,15 @@ export default function TextMessageOptInPage() {
                     </p>
                   </div>
                   <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
-                    />
+                    <SectionCard subject={card.subject} bullets={card.bullets} />
                   </div>
                 </>
               )}
             </div>
           </div>
         </section>
-      ))}
+      )})}
+
 
       {/* Opt-in Form Section */}
       <section className="subpage-section subpage-section-cream">

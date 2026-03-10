@@ -1,3 +1,56 @@
+import SectionCard from '../../components/SectionCard'
+
+const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
+  'financial-services': {
+    subject: 'Financial Services Recovery',
+    bullets: [
+      { text: 'Intelligent, analytics-driven recovery strategies for national banks, credit unions, and fintech lenders.' },
+      { text: 'Direct integration with your KPIs enabling custom performance tracking and real-time portfolio insight.' },
+      { text: 'Full FDCPA/FCRA compliance with strict consumer data safeguards for high-volume and niche accounts alike.' },
+    ],
+  },
+  'telecommunications': {
+    subject: 'Telecom Collections Excellence',
+    bullets: [
+      { text: 'Decades of experience supporting wireless, broadband, landline, satellite, and cable providers nationwide.' },
+      { text: 'Digital-first collections model with real-time analytics and compliance-forward workflows at every stage.' },
+      { text: 'Tailored solutions that optimize recovery without compromising brand equity or consumer relationships.' },
+    ],
+  },
+  'healthcare': {
+    subject: 'Patient-Centered Recovery',
+    bullets: [
+      { text: 'Compassionate recovery model for hospitals, physician groups, specialty centers, insurers, and pharmacy networks.' },
+      { text: 'Full HIPAA compliance is non-negotiable — we prioritize patient rights and data security at every touchpoint.' },
+      { text: 'Dignity and professionalism in every engagement while accelerating receivables and protecting patient privacy.' },
+    ],
+  },
+  'utilities': {
+    subject: 'Utility Sector Specialists',
+    bullets: [
+      { text: 'Supporting gas, water, electric, and broadband providers across regulated and deregulated markets.' },
+      { text: 'Life-cycle-based collections approach ensuring early intervention, regulatory alignment, and minimal reputational risk.' },
+      { text: 'Specialized handling of equipment loss and property damage accounts with care, accuracy, and compliance.' },
+    ],
+  },
+  'commercial-b2b': {
+    subject: 'Business-to-Business Recovery',
+    bullets: [
+      { text: 'Professionalism and discretion in commercial receivables management that protects long-term business relationships.' },
+      { text: 'Customized strategies designed to fit your operations without disrupting your reputation or client partnerships.' },
+      { text: 'Deep understanding of corporate debt recovery nuances across multiple industries and account types.' },
+    ],
+  },
+  'education': {
+    subject: 'Higher Education Solutions',
+    bullets: [
+      { text: 'FERPA-aware solutions for public and private colleges, universities, and vocational institutions nationwide.' },
+      { text: 'Compassionate, compliant approach that maintains institutional image while resolving student account balances.' },
+      { text: 'Empowering students to resolve their obligations through respectful engagement and flexible resolution options.' },
+    ],
+  },
+}
+
 export default function IndustriesWeServePage() {
   const industrySections = [
     {
@@ -78,47 +131,42 @@ export default function IndustriesWeServePage() {
       </section>
 
       {/* Industry Sections */}
-      {industrySections.map((section, index) => (
-        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
-          <div className="subpage-container">
-            <div className="subpage-grid">
-              {section.imageLeft ? (
-                <>
-                  <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                  <div>
-                    <h2>{section.title}</h2>
+      {industrySections.map((section, index) => {
+        const card = sectionCards[section.id]
+        return (
+          <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
+            <div className="subpage-container">
+              <div className="subpage-grid">
+                {section.imageLeft ? (
+                  <>
                     <div>
-                      {section.description}
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
                     </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div>
-                    <h2>{section.title}</h2>
                     <div>
-                      {section.description}
+                      <h2>{section.title}</h2>
+                      <div>
+                        {section.description}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="subpage-image"
-                    />
-                  </div>
-                </>
-              )}
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h2>{section.title}</h2>
+                      <div>
+                        {section.description}
+                      </div>
+                    </div>
+                    <div>
+                      <SectionCard subject={card.subject} bullets={card.bullets} />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* Summary Section */}
       <section className="subpage-section subpage-section-cream">
@@ -145,4 +193,4 @@ export default function IndustriesWeServePage() {
       </section>
     </>
   )
-} 
+}
