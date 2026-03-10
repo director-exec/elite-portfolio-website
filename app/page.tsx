@@ -101,7 +101,8 @@ export default function Home() {
                   <span className="cert-badge">RMAI Member</span>
                   <span className="cert-badge">Everchain Certified</span>
                   <span className="cert-badge">BBB Accredited</span>
-                  <span className="cert-badge">State Licensed</span>
+                  <span className="cert-badge">Multi-State Licensed</span>
+                  <span className="cert-badge">Insured & Bonded</span>
                 </div>
               </div>
             </div>
