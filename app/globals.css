@@ -1141,7 +1141,6 @@ footer {
 
 .footer-badges .badge-aca,
 .footer-badges .badge-rmai {
-  filter: brightness(0) invert(1);
   opacity: 0.95;
   height: 48px;
 }
