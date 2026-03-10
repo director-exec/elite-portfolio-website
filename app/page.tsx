@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SectionCard from './components/SectionCard'
 
 export default function Home() {
   return (
@@ -95,11 +96,14 @@ export default function Home() {
                   <i className="fas fa-check-circle"></i>
                 </div>
                 <h3>Industry Standards</h3>
-                <ul className="standards-list">
-                  <li>FDCPA and TCPA oversight and documentation standards</li>
-                  <li>State licensing, COAs, and bond requirements in every jurisdiction we operate</li>
-                  <li>Regular compliance audits and training</li>
-                </ul>
+                <div className="cert-badges">
+                  <span className="cert-badge">ACA Member</span>
+                  <span className="cert-badge">RMA Member</span>
+                  <span className="cert-badge">RMAI Member</span>
+                  <span className="cert-badge">Everchain Certified</span>
+                  <span className="cert-badge">BBB Accredited</span>
+                  <span className="cert-badge">State Licensed</span>
+                </div>
               </div>
             </div>
           </div>
@@ -110,7 +114,17 @@ export default function Home() {
       <section className="about">
         <div className="container">
           <div className="about-container">
-            <div className="about-image"></div>
+            <div className="about-card-wrapper">
+              <SectionCard
+                subject="About Elite Portfolio"
+                bullets={[
+                  { text: 'Over four decades of proven collections experience delivering best-in-class recovery solutions for creditors nationwide.' },
+                  { text: 'Compliance-first culture — every consumer interaction reflects the highest standards of professionalism, respect, and regulatory adherence.' },
+                  { text: 'Advanced technology platform with secure infrastructure, real-time reporting, and data-driven strategies that maximize ROI.' },
+                  { text: 'Long-term client partnerships built on transparency, ethical practices, and consistent performance that protects your brand reputation.' },
+                ]}
+              />
+            </div>
             <div className="about-content">
               <h2>About Elite Portfolio</h2>
               <p>
@@ -154,4 +168,4 @@ export default function Home() {
       </section>
     </>
   )
-} 
+}

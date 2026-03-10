@@ -804,6 +804,12 @@ body.mobile-menu-open {
   box-shadow: var(--shadow-lg);
 }
 
+.about-card-wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: 380px;
+}
+
 .about-content h2 {
   font-family: var(--font-heading);
   font-size: 2.5rem;
@@ -1301,6 +1307,7 @@ footer {
   }
 
   .about-image { height: 300px; }
+  .about-card-wrapper { min-height: auto; }
 
   .footer-compact {
     gap: 0.75rem;
