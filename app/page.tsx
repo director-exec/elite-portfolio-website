@@ -98,7 +98,6 @@ export default function Home() {
                 <h3>Industry Standards</h3>
                 <div className="cert-badges">
                   <span className="cert-badge">ACA Member</span>
-                  <span className="cert-badge">RMA Member</span>
                   <span className="cert-badge">RMAI Member</span>
                   <span className="cert-badge">Everchain Certified</span>
                   <span className="cert-badge">BBB Accredited</span>
