@@ -4,7 +4,22 @@ export default function Footer() {
   return (
     <footer>
       <div className="container">
-        {/* Legal Disclosure — single line, small */}
+        {/* TOP: All License Numbers — bold white, prominent */}
+        <div className="footer-licenses">
+          <span>NMLS # 2724917</span>
+          <span className="license-separator">|</span>
+          <span>CA License # 11645-99</span>
+          <span className="license-separator">|</span>
+          <span>FL License # CCA9905045</span>
+          <span className="license-separator">|</span>
+          <span>WA UBI # 605-954-627</span>
+          <span className="license-separator">|</span>
+          <span>LA License # WEB 46689190I</span>
+          <span className="license-separator">|</span>
+          <span>TN License # 2709</span>
+        </div>
+
+        {/* Legal Disclosure — bold white, clearly readable */}
         <div className="footer-legal-banner">
           <p>
             This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
@@ -48,12 +63,12 @@ export default function Footer() {
               />
               <img
                 src="/LOGO/ACA_Member.svg"
-                alt="ACA International Certified Member"
+                alt="ACA International Member"
                 className="badge-aca"
               />
               <img
                 src="/LOGO/RMAI_Member.svg"
-                alt="RMAI Certified Member"
+                alt="RMAI Member"
                 className="badge-rmai"
               />
             </div>
@@ -68,12 +83,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar — licenses + copyright */}
+        {/* Bottom Bar — copyright only */}
         <div className="footer-bottom">
-          <div className="footer-bottom-left">
-            <span>NMLS # 2724917</span>
-            <span>CA License # 11645-99</span>
-          </div>
           <p>&copy; 2026 Elite Portfolio Management. All rights reserved.</p>
         </div>
       </div>
