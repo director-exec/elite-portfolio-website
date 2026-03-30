@@ -38,7 +38,7 @@ export default function Home() {
               </div>
               <h3>Make a Payment</h3>
               <p>Use one of our secure, convenient payment options to resolve your account.</p>
-              <Link href="https://pay.eliteportmgmt.com/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <Link href="https://secure.eliteportmgmt.com" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                 Make a Payment
               </Link>
             </div>

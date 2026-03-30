@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 export default function MakePaymentPage() {
   useEffect(() => {
     // Redirect to the external payment portal
-    window.location.href = 'https://pay.eliteportmgmt.com/'
+    window.location.href = 'https://secure.eliteportmgmt.com'
   }, [])
 
   return (
@@ -43,7 +43,7 @@ export default function MakePaymentPage() {
         }}>
           If you are not redirected automatically,{' '}
           <a
-            href="https://pay.eliteportmgmt.com/"
+            href="https://secure.eliteportmgmt.com"
             style={{
               color: '#1c2a3f',
               textDecoration: 'underline'

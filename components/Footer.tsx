@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Center: Quick Links */}
           <div className="footer-links">
-            <a href="https://pay.eliteportmgmt.com/" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+            <a href="https://secure.eliteportmgmt.com" target="_blank" rel="noopener noreferrer">Make a Payment</a>
             <Link href="/consumer-tools">Consumer Tools</Link>
             <Link href="/solutions">Solutions</Link>
             <Link href="/about">About</Link>

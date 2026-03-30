@@ -58,7 +58,7 @@ export default function ConsumerToolsPage() {
       id: 'make-payment',
       title: 'Make a Payment',
       description: 'Use our secure, convenient payment options to resolve your account quickly and easily. We offer multiple payment methods including online payments, phone payments, and mail-in options to accommodate your preferences.',
-      link: 'https://pay.eliteportmgmt.com/',
+      link: 'https://secure.eliteportmgmt.com',
       external: true,
       background: 'white',
       imageLeft: false

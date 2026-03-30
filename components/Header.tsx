@@ -69,7 +69,7 @@ export default function Header() {
                 <div className="contact-info">
                   Need Help? Call us at 833-381-4416
                 </div>
-                <a href="https://pay.eliteportmgmt.com/" className="payment-button" target="_blank" rel="noopener noreferrer">
+                <a href="https://secure.eliteportmgmt.com" className="payment-button" target="_blank" rel="noopener noreferrer">
                   Make A Payment
                 </a>
               </div>
@@ -194,7 +194,7 @@ export default function Header() {
           <a href="tel:833-381-4416" className="mobile-call-btn">
             Call Us
           </a>
-          <a href="https://pay.eliteportmgmt.com/" className="mobile-payment-btn" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
+          <a href="https://secure.eliteportmgmt.com" className="mobile-payment-btn" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
             Make A Payment
           </a>
         </div>
