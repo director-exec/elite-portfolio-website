@@ -1,70 +1,25 @@
 'use client'
 
-import { useState } from 'react'
-import SectionCard from '../../components/SectionCard'
+import { useState, useEffect } from 'react'
 
-const sectionCards: Record<string, { subject: string; bullets: { text: string }[] }> = {
-  'account-details': {
-    subject: 'Validation Request Process',
-    bullets: [
-      { text: 'Complete the form below to request account validation for your account with Elite Portfolio Management.' },
-      { text: 'By submitting, you confirm that you are the authorized account holder and that your information is accurate.' },
-      { text: 'A member of our team will reach out within 24 hours to follow up with your request.' },
-    ],
-  },
-  'email-delivery': {
-    subject: 'Email Delivery Notice',
-    bullets: [
-      { text: 'Your account validation or details will be sent via standard (unencrypted) email for your convenience.' },
-      { text: 'By submitting this form, you acknowledge and accept delivery in this electronic format.' },
-      { text: 'Add support@eliteportmgmt.com to your safe sender list to avoid delivery issues.' },
-    ],
-  },
-  'required-information': {
-    subject: 'Required Information Checklist',
-    bullets: [
-      { text: 'Provide your Elite Account Number, Creditor Name, Full Legal Name, and Complete Mailing Address.' },
-      { text: 'Include a Valid Phone Number and Email Address for communication and delivery purposes.' },
-      { text: 'Acknowledge consent for electronic delivery — you may revoke consent at any time through reasonable means.' },
-    ],
-  },
-}
+const US_STATES = [
+  ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+  ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
+  ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],
+  ['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],
+  ['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],
+  ['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],
+  ['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],
+  ['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],
+  ['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],['WA','Washington'],
+  ['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],
+]
 
-export default function RequestAccountValidationPage() {
+export default function RespondToYourNoticePage() {
   const [showModal, setShowModal] = useState(true)
-
-  const closeModal = () => {
-    console.log('closeModal called')
-    setShowModal(false)
-    console.log('showModal set to false')
-  }
-
-  const validationSections = [
-    {
-      id: 'account-details',
-      title: 'Get Account Details Delivered to Your Inbox',
-      description: 'If you would like account validation for your account with Elite Portfolio Management, please complete the form below. By submitting your request, you confirm that you are the authorized account holder and that the information you\'ve provided is complete and accurate. A member of our team will reach out within 24 hours to follow up with your request.',
-      image: '/Pages/validation_sec_info.png',
-      background: 'white',
-      imageLeft: false
-    },
-    {
-      id: 'email-delivery',
-      title: 'Important Notice Regarding Email Delivery',
-      description: 'Your account validation or account details will be sent via standard (unencrypted) email. While convenient, this method may not offer the same level of security as postal mail. By submitting this form, you acknowledge and accept delivery in this format. To avoid delivery issues, we recommend adding our email address — support@eliteportmgmt.com — to your safe sender list.',
-      image: '/Pages/validation_sec_response.png',
-      background: 'grey',
-      imageLeft: true
-    },
-    {
-      id: 'required-information',
-      title: 'What You\'ll Need to Provide',
-      description: 'You\'ll need to provide your Elite Account Number, Creditor Name, Your Full Legal Name, Mailing Address, Valid Phone Number, and Valid Email Address. You must also acknowledge that you may receive communications via phone, text, or email, confirm ownership of the contact details you\'ve submitted, request electronic delivery of this document, and understand you may revoke consent at any time through reasonable means.',
-      image: '/Pages/validation_sec_rights.png',
-      background: 'white',
-      imageLeft: false
-    }
-  ]
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
+  const [submitOk, setSubmitOk] = useState(false)
 
   const [formData, setFormData] = useState({
     accountNumber: '',
@@ -77,11 +32,34 @@ export default function RequestAccountValidationPage() {
     zipCode: '',
     phoneNumber: '',
     email: '',
-    consent: false,
-    electronicDelivery: false
+    deliveryEmail: '',
+    // response selections
+    wantValidation: false,
+    wantDispute: false,
+    wantOriginalCreditor: false,
+    disputeReason: '',
+    disputeDetails: '',
+    // consents
+    attestation: false,
+    contactConsent: false,
+    electronicDeliveryConsent: false,
   })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const closeModal = () => setShowModal(false)
+
+  // Pre-fill the account number from the VOD notice link ({{dispute_link}} -> /respond?ref=E-21187)
+  useEffect(() => {
+    try {
+      const ref = new URLSearchParams(window.location.search).get('ref')
+      if (ref) setFormData(prev => ({ ...prev, accountNumber: ref }))
+    } catch {
+      /* no-op */
+    }
+  }, [])
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, type } = e.target
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked
@@ -91,51 +69,71 @@ export default function RequestAccountValidationPage() {
     }
   }
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState('')
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setSubmitMessage('')
+
+    // At least one response type must be selected
+    if (!formData.wantValidation && !formData.wantDispute && !formData.wantOriginalCreditor) {
+      setSubmitOk(false)
+      setSubmitMessage('Please choose at least one option under "How would you like to respond?"')
+      return
+    }
+
+    setIsSubmitting(true)
+    const responseTypes: string[] = []
+    if (formData.wantValidation) responseTypes.push('validation')
+    if (formData.wantDispute) responseTypes.push('dispute')
+    if (formData.wantOriginalCreditor) responseTypes.push('original_creditor')
 
     try {
       const response = await fetch('/api/submit-form', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
+        cache: 'no-store',
         body: JSON.stringify({
-          formType: 'account-validation',
-          formData: formData
+          formType: 'vod-response',
+          formData: {
+            accountNumber: formData.accountNumber,
+            creditor: formData.creditor,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            address: formData.address,
+            city: formData.city,
+            state: formData.state,
+            zip: formData.zipCode,
+            contactEmail: formData.email,
+            phone: formData.phoneNumber,
+            responseTypes,
+            disputeReason: formData.wantDispute ? formData.disputeReason : '',
+            disputeDetails: formData.wantDispute ? formData.disputeDetails : '',
+            requestOriginalCreditor: formData.wantOriginalCreditor,
+            deliveryEmail: formData.deliveryEmail || formData.email,
+            contactConsent: formData.contactConsent,
+            electronicDeliveryConsent: formData.electronicDeliveryConsent,
+          },
         }),
       })
 
-      const result = await response.json()
-
       if (response.ok) {
-        setSubmitMessage('Thank you for your request. A member of our team will reach out within 24 hours.')
-        // Reset form
+        setSubmitOk(true)
+        setSubmitMessage(
+          'Your response has been received and recorded. If you requested validation, we will send your documentation to the email address you provided. You may also receive a follow-up from a member of our team.'
+        )
         setFormData({
-          accountNumber: '',
-          creditor: '',
-          firstName: '',
-          lastName: '',
-          address: '',
-          city: '',
-          state: '',
-          zipCode: '',
-          phoneNumber: '',
-          email: '',
-          consent: false,
-          electronicDelivery: false
+          accountNumber: '', creditor: '', firstName: '', lastName: '', address: '', city: '',
+          state: '', zipCode: '', phoneNumber: '', email: '', deliveryEmail: '',
+          wantValidation: false, wantDispute: false, wantOriginalCreditor: false,
+          disputeReason: '', disputeDetails: '',
+          attestation: false, contactConsent: false, electronicDeliveryConsent: false,
         })
       } else {
-        setSubmitMessage('There was an error submitting your request. Please try again or contact us directly.')
+        setSubmitOk(false)
+        setSubmitMessage('There was an error submitting your response. Please try again, or contact us directly at (833) 381-4416.')
       }
-    } catch (error) {
-      console.error('Error submitting form:', error)
-      setSubmitMessage('There was an error submitting your request. Please try again or contact us directly.')
+    } catch {
+      setSubmitOk(false)
+      setSubmitMessage('There was an error submitting your response. Please try again, or contact us directly at (833) 381-4416.')
     } finally {
       setIsSubmitting(false)
     }
@@ -143,361 +141,238 @@ export default function RequestAccountValidationPage() {
 
   return (
     <>
-      {/* Hero Banner Section */}
+      {/* Hero */}
       <section className="subpage-hero">
-        <div
-          className="subpage-hero-bg"
-          style={{ backgroundImage: 'url(/Pages/validation_hero_bg.png)' }}
-        ></div>
+        <div className="subpage-hero-bg" style={{ backgroundImage: 'url(/Pages/Calculator_Writing_Pro.jpeg)' }}></div>
         <div className="subpage-hero-overlay"></div>
         <div className="subpage-hero-content">
-          <h1>Request Account Validation</h1>
-          <p>Get Account Details Delivered to Your Inbox</p>
+          <h1>Respond to Your Notice</h1>
+          <p>Request validation of your debt, dispute your account, or request your original creditor &mdash; in one place.</p>
         </div>
       </section>
 
-      {/* Validation Sections */}
-      {validationSections.map((section, index) => {
-        const card = sectionCards[section.id]
-        return (
-        <section key={section.id} className={`subpage-section ${section.background === 'grey' ? 'subpage-section-cream' : 'subpage-section-white'}`}>
-          <div className="subpage-container">
-            <div className="subpage-grid">
-              {section.imageLeft ? (
-                <>
-                  <div className="order-1">
-                    <SectionCard subject={card.subject} bullets={card.bullets} />
-                  </div>
-                  <div className="order-2">
-                    <h2>{section.title}</h2>
-                    <div>
-                      {section.description}
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="order-2 lg:order-1">
-                    <h2>{section.title}</h2>
-                    <div>
-                      {section.description}
-                    </div>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <SectionCard subject={card.subject} bullets={card.bullets} />
-                  </div>
-                </>
-              )}
-            </div>
+      {/* Your federal rights */}
+      <section className="subpage-section subpage-section-white">
+        <div className="subpage-container">
+          <h2>Your Rights</h2>
+          <div style={{ maxWidth: 820, lineHeight: 1.7 }}>
+            <p>
+              Under federal law, you have <strong>30 days</strong> from the date you receive our notice to dispute the
+              validity of this debt or any portion of it. You may also request the name and address of the original
+              creditor. You can respond using the form below, or in writing by mail.
+            </p>
+            <ul style={{ marginTop: 12, paddingLeft: 20 }}>
+              <li style={{ marginBottom: 8 }}><strong>Request validation</strong> &mdash; ask us to send you documentation verifying this debt.</li>
+              <li style={{ marginBottom: 8 }}><strong>Dispute the debt</strong> &mdash; tell us you believe the debt is not yours, the amount is wrong, or it was already paid.</li>
+              <li style={{ marginBottom: 8 }}><strong>Request the original creditor</strong> &mdash; ask for the name and address of the original creditor, if different from the current creditor.</li>
+            </ul>
+            <p style={{ marginTop: 12 }}>
+              You are not required to consent to phone or text contact in order to respond. To learn more about your
+              rights under federal law, visit{' '}
+              <a href="https://www.cfpb.gov/debt-collection" target="_blank" rel="noopener noreferrer">www.cfpb.gov/debt-collection</a>.
+            </p>
           </div>
-        </section>
-      )
-      })}
+        </div>
+      </section>
 
-      {/* Account Validation Form Section */}
+      {/* Delivery notice */}
+      <section className="subpage-section subpage-section-cream">
+        <div className="subpage-container">
+          <h2>How We&rsquo;ll Send Your Documents</h2>
+          <div style={{ maxWidth: 820, lineHeight: 1.7 }}>
+            <p>
+              If you request validation, we will send your documentation to the email address you choose below. You
+              may enter a different delivery address than your contact email. Documents are sent by standard
+              (unencrypted) email, which may not offer the same level of security as postal mail &mdash; by providing an
+              email address, you accept delivery in this format. To avoid delivery issues, add{' '}
+              <strong>info@eliteportmgmt.com</strong> to your safe-sender list. You may also request delivery
+              by mail using the contact information at the bottom of this page.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Form */}
       <section className="subpage-section subpage-section-white">
         <div className="subpage-container">
           <div className="text-center mb-8">
-            <h2>
-              Request Account Validation
-            </h2>
-            <p>
-              Please include Elite's eight-digit account number on your statement.
-            </p>
+            <h2>Respond to Your Notice</h2>
+            <p>Please include Elite PortfolioElite Portfolio&rsquo;srsquo;s account number from your notice (shown as your File No.).</p>
           </div>
 
           <form onSubmit={handleSubmit} className="subpage-form">
-              <div className="form-row">
-                {/* Left Column */}
-                <div>
-                  <div>
-                                          <label >
-                        Account Number <span className="text-blue-900">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="accountNumber"
-                        value={formData.accountNumber}
-                        onChange={handleInputChange}
-                                                placeholder="Enter account number"
-                        required
-                      />
-                  </div>
-                  
-                  <div>
-                                          <label >
-                        First Name <span className="text-blue-900">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                                                placeholder="Enter your first name"
-                        required
-                      />
-                  </div>
-                  
-                  <div>
-                                          <label >
-                        Address <span className="text-blue-900">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="address"
-                        value={formData.address}
-                        onChange={handleInputChange}
-                                                placeholder="Enter your mailing address"
-                        required
-                      />
-                  </div>
-                  
-                  <div>
-                                          <label >
-                        City <span className="text-blue-900">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleInputChange}
-                                                placeholder="Enter your city"
-                        required
-                      />
-                  </div>
-                  
-                  <div className="form-row">
-                    <div>
-                      <label >
-                        State <span className="text-blue-900">*</span>
-                      </label>
-                      <select
-                        name="state"
-                        value={formData.state}
-                        onChange={handleInputChange}
-                                                required
-                      >
-                        <option value="">Select State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                      </select>
-                    </div>
-                    
-                    <div>
-                      <label >
-                        ZIP Code <span className="text-blue-900">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="zipCode"
-                        value={formData.zipCode}
-                        onChange={handleInputChange}
-                                                placeholder="Enter ZIP code"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Right Column */}
-                <div>
-                  <div>
-                    <label >
-                      Creditor <span className="text-blue-900">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="creditor"
-                      value={formData.creditor}
-                      onChange={handleInputChange}
-                                            placeholder="Enter creditor name"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label >
-                      Last Name <span className="text-blue-900">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                                            placeholder="Enter your last name"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label >
-                      Phone Number <span className="text-blue-900">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phoneNumber"
-                      value={formData.phoneNumber}
-                      onChange={handleInputChange}
-                                            placeholder="Enter your phone number"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label >
-                      Email Address <span className="text-blue-900">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                                            placeholder="Enter your email address"
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Consent Checkboxes */}
+            <div className="form-row">
+              {/* Left column */}
               <div>
-                <div className="form-checkbox">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    checked={formData.consent}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <label>
-                    I acknowledge that I may receive communications via phone, text, or email, and I confirm ownership of the contact details I&apos;ve submitted.
-                  </label>
+                <div>
+                  <label>Account Number <span className="text-blue-900">*</span></label>
+                  <input type="text" name="accountNumber" value={formData.accountNumber} onChange={handleInputChange} placeholder="Account number from your notice" required />
                 </div>
-
-                <div className="form-checkbox">
-                  <input
-                    type="checkbox"
-                    name="electronicDelivery"
-                    checked={formData.electronicDelivery}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <label>
-                    I request electronic delivery of this document and understand I may revoke consent at any time through reasonable means.
-                  </label>
+                <div>
+                  <label>First Name <span className="text-blue-900">*</span></label>
+                  <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="Enter your first name" required />
                 </div>
-              </div>
-              
-              {/* Submit Button */}
-              <div className="form-submit-wrap">
-                <button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting...' : 'Submit Request'}
-                </button>
-
-                {submitMessage && (
-                  <div className={submitMessage.includes('error') ? 'form-error' : 'form-success'}>
-                    {submitMessage}
+                <div>
+                  <label>Mailing Address <span className="text-blue-900">*</span></label>
+                  <input type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Enter your mailing address" required />
+                </div>
+                <div>
+                  <label>City <span className="text-blue-900">*</span></label>
+                  <input type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="Enter your city" required />
+                </div>
+                <div className="form-row">
+                  <div>
+                    <label>State <span className="text-blue-900">*</span></label>
+                    <select name="state" value={formData.state} onChange={handleInputChange} required>
+                      <option value="">Select State</option>
+                      {US_STATES.map(([abbr, name]) => (<option key={abbr} value={abbr}>{name}</option>))}
+                    </select>
                   </div>
-                )}
+                  <div>
+                    <label>ZIP Code <span className="text-blue-900">*</span></label>
+                    <input type="text" name="zipCode" value={formData.zipCode} onChange={handleInputChange} placeholder="Enter ZIP code" required />
+                  </div>
+                </div>
               </div>
-            </form>
+
+              {/* Right column */}
+              <div>
+                <div>
+                  <label>Creditor <span className="text-blue-900">*</span></label>
+                  <input type="text" name="creditor" value={formData.creditor} onChange={handleInputChange} placeholder="Enter creditor name" required />
+                </div>
+                <div>
+                  <label>Last Name <span className="text-blue-900">*</span></label>
+                  <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Enter your last name" required />
+                </div>
+                <div>
+                  <label>Phone Number (optional)</label>
+                  <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} placeholder="Optional" />
+                </div>
+                <div>
+                  <label>Contact Email <span className="text-blue-900">*</span></label>
+                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Enter your email address" required />
+                </div>
+                <div>
+                  <label>Send my validation documents to <span className="text-blue-900">*</span></label>
+                  <input type="email" name="deliveryEmail" value={formData.deliveryEmail} onChange={handleInputChange} placeholder="Defaults to your contact email" />
+                </div>
+              </div>
+            </div>
+
+            {/* Response selection */}
+            <div style={{ marginTop: 8, padding: '20px', border: '1px solid #d8dee9', borderRadius: 8, background: '#fafbfc' }}>
+              <p style={{ fontWeight: 700, marginBottom: 12 }}>How would you like to respond? (check all that apply) <span className="text-blue-900">*</span></p>
+
+              <div className="form-checkbox">
+                <input type="checkbox" name="wantValidation" checked={formData.wantValidation} onChange={handleInputChange} />
+                <label>Request validation/verification of this debt.</label>
+              </div>
+
+              <div className="form-checkbox">
+                <input type="checkbox" name="wantDispute" checked={formData.wantDispute} onChange={handleInputChange} />
+                <label>Dispute this debt.</label>
+              </div>
+
+              {formData.wantDispute && (
+                <div style={{ margin: '4px 0 12px 28px' }}>
+                  <p style={{ marginBottom: 6 }}>I am disputing because:</p>
+                  {[
+                    ['not_my_debt', 'This is not my debt.'],
+                    ['wrong_amount', 'The amount is wrong.'],
+                    ['already_paid', 'This debt was already paid.'],
+                    ['other', 'Other (please describe below).'],
+                  ].map(([val, label]) => (
+                    <div className="form-checkbox" key={val}>
+                      <input type="radio" name="disputeReason" value={val} checked={formData.disputeReason === val} onChange={handleInputChange} />
+                      <label>{label}</label>
+                    </div>
+                  ))}
+                  <textarea
+                    name="disputeDetails"
+                    value={formData.disputeDetails}
+                    onChange={handleInputChange}
+                    placeholder="Add any details about your dispute (optional)."
+                    rows={3}
+                    style={{ width: '100%', marginTop: 8, padding: 10, borderRadius: 6, border: '1px solid #d8dee9' }}
+                  />
+                </div>
+              )}
+
+              <div className="form-checkbox">
+                <input type="checkbox" name="wantOriginalCreditor" checked={formData.wantOriginalCreditor} onChange={handleInputChange} />
+                <label>Request the name and address of the original creditor (if different from the current creditor).</label>
+              </div>
+            </div>
+
+            {/* Consents */}
+            <div style={{ marginTop: 16 }}>
+              <div className="form-checkbox">
+                <input type="checkbox" name="attestation" checked={formData.attestation} onChange={handleInputChange} required />
+                <label>I am the account holder (or an authorized representative), and the information I have provided is accurate. <span className="text-blue-900">*</span></label>
+              </div>
+              <div className="form-checkbox">
+                <input type="checkbox" name="electronicDeliveryConsent" checked={formData.electronicDeliveryConsent} onChange={handleInputChange} />
+                <label>I request electronic delivery of my documents and understand I may revoke this consent at any time through reasonable means. (Optional)</label>
+              </div>
+              <div className="form-checkbox">
+                <input type="checkbox" name="contactConsent" checked={formData.contactConsent} onChange={handleInputChange} />
+                <label>You may contact me by phone or text at the number I provided. (Optional &mdash; not required to submit this response.)</label>
+              </div>
+            </div>
+
+            <div className="form-submit-wrap">
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Response'}
+              </button>
+              {submitMessage && (
+                <div className={submitOk ? 'form-success' : 'form-error'}>{submitMessage}</div>
+              )}
+            </div>
+          </form>
         </div>
       </section>
 
-      {/* Legal Disclosure Section */}
+      {/* Mini-Miranda / legal disclosure (prominent) */}
       <section className="subpage-section subpage-section-cream">
         <div className="subpage-container">
-          <h2>Legal Disclosure</h2>
-          <div>
-            <p>
-              This is an attempt to collect a debt. Any information obtained will be used for that purpose. This communication is from a debt collector.
+          <div style={{ maxWidth: 820, border: '2px solid #0b1f3a', borderRadius: 8, padding: '18px 22px', background: '#ffffff' }}>
+            <p style={{ fontSize: 16, fontWeight: 700, color: '#0b1f3a', lineHeight: 1.6, margin: 0 }}>
+              This is an attempt to collect a debt, and any information obtained will be used for that purpose. This
+              communication is from a debt collector.
+            </p>
+            <p style={{ fontSize: 14, color: '#1a1a1a', lineHeight: 1.6, marginTop: 10, marginBottom: 0 }}>
+              If you have received a discharge in bankruptcy for this debt, this communication is for informational
+              purposes only and is not an attempt to collect the debt against you personally.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Information Section */}
+      {/* Contact information */}
       <section className="subpage-section subpage-section-white">
         <div className="subpage-container">
           <h2>Contact Information</h2>
-          <div>
-            <div>
-              <p>Elite Portfolio Management</p>
-              <p>2200 N Frazier St. STE 120 Box 142 Conroe TX, 77301</p>
-              <p>Phone: 833-381-4416</p>
-              <p>
-                <strong>Validation Email:</strong> validation@eliteportmgmt.com
-              </p>
-            </div>
+          <div style={{ lineHeight: 1.7 }}>
+            <p><strong>Elite Portfolio Management, LLC</strong></p>
+            <p>2200 N Frazier St. STE 120 Box 142, Conroe, TX 77301</p>
+            <p>Phone: (833) 381-4416</p>
+            <p><strong>Validation / Dispute Email:</strong> info@eliteportmgmt.com</p>
           </div>
         </div>
       </section>
 
-      {/* Pop-up Modal */}
+      {/* Disclosure modal */}
       {showModal && (
         <div className="disclosure-overlay" onClick={closeModal}>
           <div className="disclosure-modal" onClick={(e) => e.stopPropagation()}>
             <h2>IMPORTANT</h2>
-            <p>
-              This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.
-            </p>
-            <p>
-              Calls to and from this company may be monitored and/or recorded.
-            </p>
-            <button className="disclosure-modal-btn" onClick={closeModal}>
-              I Accept
-            </button>
+            <p>This is an attempt to collect a debt. Any information will be used for that purpose. This communication is from a debt collector.</p>
+            <p>Calls to and from this company may be monitored and/or recorded.</p>
+            <button className="disclosure-modal-btn" onClick={closeModal}>I Accept</button>
           </div>
         </div>
       )}
     </>
   )
-} 
+}
