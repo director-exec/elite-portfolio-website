@@ -26,7 +26,7 @@ export default function ContactPage() {
       title: 'Employment Verification or HR Questions?',
       description: 'Need to verify employment, check holiday hours, or inquire about benefits?',
       image: '/Pages/contact_hero_bg.png',
-      email: 'hr@eliteportmgmt.com'
+      email: 'info@eliteportmgmt.com'
     }
   ]
 
